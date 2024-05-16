@@ -50,11 +50,11 @@ Adopt A Candidate is a "Tinder style" recruitment application that matches compa
 ### Nice to have
 
 - The phone and PC application can be used either by a candidate or a company.
-- Some back-end to send requests to an API.
+- Some back-end[^1] to send requests to an API[^2].
 
 ### Priorities
 
-- The front-end of the application.
+- The front-end[^1] of the application.
 - The compatibility with different devices.
 
 ## Conventions
@@ -80,7 +80,7 @@ The rule concerning comments is explained in the [conventions and rules file](..
 
 - You can format automatically your .dart files using *Shift* + *Alt* + F.
 - Avoid to create too long lines.
-- Avoid non-ASCII characters.
+- Avoid non-ASCII[^3] characters.
 
 Here's an example of the formatting rules:
 
@@ -120,4 +120,11 @@ Widget example(String word, int number){
 
 ## Glossary
 
-<!-- TO-DO -->
+[^1]: Front-end/Back-end
+In software engineering, the terms frontend and backend (sometimes written as back end or back-end) refer to the separation of concerns between the presentation layer (frontend), and the data access layer (backend) of a piece of software. | [Wikipedia](https://en.wikipedia.org/wiki/Frontend_and_backend)
+
+[^2]: API
+An application programming interface (API) is a way for two or more computer programs or components to communicate with each other. | [Wikipedia](https://en.wikipedia.org/wiki/API)
+
+[^3]: ASCII
+ASCII is an acronym for American Standard Code for Information Interchange, is a character encoding standard for electronic communication. ASCII codes represent text in computers, telecommunications equipment, and other devices. | [Wikipedia](https://en.wikipedia.org/wiki/ASCII)
