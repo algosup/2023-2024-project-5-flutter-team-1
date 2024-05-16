@@ -67,7 +67,7 @@
 
 ### Naming
 
-<!-- TO-DO -->
+The naming conventions are explained in the [dedicated file](../../conventionsandrules.md).
 
 ### GitHub
 
@@ -79,7 +79,7 @@
 
 #### Comments
 
-<!-- TO-DO -->
+The rule concerning comments is explained in the [conventions and rules file](../../conventionsandrules.md).
 
 #### Formatting
 
