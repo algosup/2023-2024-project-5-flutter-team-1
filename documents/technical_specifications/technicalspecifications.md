@@ -8,13 +8,9 @@
 - [Adopt a Candidate - Technical Specifications](#adopt-a-candidate---technical-specifications)
   - [Audience](#audience)
   - [Overview](#overview)
-  - [Requirements](#requirements)
-  - [Nice to have](#nice-to-have)
-  - [Priorities](#priorities)
-  - [Technical Architecture](#technical-architecture)
-    - [Technology Used](#technology-used)
-      - [Hardware](#hardware)
-      - [Software](#software)
+    - [Requirements](#requirements)
+    - [Nice to have](#nice-to-have)
+    - [Priorities](#priorities)
   - [Conventions](#conventions)
     - [Naming](#naming)
     - [GitHub](#github)
@@ -22,7 +18,14 @@
     - [Coding](#coding)
       - [Comments](#comments)
       - [Formatting](#formatting)
-  - [Key Functionality](#key-functionality)
+  - [Technical Architecture](#technical-architecture)
+    - [Technology Used](#technology-used)
+      - [Hardware](#hardware)
+      - [Software](#software)
+  - [Front-end](#front-end)
+    - [Key Functionalities](#key-functionalities)
+  - [Back-end](#back-end)
+    - [Key Functionalities](#key-functionalities-1)
   - [Security](#security)
   - [Glossary](#glossary)
 
@@ -37,19 +40,55 @@
 
 ## Overview
 
-<!-- TO-DO -->
+Adopt A Candidate is a "Tinder style" recruitment application that matches companies with jobseekers in a different way.
 
-## Requirements
+### Requirements
 
-<!-- TO-DO -->
+- The application will need to be available on phone, and PC.
+- The phone format will be dedicated to candidate's use, whereas the PC format will be dedicated to a company's use.
 
-## Nice to have
+### Nice to have
 
-<!-- TO-DO -->
+- The phone and PC application can be used either by a candidate or a company.
+- Some back-end to send requests to an API.
 
-## Priorities
+### Priorities
 
-<!-- TO-DO -->
+- The front-end of the application.
+- The compatibility with different devices.
+
+## Conventions
+
+### Naming
+
+The naming conventions are explained in the [dedicated file](../../conventionsandrules.md).
+
+### GitHub
+
+#### Organisation
+
+- Each pull-request has to contain labels, the project, the dedicated milestone, and at least 2 reviewers.
+- Each issue has to contain labels, the project, the dedicated milestone, and the assigned member.
+
+### Coding
+
+#### Comments
+
+The rule concerning comments is explained in the [conventions and rules file](../../conventionsandrules.md).
+
+#### Formatting
+
+- You can format automatically your .dart files using *Shift* + *Alt* + F.
+- Avoid to create too long lines.
+- Avoid non-ASCII characters.
+
+Here's an example of the formatting rules:
+
+```dart
+Widget example(String word, int number){
+    //write your piece of code here
+}
+```
 
 ## Technical Architecture
 
@@ -63,29 +102,15 @@
 
 <!-- TO-DO -->
 
-## Conventions
+## Front-end
 
-### Naming
-
-The naming conventions are explained in the [dedicated file](../../conventionsandrules.md).
-
-### GitHub
-
-#### Organisation
+### Key Functionalities
 
 <!-- TO-DO -->
 
-### Coding
+## Back-end
 
-#### Comments
-
-The rule concerning comments is explained in the [conventions and rules file](../../conventionsandrules.md).
-
-#### Formatting
-
-<!-- TO-DO -->
-
-## Key Functionality
+### Key Functionalities
 
 <!-- TO-DO -->
 
