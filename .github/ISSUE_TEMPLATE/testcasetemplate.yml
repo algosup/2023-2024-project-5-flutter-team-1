@@ -1,0 +1,37 @@
+name: 📝 Test case
+description: Template for the test cases
+title: "<title>"
+body:
+ - type: textarea
+    attribute:
+      label: Description
+      description: Describe the goal of this test case.
+    validation:
+      required: false
+- type: checkboxes
+    attribute:
+      label: The severity of this test case
+      description: What's the level of priority of this test case?
+      - label: Low
+      - label: Medium
+      - label: High
+      - label: Critical
+      required: false
+- type: textarea
+    attribute:
+      label: Action to realise
+      description: Whats the action you have to do to complete the test case?
+    validation:
+      required: false
+- type: textarea
+    attribute:
+      label: Status
+      description: What the current status of the test case?
+    validation:
+      required: false
+- type: textarea
+    attribute:
+      label: Last test date
+      description: The date of the last test on this test case
+    validation:
+      required: false
