@@ -112,7 +112,7 @@ Phones can be used to debug flutter code, either on Android and IOS. There are s
 
 **Flutter needs to be setup correctly**
 
-- Run `flutter doctor`
+- Run `flutter doctor` in your terminal
 
 It should display " No issues found! "
 
