@@ -1,4 +1,4 @@
-# Functional Specifications: ADOPTE 1 CANDIDAT Project
+# Functional Specifications: ADOPT A CANDIDAT Project
 
 ## Table of Contents
 
