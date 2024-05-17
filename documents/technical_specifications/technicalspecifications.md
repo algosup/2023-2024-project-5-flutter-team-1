@@ -108,28 +108,28 @@ Widget example(String word, int number){
 
 #### Hardware
 
-We can use real hardware to test our features or even debug our code. To do so, we'll have to cover a certain range of device:
+Phones can be used to debug flutter code, either on Android and IOS. There are some requirements that need to be done though, and in a certain range of device:
 
-##### Android-based phone
-
-Android-based phones can be used to debug flutter code, either on Android Studio and Visual Studio Code. There are some requirements that need to be done though:
-
->**Flutter needs to be setup correctly**
+**Flutter needs to be setup correctly**
 
 - Run `flutter doctor`
 
-It should display " No issues found! ". If not, it should also display where the issues come from:
+It should display " No issues found! "
 
 Windows:
 <!-- IMAGE -->
 Mac:
 <!-- IMAGE -->
 
+If not, it should also display where the issues come from:
+
+##### Android-based phone
+
 >**The Android-based device needs to be setup correctly**
 
 - Enable Developer mode
 
-Go to Settings > System in your device.
+>Go to Settings > System in your device.
 Touch About phone.
 Touch the Build number field 7 times. You will begin seeing a message as you approach the 7 touches.
 Once you did the 7 touches, the message "You are now a developer" will appear.
@@ -142,11 +142,26 @@ Go to USB Debug.
 Enable USB Debug, regardless the warnings.
 You can now Debug on your device.
 
-**Your device is now visible from your IDE, and you can run and debug your application on it by installing the debug APK built.**
-
 ##### IOS-based phone
 
-<!-- TO-DO -->
+>**The IOS-based device needs to be setup correctly**
+
+- Enable Developer mode
+
+>Open Settings > Privacy & Security > Developer Mode.
+Enable the toggle.
+You will receive a prompt from iOS to restart your device.
+Restart the device.
+
+- Approve the application's developer
+
+>Touch Settings > General > Profiles, or Profiles and Device Management.
+The profile corresponding to the developer is displayed in the "Enterprise App" section.
+Under the Enterprise App header, tap the profile name to approve the developer.
+Confirm your choice when prompted.
+Once the profile has been approved, you can manually install other applications from this developer and open them immediately.
+
+**Your device is now visible from your IDE, and you can run and debug your application on it by installing the debug APK built.**
 
 It could be better to debug and test your code on a real portable device, though you can obviously do it on a virtual device.
 
