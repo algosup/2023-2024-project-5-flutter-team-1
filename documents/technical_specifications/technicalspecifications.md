@@ -9,7 +9,7 @@
   - [Audience](#audience)
   - [Overview](#overview)
     - [Requirements](#requirements)
-    - [Nice to have](#nice-to-have)
+    - [Nice To Have](#nice-to-have)
     - [Priorities](#priorities)
   - [Conventions](#conventions)
     - [Naming](#naming)
@@ -20,12 +20,12 @@
       - [Formatting](#formatting)
   - [Technical Architecture](#technical-architecture)
     - [Technology Used](#technology-used)
-      - [Hardware](#hardware)
-        - [Android-based phone](#android-based-phone)
-        - [IOS-based phone](#ios-based-phone)
-        - [Computer](#computer)
+      - [Supported Hardware](#supported-hardware)
+      - [Real Device Use](#real-device-use)
+        - [Android-based Phone](#android-based-phone)
+        - [IOS-based Phone](#ios-based-phone)
+        - [PC](#pc)
       - [Software](#software)
-      - [Emulation](#emulation)
     - [Front-end](#front-end)
       - [Key Functionalities](#key-functionalities)
     - [Back-end](#back-end)
@@ -54,7 +54,7 @@ Adopt A Candidate is a "Tinder style" recruitment application that matches compa
 - **The PC format will be dedicated to a company's use.**
   - This fomat promotes the chat managing system<!--, the company just gets notified when it matches with a jobseeker and it can send the first message // the first message is sent automatically to initiate the discussion. -->.
 
-### Nice to have
+### Nice To Have
 
 - The phone and PC application can be used either by a candidate or a company.
 - Some back-end to send requests to an API.
@@ -106,9 +106,27 @@ Widget example(String word, int number){
 
 ### Technology Used
 
-#### Hardware
+#### Supported Hardware
 
-Phones can be used to debug flutter code, either on Android and IOS. There are some requirements that need to be done though, and in a certain range of device:
+As of the current release, Flutter supports the following platforms as part of Google-tested and best-effort platform tier:
+
+|  Platform  |  Version   |  Channels  |
+|   :----:   |   :------:   |   :--:   |
+| Android | API 16 (Android 4.1) & above | All |
+| IOS | IOS 11 & above | All |
+| Linux | Debian, 64-bit | All |
+| macOS | El Capitan (10.11) & above | All |
+| Web | Chrome 84 & above | All |
+| Web | Firefox 72.0 & above | All |
+| Web | Safari on El Capitan & above | All |
+| Web | Edge 1.2.0 & above | All |
+| Windows | Windows 7 & above, 64-bit | All |
+
+**All channels include master, beta, and stable channels.**
+
+#### Real Device Use
+
+Phones and PCs can be used to debug Flutter code, either on Android, IOS and PC. There are some requirements that need to be done though, and in a certain range of device:
 
 **Flutter needs to be setup correctly**
 
@@ -120,14 +138,13 @@ Windows:
 
 ![flutter-doctor-windows](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/ce6777ed-ccfd-4c6f-b049-d3bbae302309)
 
-Mac:
+macOS:
 
 ![flutter-doctor-mac](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/97a09c69-2e59-4dce-a039-02040d0b272c)
 
+If not, it will also display where the issues come from and how you can overcome them.
 
-If not, it should also display where the issues come from:
-
-##### Android-based phone
+##### Android-based Phone
 
 **The Android-based device needs to be setup correctly**
 
@@ -148,7 +165,7 @@ Enable USB Debug, regardless the warnings.
 
 You can now Debug on your device.
 
-##### IOS-based phone
+##### IOS-based Phone
 
 **The IOS-based device needs to be setup correctly**
 
@@ -174,15 +191,26 @@ Once the profile has been approved, you can manually install other applications 
 
 It could be better to debug and test your code on a real portable device, though you can obviously do it on a virtual device.
 
-##### Computer
+##### PC
+
+Run and debug Flutter code on PC is quite easier than on phones.
+You already have a device named by your OS:
+
+<!-- IMAGE -->
+
+You can directly run and debug on it, no need to setup something else.
+
+Also, you can use virtual devices on your PC, whether it is IOS or Android-based. 
+Some of these emulators are already integrated to Android-Studio and else, however you sometimes have to create it by yourself.
 
 #### Software
 
-<!-- TO-DO -->
+Here's the IDE that we'll use:
 
-#### Emulation
+- Visual Studio Code | version 1.89.1 or newer (mainly used)
+- Android Studio Jellyfish | 2023.3.1 or newer
 
-<!-- TO-DO -->
+We'll use Flutter version 3.22.0 or newer (visible if you run `flutter doctor -v` in your terminal).
 
 ### Front-end
 
@@ -209,3 +237,5 @@ An **Application Programming Interface (API)** is a way for two or more computer
 **ASCII** is an acronym for American Standard Code for Information Interchange, is a character encoding standard for electronic communication. ASCII codes represent text in computers, telecommunications equipment, and other devices. | [Wikipedia](https://en.wikipedia.org/wiki/ASCII)
 
 An **Integrated Development Environment (IDE)** is a software application that provides comprehensive facilities for software development. An IDE normally consists of at least a source-code editor, build automation tools, and a debugger. | [Wikipedia](https://en.wikipedia.org/wiki/Integrated_development_environment)
+
+Flutter contains few **channels**: master, beta and stable; in increasing order of stability. | [Source](https://github.com/flutter/flutter/wiki/flutter-build-release-channels)
