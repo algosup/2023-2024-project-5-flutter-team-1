@@ -21,11 +21,15 @@
   - [Technical Architecture](#technical-architecture)
     - [Technology Used](#technology-used)
       - [Hardware](#hardware)
+        - [Android-based phone](#android-based-phone)
+        - [IOS-based phone](#ios-based-phone)
+        - [Computer](#computer)
       - [Software](#software)
-  - [Front-end](#front-end)
-    - [Key Functionalities](#key-functionalities)
-  - [Back-end](#back-end)
-    - [Key Functionalities](#key-functionalities-1)
+      - [Emulation](#emulation)
+    - [Front-end](#front-end)
+      - [Key Functionalities](#key-functionalities)
+    - [Back-end](#back-end)
+      - [Key Functionalities](#key-functionalities-1)
   - [Security](#security)
   - [Glossary](#glossary)
 
@@ -45,16 +49,19 @@ Adopt A Candidate is a "Tinder style" recruitment application that matches compa
 ### Requirements
 
 - The application will need to be available on phone, and PC.
-- The phone format will be dedicated to candidate's use, whereas the PC format will be dedicated to a company's use.
+- **The phone format will be dedicated to candidate's use:**
+  - This format promotes the swipe system, the user just has to swipe and receive a message from a company when he matches with it.
+- **The PC format will be dedicated to a company's use.**
+  - This fomat promotes the chat managing system<!--, the company just gets notified when it matches with a jobseeker and it can send the first message // the first message is sent automatically to initiate the discussion. -->.
 
 ### Nice to have
 
 - The phone and PC application can be used either by a candidate or a company.
-- Some back-end[^1] to send requests to an API[^2].
+- Some back-end to send requests to an API.
 
 ### Priorities
 
-- The front-end[^1] of the application.
+- The front-end of the application.
 - The compatibility with different devices.
 
 ## Conventions
@@ -69,6 +76,11 @@ The naming conventions are explained in the [dedicated file](../../conventionsan
 
 - Each pull-request has to contain labels, the project, the dedicated milestone, and at least 2 reviewers.
 - Each issue has to contain labels, the project, the dedicated milestone, and the assigned member.
+- The working version of the project goes into the *Release* branch.
+- Release should be made from the main.
+- The main branch should be updated at least once a day (when the team is in project-time).
+- There can't be any direct push to the main. The member has to do a pull-request to merge their changes in the main.
+- Only push code that has been tested (working code).
 
 ### Coding
 
@@ -80,7 +92,7 @@ The rule concerning comments is explained in the [conventions and rules file](..
 
 - You can format automatically your .dart files using *Shift* + *Alt* + F.
 - Avoid to create too long lines.
-- Avoid non-ASCII[^3] characters.
+- Avoid non-ASCII characters.
 
 Here's an example of the formatting rules:
 
@@ -96,21 +108,67 @@ Widget example(String word, int number){
 
 #### Hardware
 
+We can use real hardware to test our features or even debug our code. To do so, we'll have to cover a certain range of device:
+
+##### Android-based phone
+
+Android-based phones can be used to debug flutter code, either on Android Studio and Visual Studio Code. There are some requirements that need to be done though:
+
+>**Flutter needs to be setup correctly**
+
+- Run `flutter doctor`
+
+It should display " No issues found! ". If not, it should also display where the issues come from:
+
+Windows:
+<!-- IMAGE -->
+Mac:
+<!-- IMAGE -->
+
+>**The Android-based device needs to be setup correctly**
+
+- Enable Developer mode
+
+Go to Settings > System in your device.
+Touch About phone.
+Touch the Build number field 7 times. You will begin seeing a message as you approach the 7 touches.
+Once you did the 7 touches, the message "You are now a developer" will appear.
+You can now access to the Developer's settings.
+
+- Authorize USB Debug mode
+
+Search Debug in the Settings.
+Go to USB Debug.
+Enable USB Debug, regardless the warnings.
+You can now Debug on your device.
+
+**Your device is now visible from your IDE, and you can run and debug your application on it by installing the debug APK built.**
+
+##### IOS-based phone
+
 <!-- TO-DO -->
+
+It could be better to debug and test your code on a real portable device, though you can obviously do it on a virtual device.
+
+##### Computer
 
 #### Software
 
 <!-- TO-DO -->
 
-## Front-end
-
-### Key Functionalities
+#### Emulation
 
 <!-- TO-DO -->
 
-## Back-end
+### Front-end
 
-### Key Functionalities
+#### Key Functionalities
+
+<!-- TO-DO -->
+
+### Back-end
+
+#### Key Functionalities
 
 <!-- TO-DO -->
 
@@ -120,11 +178,10 @@ Widget example(String word, int number){
 
 ## Glossary
 
-[^1]: Front-end/Back-end
-In software engineering, the terms frontend and backend (sometimes written as back end or back-end) refer to the separation of concerns between the presentation layer (frontend), and the data access layer (backend) of a piece of software. | [Wikipedia](https://en.wikipedia.org/wiki/Frontend_and_backend)
+In software engineering, the terms **frontend** and **backend** (sometimes written as back end or back-end) refer to the separation of concerns between the presentation layer (frontend), and the data access layer (backend) of a piece of software. | [Wikipedia](https://en.wikipedia.org/wiki/Frontend_and_backend)
 
-[^2]: API
-An application programming interface (API) is a way for two or more computer programs or components to communicate with each other. | [Wikipedia](https://en.wikipedia.org/wiki/API)
+An **Application Programming Interface (API)** is a way for two or more computer programs or components to communicate with each other. | [Wikipedia](https://en.wikipedia.org/wiki/API)
 
-[^3]: ASCII
-ASCII is an acronym for American Standard Code for Information Interchange, is a character encoding standard for electronic communication. ASCII codes represent text in computers, telecommunications equipment, and other devices. | [Wikipedia](https://en.wikipedia.org/wiki/ASCII)
+**ASCII** is an acronym for American Standard Code for Information Interchange, is a character encoding standard for electronic communication. ASCII codes represent text in computers, telecommunications equipment, and other devices. | [Wikipedia](https://en.wikipedia.org/wiki/ASCII)
+
+An **Integrated Development Environment (IDE)** is a software application that provides comprehensive facilities for software development. An IDE normally consists of at least a source-code editor, build automation tools, and a debugger. | [Wikipedia](https://en.wikipedia.org/wiki/Integrated_development_environment)
