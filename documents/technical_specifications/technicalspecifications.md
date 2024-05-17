@@ -117,9 +117,13 @@ Phones can be used to debug flutter code, either on Android and IOS. There are s
 It should display " No issues found! "
 
 Windows:
-<!-- IMAGE -->
+
+![flutter-doctor-windows](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/ce6777ed-ccfd-4c6f-b049-d3bbae302309)
+
 Mac:
-<!-- IMAGE -->
+
+![flutter-doctor-mac](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/97a09c69-2e59-4dce-a039-02040d0b272c)
+
 
 If not, it should also display where the issues come from:
 
