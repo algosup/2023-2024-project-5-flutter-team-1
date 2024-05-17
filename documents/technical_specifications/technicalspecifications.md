@@ -20,7 +20,7 @@
       - [Formatting](#formatting)
   - [Technical Architecture](#technical-architecture)
     - [Technology Used](#technology-used)
-      - [Supported Hardware](#supported-hardware)
+      - [Supported Platforms](#supported-platforms)
       - [Real Device Use](#real-device-use)
         - [Android-based Phone](#android-based-phone)
         - [IOS-based Phone](#ios-based-phone)
@@ -40,7 +40,7 @@
 **This document is primarily intended for:**
 
 - Software Engineers:
-    to understand the user and technical requirements, and to guide their work. Help them understand risks and challenges and choices made.
+    to understand the user and technical requirements, and to guide their work. Help them understand challenges and choices made.
 
 ## Overview
 
@@ -108,7 +108,7 @@ Widget example(String word, int number){
 
 ### Technology Used
 
-#### Supported Hardware
+#### Supported Platforms
 
 As of the current release, Flutter supports the following platforms as part of Google-tested and best-effort platform tier:
 
@@ -155,7 +155,7 @@ If not, it will also display where the issues come from and how you can overcome
 >Go to Settings > System in your device.<br>
 Touch About phone.<br>
 Touch the Build number field 7 times. You will begin seeing a message as you approach the 7 touches.<br>
-Once you did the 7 touches, the message "You are now a developer" will appear.<br>
+Once you did the 7 touches, the message "You are now a developer" will appear.
 
 You can now access to the Developer's settings.
 
@@ -185,7 +185,7 @@ Your device is now in Developer mode.
 >Touch Settings > General > Profiles, or Profiles and Device Management.<br>
 The profile corresponding to the developer is displayed in the "Enterprise App" section.<br>
 Under the Enterprise App header, tap the profile name to approve the developer.<br>
-Confirm your choice when prompted.<br>
+Confirm your choice when prompted.
 
 Once the profile has been approved, you can manually install other applications from this developer and open them immediately.
 
