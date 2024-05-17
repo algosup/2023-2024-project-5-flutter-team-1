@@ -25,6 +25,8 @@
 
 <summary>Table of content</summary>
 
+
+
 </details>
 
 ----
@@ -34,5 +36,74 @@
 <summary>Glossary</summary>
 
 ## Glossary
+
+</details>
+
+----
+
+<details open>
+
+<summary>Introduction</summary>
+
+## Introduction
+
+</details>
+
+----
+
+<details open>
+
+<summary>Testing strategy</summary>
+
+## Testing strategy
+
+</details>
+
+----
+
+<details open>
+
+<summary>Execution strategy</summary>
+
+## Execution strategy
+
+</details>
+
+----
+
+<details open>
+
+<summary>Test management process</summary>
+
+## Test management process
+
+</details>
+
+----
+
+<details open>
+
+<summary>Conclusion</summary>
+
+## Conclusion
+
+</details>
+
+----
+
+<details open>
+
+<summary>Document approval</summary>
+
+## Document approval
+
+|Role|Name|Signature|
+|----|----|---------|
+|Project Manager| BAVAROIS Séréna ||
+|Program Manager| PORTET Wilfried ||
+|Technical Lead| GUILLOUCHE Enzo ||
+|Technical Writer| DELILLE Elone ||
+|Software Enginer| DERAMCHI Guillaume ||
+|Quality Assurance| LEFIN Mattéo ||
 
 </details>
