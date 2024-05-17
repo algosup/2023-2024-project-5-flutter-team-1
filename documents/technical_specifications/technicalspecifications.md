@@ -45,6 +45,7 @@
 ## Overview
 
 Adopt A Candidate is a "Tinder style" recruitment application that matches companies with jobseekers in a different way.
+We'll code it using Flutter, all the technical specificities are described [here](#technical-architecture).
 
 ### Requirements
 
@@ -52,12 +53,13 @@ Adopt A Candidate is a "Tinder style" recruitment application that matches compa
 - **The phone format will be dedicated to candidate's use:**
   - This format promotes the swipe system, the user just has to swipe and receive a message from a company when he matches with it.
 - **The PC format will be dedicated to a company's use.**
-  - This fomat promotes the chat managing system<!--, the company just gets notified when it matches with a jobseeker and it can send the first message // the first message is sent automatically to initiate the discussion. -->.
+  - This fomat promotes the chat managing system, the company just gets notified when it matches with a jobseeker and they can send the first message to the jobseeker, initiating the discussion.
 
 ### Nice To Have
 
 - The phone and PC application can be used either by a candidate or a company.
-- Some back-end to send requests to an API.
+- Some back-end using a database to store data.
+- APIs concerning choices in the registration.
 
 ### Priorities
 
@@ -200,7 +202,7 @@ You already have a device named by your OS:
 
 You can directly run and debug on it, no need to setup something else.
 
-Also, you can use virtual devices on your PC, whether it is IOS or Android-based. 
+Also, you can use virtual devices on your PC, whether it is IOS or Android-based.
 Some of these emulators are already integrated to Android-Studio and else, however you sometimes have to create it by yourself.
 
 #### Software
@@ -210,7 +212,18 @@ Here's the IDE that we'll use:
 - Visual Studio Code | version 1.89.1 or newer (mainly used)
 - Android Studio Jellyfish | 2023.3.1 or newer
 
-We'll use Flutter version 3.22.0 or newer (visible if you run `flutter doctor -v` in your terminal).
+We'll use Dart version 3.4.0 or newer and Flutter version 3.22.0 or newer (visible if you run `flutter doctor -v` in your terminal).
+
+**Dependencies:**
+
+- Flutter SDK.
+  - already setup if there's no issues in the flutter doctor summary.
+- Flutter widget package implementing Material design.
+  - importation: `import 'package:flutter/material.dart'`
+- Flutter router package implementing pages navigation.
+  - importation: `import 'package:go_router/go_router.dart';`
+- Flutter IOS package implementing IOS design.
+  - importation: `import 'package:flutter/cupertino.dart';`
 
 ### Front-end
 
@@ -237,5 +250,7 @@ An **Application Programming Interface (API)** is a way for two or more computer
 **ASCII** is an acronym for American Standard Code for Information Interchange, is a character encoding standard for electronic communication. ASCII codes represent text in computers, telecommunications equipment, and other devices. | [Wikipedia](https://en.wikipedia.org/wiki/ASCII)
 
 An **Integrated Development Environment (IDE)** is a software application that provides comprehensive facilities for software development. An IDE normally consists of at least a source-code editor, build automation tools, and a debugger. | [Wikipedia](https://en.wikipedia.org/wiki/Integrated_development_environment)
+
+Written in C, C++ and Dart, **Flutter** is an open-source UI software development kit created by Google. It can be used to develop cross platform applications from a single codebase for the web,[4] Fuchsia, Android, iOS, Linux, macOS, and Windows. | [Wikipedia](https://en.wikipedia.org/wiki/Flutter_(software))
 
 Flutter contains few **channels**: master, beta and stable; in increasing order of stability. | [Source](https://github.com/flutter/flutter/wiki/flutter-build-release-channels)
