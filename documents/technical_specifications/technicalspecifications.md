@@ -196,7 +196,7 @@ It could be better to debug and test your code on a real portable device, though
 Run and debug Flutter code on PC is quite easier than on phones.
 You already have a device named by your OS:
 
-<!-- IMAGE -->
+![destop-device](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/e2e8be53-6a52-4d89-8f2d-1d9126ab362c)
 
 You can directly run and debug on it, no need to setup something else.
 
