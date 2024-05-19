@@ -1,3 +1,5 @@
+// Page made by DELILLE Elone - https://github.com/HiNett
+// Except from 212 to 219
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../preferences.dart';
@@ -62,6 +64,16 @@ class _RegisterPageState extends State<RegisterPage> {
   };
 
   Map<String, String> nextText = {"fr_FR": "Suivant", "en_US": "Next"};
+
+  Map<String, String> alreadyAcc ={
+    "fr_FR": "Déjà inscrit ?",
+    "en_US": "Already register?"
+  };
+
+  Map<String,String> loginNow = {
+    "fr_FR": "Connecte-toi",
+    "en_US": "Login"
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -207,6 +219,7 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             Row(
               children: [
+                // Align made by Enzo GUILLOUCHE
                 Align(
                   alignment: Alignment.bottomLeft,
                   child: Image.asset(
@@ -214,6 +227,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     width: size.width * 0.4,
                   ),
                 ),
+                Column( children: [
                 GestureDetector(
                   onTap: () {
                     setState(() {
@@ -241,6 +255,31 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ),
                 ),
+                GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      context.go("/loginpage");
+                    });
+                  },
+                  child:
+                Row(children: [
+                  Text("${alreadyAcc[lang]} ", style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w200,
+                      color: Colors.black,
+                    )
+                  )),
+                  Text("${loginNow[lang]}", style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w200,
+                      color: Color.fromRGBO(0, 117, 255, 100)
+                    )
+                  ))
+                ],))
+                
+                ])
               ],
             ),
           ],
