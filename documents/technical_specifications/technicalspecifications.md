@@ -27,9 +27,13 @@
         - [PC](#pc)
       - [Software](#software)
     - [Front-end](#front-end)
-      - [Key Functionalities](#key-functionalities)
+      - [Images](#images)
+      - [](#)
     - [Back-end](#back-end)
-      - [Key Functionalities](#key-functionalities-1)
+      - [Routes](#routes)
+      - [Maps](#maps)
+      - [Database](#database)
+      - [Key Functionalities](#key-functionalities)
   - [Security](#security)
   - [Glossary](#glossary)
 
@@ -227,11 +231,25 @@ We'll use Dart version 3.4.0 or newer and Flutter version 3.22.0 or newer (visib
 
 ### Front-end
 
-#### Key Functionalities
+First things first, all the front-end of the product should follow the design of the mock-up, available [here](https://www.figma.com/design/juw1xMWP0mUO0F4TyaW9jz/Flutter-Project?node-id=0%3A1&t=prqGkHnUDQfi96h2-1).
+
+#### Images
 
 <!-- TO-DO -->
 
 ### Back-end
+
+#### Routes
+
+<!-- TO-DO -->
+
+#### Maps
+
+<!-- TO-DO -->
+
+#### Database
+
+<!-- TO-DO -->
 
 #### Key Functionalities
 
