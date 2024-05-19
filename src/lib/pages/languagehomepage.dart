@@ -1,10 +1,49 @@
 // File made by DELILLE Elone - https://github.com/HiNett
+import 'dart:io';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:http/http.dart' as http;
+import 'package:path_provider/path_provider.dart';
+import 'package:go_router/go_router.dart';
+
+class GetUserData {
+  Future<String> get folderLocalization async {
+    final directory = await getApplicationDocumentsDirectory();
+    return directory.path;
+  }
+
+  Future<File> get fileLocalization async {
+    final path = await folderLocalization;
+    return File("$path/myFile.txt");
+  }
+
+  Future<String> userMacAddress() async {
+    final file = await fileLocalization;
+    String macAddress = await file.readAsString();
+    return macAddress;
+  }
+
+  Future<bool> postUserLang(bool english) async {
+    String address = await userMacAddress();
+    String language = english ? "en_US" : "fr_FR";
+    final url = await http.post(Uri.parse("https://ffeur.pq.lu/v1/data/getApi/setUserLanguage.php"), body: {'mac': address,'language': language});
+
+    if (url.statusCode == 200) {
+      final jsonResponse = jsonDecode(url.body);
+      return jsonResponse['success'];
+    } else {
+      print('Failed to update language with status code: ${url.statusCode}');
+      return false;
+    }
+
+  }
+}
 
 class LanguageHomePage extends StatefulWidget {
-  const LanguageHomePage({super.key});
+  const LanguageHomePage({super.key, required this.storage});
 
+  final GetUserData storage;
   @override
   State<LanguageHomePage> createState() => _LanguageHomePageState();
 }
@@ -16,9 +55,22 @@ class _LanguageHomePageState extends State<LanguageHomePage> {
    *    French Selected variable is used to setup the language on the page (French)
    * bool englishSelected :
    *    English Selected variable is used to setup the language on the page (English)
+   * String? macAddress :
+   *    The macAddress string is used to store the user macAddress and communicate with the Database to fetch user informations
    */
   bool frenchSelected = false;
   bool englishSelected = true;
+  String? macAddress;
+
+  @override
+  void initState(){
+    super.initState();
+    getMacAddress();
+  }
+
+  void getMacAddress() async {
+    macAddress = await widget.storage.userMacAddress();
+  }
 
   // Main Page
   @override
@@ -84,6 +136,12 @@ class _LanguageHomePageState extends State<LanguageHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
+                    onTap:() {
+                      widget.storage.postUserLang(englishSelected);
+                      setState(() {
+                        context.go("/loginpage");
+                      });
+                    },
                     child: Container(
                       width: size.width * 0.4,
                       height: size.width * 0.11,
