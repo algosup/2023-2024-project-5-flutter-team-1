@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 import 'package:go_router/go_router.dart';
+import '../preferences.dart';
 
 class GetUserData {
   Future<String> get folderLocalization async {
@@ -36,7 +37,14 @@ class GetUserData {
       print('Failed to update language with status code: ${url.statusCode}');
       return false;
     }
+  }
 
+  void setLang(bool english){
+    if(english == true){
+      appPreferences.setLanguage("en_US");
+    } else if (english == false){
+      appPreferences.setLanguage("fr_FR");
+    }
   }
 }
 
@@ -138,6 +146,7 @@ class _LanguageHomePageState extends State<LanguageHomePage> {
                   GestureDetector(
                     onTap:() {
                       widget.storage.postUserLang(englishSelected);
+                      widget.storage.setLang(englishSelected);
                       setState(() {
                         context.go("/loginpage");
                       });

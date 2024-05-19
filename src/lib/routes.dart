@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'pages/languagehomepage.dart';
 import 'pages/redirection.dart';
 import 'pages/loginpage.dart';
+import 'pages/registerpage.dart';
+import 'pages/registerpage2.dart';
 
 final routes = GoRouter(
   routes: [
@@ -22,6 +24,16 @@ final routes = GoRouter(
       path: "/loginpage",
       name: "LoginPage",
       builder: (BuildContext context, GoRouterState state) => LoginPage(storage: DataClass()),
-    )
+    ),
+    GoRoute(
+      path: "/registerpage",
+      name: "RegisterPage",
+      builder: (BuildContext context, GoRouterState state) => const RegisterPage(),
+    ),
+    GoRoute(
+      path: "/registerpage2",
+      name: "RegisterPage2",
+      builder: (BuildContext context, GoRouterState state) => const RegisterPage2(),
+    ),
   ]
 );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:src/preferences.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:go_router/go_router.dart';
 
 class DataClass {
   String appLang = "en_US";
@@ -39,16 +40,22 @@ class _LoginPageState extends State<LoginPage> {
     print("Application Language : $applicationLanguage");
   }
 
+  void callNewPage(String pageName){
+    setState(() {
+      context.go(pageName);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: myApplication(context, applicationLanguage))
+        child: myApplication(context, applicationLanguage, callNewPage))
     );
   }
 }
 
-Widget myApplication(BuildContext context, String appLang) {
+Widget myApplication(BuildContext context, String appLang, void Function(String) newPage) {
   Map<String, String> loginLang = {
     "fr_FR": "Connexion",
     "en_US": "Login"
@@ -127,7 +134,15 @@ Widget myApplication(BuildContext context, String appLang) {
                 ),
                 Container(
                   width: size.width * 0.6,
+                  height: size.width * 0.15,
                   child: TextField(
+                    style: GoogleFonts.poppins(
+                      textStyle: const TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                        fontSize: 18,
+                      )
+                    ),
                     decoration: InputDecoration(
                       hintText: "${loginText[appLang]}",
                       hintStyle: GoogleFonts.poppins(
@@ -172,7 +187,12 @@ Widget myApplication(BuildContext context, String appLang) {
                 ),
                 Container(
                   width: size.width * 0.6,
+                  height: size.width * 0.15,
                   child: TextField(
+                    obscureText: true,
+                    enableSuggestions: false,
+                    autocorrect: false,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                     decoration: InputDecoration(
                       hintText: "${passwordText[appLang]}",
                       hintStyle: GoogleFonts.poppins(
@@ -206,7 +226,7 @@ Widget myApplication(BuildContext context, String appLang) {
                   style: GoogleFonts.poppins(
                         textStyle: const TextStyle(
                           fontWeight: FontWeight.w700,
-                          color: Color.fromRGBO(80, 200, 250, 100),
+                          color: Color.fromRGBO(0, 117, 255, 100),
                           fontSize: 15,
                         ),
                   ),
@@ -224,7 +244,7 @@ Widget myApplication(BuildContext context, String appLang) {
                     width: size.width * 0.6,
                     height: size.width * 0.15,
                     decoration: BoxDecoration(
-                      color: const Color.fromRGBO(142, 193, 243, 100),
+                      color: const Color.fromRGBO(0, 117, 255, 100),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Center(
@@ -241,6 +261,9 @@ Widget myApplication(BuildContext context, String appLang) {
               ),
             ),
             GestureDetector(
+              onTap: () {
+                newPage("/registerpage");
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -256,7 +279,7 @@ Widget myApplication(BuildContext context, String appLang) {
                         style: GoogleFonts.poppins(
                         textStyle: const TextStyle(
                           fontWeight: FontWeight.w600,
-                          color: Color.fromRGBO(80, 200, 250, 100),
+                          color: Color.fromRGBO(0, 117, 255, 100),
                           fontSize: 15,
                         ),
                   ),),
