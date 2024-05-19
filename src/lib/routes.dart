@@ -21,7 +21,7 @@ final routes = GoRouter(
     GoRoute(
       path: "/loginpage",
       name: "LoginPage",
-      builder: (BuildContext context, GoRouterState state) => const MyWidget(),
+      builder: (BuildContext context, GoRouterState state) => LoginPage(storage: DataClass()),
     )
   ]
 );

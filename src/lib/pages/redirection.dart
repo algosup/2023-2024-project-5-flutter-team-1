@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:go_router/go_router.dart';
+import '../preferences.dart';
 
 class DocumentStorage {
   Future<String> get folderLocalization async {
@@ -168,6 +169,12 @@ class _RedirectionPageState extends State<RedirectionPage> {
     String userLang = await widget.storage.userLanguageFetch(appMacAddress);
     if(userLang == "[\"vfr_FR\"]" || userLang == "[\"ven_US\"]"){
       setState(() {
+      if(userLang == "[\"vfr_FR\"]"){
+        appPreferences.setLanguage("fr_FR");
+        print("${appPreferences.appLanguage}");
+      } else {
+        appPreferences.setLanguage("en_US");
+      }
         context.go("/loginpage");
       });
     } else {
