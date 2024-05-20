@@ -27,13 +27,13 @@
         - [PC](#pc)
       - [Software](#software)
     - [Front-end](#front-end)
+      - [SafeArea](#safearea)
       - [Images](#images)
-      - [](#)
+      - [Sizes](#sizes)
     - [Back-end](#back-end)
       - [Routes](#routes)
       - [Maps](#maps)
       - [Database](#database)
-      - [Key Functionalities](#key-functionalities)
   - [Security](#security)
   - [Glossary](#glossary)
 
@@ -233,9 +233,71 @@ We'll use Dart version 3.4.0 or newer and Flutter version 3.22.0 or newer (visib
 
 First things first, all the front-end of the product should follow the design of the mock-up, available [here](https://www.figma.com/design/juw1xMWP0mUO0F4TyaW9jz/Flutter-Project?node-id=0%3A1&t=prqGkHnUDQfi96h2-1).
 
+#### SafeArea
+
+The class SafeArea insets its only child by sufficient padding to avoid intrusions by the operating system.
+
+We use it this way:
+
+```dart
+return Scaffold(
+  child: SafeArea(
+    // my code, with one child.
+  ),
+);
+```
+
+It has to be used when an element should be safe from the edge of the screen for example.
+
+Without SafeArea:
+
+![withoutsafearea](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/e5fabfd8-9bb0-4d10-9d46-96de7daa5178)
+
+With SafeArea:
+
+![withsafearea](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/4103b603-2943-4aa9-b488-da29fccfb36d)
+
 #### Images
 
-<!-- TO-DO -->
+The images used for the development have to be in a dedicated folder, following this convention: `assets/images/MyImage.png`.
+
+The file `pubspec.yaml` needs to contain this lines to add the assets:
+
+```yaml
+flutter:
+  assets:
+    - assets/images/
+```
+
+Then, you can use the assets using:
+
+```dart
+Image.asset('assets/images/MyImage.png'),
+```
+
+#### Sizes
+
+The elements' size has to be set taking in consideration the screen size.
+It will help us exporting the application to different device with different screen sizes.
+
+We can take it coding this, where `size` contains the size of the screen:
+
+```dart
+Widget build(BuildContext context) {
+    var size = MediaQuery.sizeOf(context);
+    // your code
+}
+```
+
+You can initiate it at the beginning of the app, and then import this Size variable to the different pages.
+
+Once you've done this initialization, you can use the variable to set the size of all the elements:
+
+```dart
+Container(
+  width: size.width * 0.5,
+),
+```
 
 ### Back-end
 
@@ -248,10 +310,6 @@ First things first, all the front-end of the product should follow the design of
 <!-- TO-DO -->
 
 #### Database
-
-<!-- TO-DO -->
-
-#### Key Functionalities
 
 <!-- TO-DO -->
 
