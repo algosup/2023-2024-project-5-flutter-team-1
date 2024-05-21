@@ -433,6 +433,9 @@ Both parameters are compared, to enchance the security.
 
 If the time from the last connexion to the current one is below 15min, the position from the last connexion to the current one is below 15km, and the IPV4 from the last connexion to the current one doesn't differ, no need to login again.
 
+Here's a diagram that should be more understandable:
+![logintechnicaldiagram](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/0095d9da-9ac0-47fb-b9aa-70138a1354f9)
+
 **Account Data Flow**
 
 The database will stock all the information about the user account (as strings):
