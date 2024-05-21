@@ -2,29 +2,31 @@
 
 ## Table of Contents
 
-1. [Document Control](#1-document-control)
-   1. [Version History](#11-version-history)
-   2. [Document Approval](#12-document-approval)
-2. [Overview](#2-overview)
-   1. [Product Description](#21-product-description)
-   2. [Product Functional Capabilities](#22-product-functional-capabilities)
-   3. [User Roles](#23-user-roles)
-   4. [Use Cases for All Operations](#24-use-cases-for-all-operations)
-      1. [User Side](#241-user-side)
-      2. [Company Side](#242-company-side)
-3. [General Constraints](#3-general-constraints)
-4. [Design Constraints](#4-design-constraints)
-5. [Assumptions](#5-assumptions)
-6. [Specific Function Descriptions](#6-specific-function-descriptions)
-   1. [Description](#61-description)
-   2. [Inputs](#62-inputs)
-   3. [Processing](#63-processing)
-   4. [Outputs](#64-outputs)
-7. [User Interfaces](#7-user-interfaces)
-8. [Hardware Interfaces](#8-hardware-interfaces)
-9. [Configurability and Compatibility](#9-configurability-and-compatibility)
-10. [Installation](#10-installation)
-11. [Usability](#11-usability)
+- [Functional Specifications: ADOPT A CANDIDATE Project](#functional-specifications-adopt-a-candidate-project)
+  - [Table of Contents](#table-of-contents)
+  - [1. Document Control](#1-document-control)
+    - [1.1 Version History](#11-version-history)
+    - [1.2 Document Approval](#12-document-approval)
+  - [2. Overview](#2-overview)
+    - [2.1 Product Description](#21-product-description)
+    - [2.2 Product Functional Capabilities](#22-product-functional-capabilities)
+    - [2.3 User Roles](#23-user-roles)
+    - [2.4 Use Cases for All Operations](#24-use-cases-for-all-operations)
+      - [2.4.1 Jobseekers Side](#241-jobseekers-side)
+      - [2.4.2 Company Side](#242-company-side)
+  - [3. General Constraints](#3-general-constraints)
+  - [4. Design Constraints](#4-design-constraints)
+  - [5. Assumptions](#5-assumptions)
+  - [6. Specific Function Descriptions](#6-specific-function-descriptions)
+    - [6.1 Description](#61-description)
+    - [6.2 Inputs](#62-inputs)
+    - [6.3 Processing](#63-processing)
+    - [6.4 Outputs](#64-outputs)
+  - [7. User Interfaces](#7-user-interfaces)
+  - [8. Hardware Interfaces](#8-hardware-interfaces)
+  - [9. Configurability and Compatibility](#9-configurability-and-compatibility)
+  - [10. Installation](#10-installation)
+  - [11. Usability](#11-usability)
 
 ## 1. Document Control
 
@@ -52,7 +54,7 @@ The aim of this document is to provide a comprehensive overview of the "Adopt a 
 
 ### 2.1 Product Description
 
-“Adopte un candidat" is a mobile/web application designed to connect candidates and companies while ensuring anonymity to prevent discrimination based on gender, origin, or other factors. The app emphasizes soft skills rather than traditional CVs, aiming to match candidates with companies seeking specific soft skills.
+“Adopt a candidate" is a mobile/web application designed to connect candidates and companies while ensuring anonymity to prevent discrimination based on gender, origin, or other factors. The app emphasizes soft skills rather than traditional CVs, aiming to match candidates with companies seeking specific soft skills.
 
 Developed using Flutter 3, and commissioned by "We Are Evolution," this application focuses on collecting and utilizing candidate data effectively.
 
@@ -69,7 +71,7 @@ Developed using Flutter 3, and commissioned by "We Are Evolution," this applicat
 - Allow both candidates and companies to create accounts.
 - Provide a like/dislike system for candidates to express interest in companies.
 - Include an administrative interface for companies to manage applications and communicate with candidates.
-- Users will be able to search for softskills through a search bar.
+- Jobseekers will be able to search for softskills through a search bar.
 And in case the softskills they want to add don't exist in the database, they can create it.
 - Allow companies to specify the soft skills they are looking for via checkboxes.
 
@@ -84,32 +86,32 @@ And in case the softskills they want to add don't exist in the database, they ca
 
 **Typical usage scenarios and tasks:**
 
-#### 2.4.1 User Side
+#### 2.4.1 Jobseekers Side
 
-Typical steps for users:
+Typical steps for jobseekers:
 
 1. Download the application.
 2. Select the preferred language for the application's text.
 3. Create an account by providing personal information.
 4. Select relevant soft skills via checkboxes.
-5. Access the homepage to view companies currently hiring for the selected soft skills.
-6. Specify the geographical area for job searching.
-7. If a company expresses interest in the user’s profile, the connection process begins.
+5. Specify the geographical area for job searching.
+6. Access the homepage to view companies currently hiring for the selected soft skills.
+7. On the homepage the job seeker must like the company to initiate the match.
+8. If a company expresses interest in the jobseekers profile, the connection process begins.
 
 #### 2.4.2 Company Side
 
 Typical steps for companies:
 
-1. Download the application on a computer or mobile device.
+1. Download the application on a computer.
 2. Select the preferred language for the application's text.
 3. Create an account by providing company information.
 4. Access the homepage.
-5. Create job offers by specifying the required soft skills and geographical location.
-6. Post job advertisements on the app.
+5. Post job advertisements on the app.
+6. When posting a job advertisement the company gives their preferred soft-skills, and if a job seeker likes a company with which the soft skills are compatible, the match appears.
 7. Wait for applications from candidates.
 8. Review anonymous candidate profiles based on soft skills.
-9. Create a match if interested in a candidate's profile.
-10. Communicate with the candidate through the app’s chat feature.
+9.  The company decides to send a message to the job seeker afterwards.
 
 ## 3. General Constraints
 
@@ -123,22 +125,23 @@ Typical steps for companies:
 
 ## 5. Assumptions
 
-- The application will assume users have access to a stable internet connection for full functionality.
-- Users will grant necessary permissions for the application to access location data, notifications, and other required services.
-- Users will provide accurate information during the account creation and profile setup process.
+- The application will assume jobseekers and companies have access to a stable internet connection for full functionality.
+- Jobseekers will grant necessary permissions for the application to access location data, notifications, and other required services.
+- Both jobseekers and companies will provide accurate information during the account creation and profile setup process.
 
 ## 6. Specific Function Descriptions
 
 ### 6.1 Description
 
 - **Matching Function:** Matches candidates with job postings based on selected soft skills.
-- **Profile Management:** Allows users to create and manage their profiles, including updating personal information and soft skills.
+- **Profile Management:** Allows jobseekers to create and manage their profiles, including updating personal information and soft skills.
 - **Job Posting Management:** Enables companies to create, edit, and manage job postings.
 
 ### 6.2 Inputs
 
 - **Candidate Inputs:**
   - Personal information,
+  - Location details,
   - Selected soft skills,
   - Job preferences.
 - **Company Inputs:**
@@ -149,7 +152,7 @@ Typical steps for companies:
 ### 6.3 Processing
 
 - **Matching Algorithm:** Uses a weighted scoring system to match candidate soft skills with job requirements.
-- **Data Validation:** Ensures that user inputs meet predefined criteria for format, completeness, and accuracy.
+- **Data Validation:** Ensures that both companies and jobseekers inputs meet predefined criteria for format, completeness, and accuracy.
 
 ### 6.4 Outputs
 
@@ -157,7 +160,7 @@ Typical steps for companies:
   - Displays matched job postings to candidates,
   - Matched candidates to companies.
 - **Notifications:**
-  - Sends alerts to users when a company starts a chat,
+  - Sends alerts to jobseekers when a company starts a chat,
   - Important updates.
 
 ## 7. User Interfaces
@@ -171,11 +174,11 @@ You can find all the mockups here → [Mockups on Figma](https://www.figma.com/d
 
 ## 8. Hardware Interfaces
 
-- To use the "Adopt a Candidate" app, users looking for a job must access the app via their smartphone by downloading it from the Apple Store or Play Store. The app will be optimized to work on the following devices:
+- To use the "Adopt a Candidate" app, jobseekers must access the app via their smartphone by downloading it from the Apple Store or Play Store. The app will be optimized to work on the following devices:
   - Smartphones with iOS 12 or later.
   - Smartphones with Android 8.0 (Oreo) or later.
   - A stable Internet connection is required to access all the features of the application.
-- In a future release, users will also be able to use the app on their personal computers. The minimum specifications laid down are:
+- In a future release, jobseekers will also be able to use the app on their personal computers. The minimum specifications laid down are:
   - Compatible browsers: Google Chrome, Mozilla Firefox, Safari, Microsoft Edge (recent versions).
 - For businesses, the platform will be mainly usable with a computer and will require the following equipment:
   - Desktops or laptops with a stable Internet connection.
@@ -183,16 +186,16 @@ You can find all the mockups here → [Mockups on Figma](https://www.figma.com/d
 - **Hardware Compatibility (Screen size):**
   - The application must be compatible with devices with varying screen resolutions, ranging from small 4-inch screens to large tablet screens of 10 inches or more.
 - **Accessibility:**
-  - The application should include accessibility features for users with disabilities, such as compatibility with screen readers and the ability to adjust contrasts and font sizes.
+  - The application should include accessibility features for jobseekers with disabilities, such as compatibility with screen readers and the ability to adjust contrasts and font sizes.
 
 ## 9. Configurability and Compatibility
 
-- **Customization:** Users should be able to customize their profiles.
+- **Customization:** jobseekers should be able to customize their profiles.
 - **Operating Systems:** The application must be compatible with the latest versions of iOS and Android.
 
 ## 10. Installation
 
-- **Installation Method:** Users can download the app from their store:
+- **Installation Method:** jobseekers can download the app from their store:
   - Apple Store
   - Play Store
 
