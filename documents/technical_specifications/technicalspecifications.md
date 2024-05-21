@@ -303,7 +303,43 @@ Container(
 
 #### Routes
 
-<!-- TO-DO -->
+Routes are used to navigate through the application's pages.
+We initialize the Language Page, the Redirection Page and the Login Page in this example:
+
+```dart
+import 'package:go_router/go_router.dart';
+
+final routes = GoRouter(
+  routes: [
+    GoRoute(
+      path: "/languagehomepage",
+      name: "LanguageHomePage",
+      builder: (BuildContext context, GoRouterState state) ->  LanguageHomePage(storage: GetUserData()),
+    ),
+    GoRoute(
+      path: "/",
+      name: "RedirectionPage",
+      builder: (BuildContext context, GoRouterState state) ->  RedirectionPage(storage: DocumentStorage()),
+    ),
+    GoRoute(
+      path: "/loginpage",
+      name: "LoginPage",
+      builder: (BuildContext context, GoRouterState state) ->  LoginPage(storage: DataClass()),
+    ),
+  ]
+);
+```
+
+You can now call the route to switch pages.
+Here's how you can navigate to routes (here, to the Login Page):
+
+```dart
+onTap(){
+  setState(() {
+    context.go("/loginpage");
+  });
+},
+```
 
 #### Maps
 
