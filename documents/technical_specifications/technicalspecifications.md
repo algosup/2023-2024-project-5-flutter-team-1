@@ -480,15 +480,22 @@ Both candidate and company's side:
 - the second user's ID
 - the message's content
 
-Dedicated databases have been chosen for specific purposes, due to usability and ease of code (the project was not supposed to contain some backend).
+We'll not use databases' array because dedicated databases were chosen for specific purposes, due to their security and ease of use (the project was not intended to contain a back-end system).
+They are, however, linked to the main database with the user's ID, which enhances performance.
 
 ## Security
 
-<!-- TO-DO -->
+The security is an important part of the back-end management, concerning databases and user data.
+
+Here's some elements that have to be implemented to enhance the security:
+
+- The database will be accessible only with a specific token.
+- The accessibility token changes everyday.
+- The user's password will be encrypted to prevent a theft of account (following the Caesar cipher).
 
 ## Glossary
 
-In software engineering, the terms **frontend** and **backend** (sometimes written as back end or back-end) refer to the separation of concerns between the presentation layer (frontend), and the data access layer (backend) of a piece of software. | [Wikipedia](https://en.wikipedia.org/wiki/Frontend_and_backend)
+In software engineering, the terms **front-end** and **back-end** (sometimes written as back end or back-end) refer to the separation of concerns between the presentation layer (front-end), and the data access layer (back-end) of a piece of software. | [Wikipedia](https://en.wikipedia.org/wiki/Frontend_and_backend)
 
 An **Application Programming Interface (API)** is a way for two or more computer programs or components to communicate with each other. | [Wikipedia](https://en.wikipedia.org/wiki/API)
 
@@ -503,3 +510,5 @@ Flutter contains few **channels**: master, beta and stable; in increasing order 
 In computing, a **database** is an organized collection of data based on the use of a database management system (DBMS), the software that interacts with end users, applications, and the database itself to capture and analyze the data. | [Wikipedia](https://en.wikipedia.org/wiki/Database)
 
 An **Application Programming Interface (API)** is a way for two or more computer programs or components to communicate with each other. | [Wikipedia](https://en.wikipedia.org/wiki/API)
+
+In cryptography, a Caesar cipher is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. | [Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher)
