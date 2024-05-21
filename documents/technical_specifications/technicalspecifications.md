@@ -30,6 +30,7 @@
       - [SafeArea](#safearea)
       - [Images](#images)
       - [Sizes](#sizes)
+      - [Text Font](#text-font)
     - [Back-end](#back-end)
       - [Routes](#routes)
       - [Maps](#maps)
@@ -299,6 +300,20 @@ Container(
 ),
 ```
 
+#### Text Font
+
+The text font in the application has to be the Google Font Poppins.
+Here's how you can add correctly the font:
+
+```dart
+Text(
+  // your text
+  style: GoogleFonts.poppins(
+    // some text adjustments
+  ),
+),
+```
+
 ### Back-end
 
 #### Routes
@@ -329,7 +344,6 @@ final routes = GoRouter(
   ]
 );
 ```
-
 You can now call the route to switch pages.
 Here's how you can navigate to routes (here, to the Login Page):
 
@@ -343,7 +357,50 @@ onTap(){
 
 #### Maps
 
-<!-- TO-DO -->
+The maps are used as collections of key/value pairs, from which you retrieve a value using its associated key.
+
+We'll use them concerning the application's language and theme.
+
+**Maps for language**
+
+Initialization:
+
+```dart
+Map<String, String> loginLang = {
+  "fr_FR": "Connexion",
+  "en_US": "Login",
+};
+```
+
+Use:
+
+```dart
+Text(
+  "${loginLang[appLang]}", // appLang is the chosen language, fr_FR or en_US then
+  style: GoogleFonts.poppins(
+    // some text adjustments
+  ),
+),
+```
+
+**Maps for theme**
+
+Initialization:
+
+```dart
+Map<String, Color> buttonColor = {
+  "dark_Theme": Colors.white,
+  "light_Theme": Colors.black,
+};
+```
+
+Use:
+
+```dart
+Container(
+  color: ${buttonColor[appTheme]}, //appTheme is the current theme, dark_Theme or light_Theme then
+),
+```
 
 #### Database
 
