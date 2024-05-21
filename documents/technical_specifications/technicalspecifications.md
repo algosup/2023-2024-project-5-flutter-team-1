@@ -34,7 +34,7 @@
     - [Back-end](#back-end)
       - [Routes](#routes)
       - [Maps](#maps)
-      - [Database](#database)
+      - [Database and Data Flow](#database-and-data-flow)
   - [Security](#security)
   - [Glossary](#glossary)
 
@@ -402,9 +402,85 @@ Container(
 ),
 ```
 
-#### Database
+#### Database and Data Flow
 
-<!-- TO-DO -->
+The user data will be stocked and supplied mainly by databases and API requests.
+
+Name of the database: *ffeur.pq.lu/*
+IP of the database: *185.221.182.215*
+
+**Login Data Flow**
+
+The database manages many parameters during the login phase:
+
+- a random MacAddress, dedicated to a specific device.
+When the application is launched on a new device, a new random MacAddress is generated.
+
+- the language of the application.
+The language can be changed in the settings.
+
+- the user ID.
+The user ID is unique to a single user.
+
+- the last and current connexion.
+Both parameters are compared, to enchance the security.
+
+- the last and current position of connexion.
+Both parameters are compared, to enchance the security.
+
+- the last and current IPV4.
+Both parameters are compared, to enchance the security.
+
+If the time from the last connexion to the current one is below 15min, the position from the last connexion to the current one is below 15km, and the IPV4 from the last connexion to the current one doesn't differ, no need to login again.
+
+**Account Data Flow**
+
+The database will stock all the information about the user account (as strings):
+
+Candidate's side:
+
+- the candidate's ID
+- the candidate's first name
+- the candidate's last name
+- the candidate's date of birth
+- the candidate's city of birth
+- the candidate's city of residence
+- the candidate's email address
+- the candidate's password
+- the candidate's soft skills
+- the candidate's current job
+- the candidate's job's expectation
+
+Company's side:
+
+- the company's ID
+- the company's full name
+- the company's brand name
+- the company's email address
+- the company's password
+- the company's HR members
+- the company's job's expectation
+- the company's soft skills' expectation
+
+**Account's Likes Data Flow**
+
+The account's likes will be managed in a dedicated database, linked with the user ID.
+
+The likes' system is only for candidates, that means "Likes" are companies' names the candidate liked.
+
+**Account's Chat Flow**
+
+The account's chat will be managed in a dedicated database, linked with the user ID.
+The database will stock all the information about the chat (as strings):
+
+Both candidate and company's side:
+
+- the user's ID
+- the chat's ID
+- the second user's ID
+- the message's content
+
+Dedicated databases have been chosen for specific purposes, due to usability and ease of code (the project was not supposed to contain some backend).
 
 ## Security
 
@@ -423,3 +499,7 @@ An **Integrated Development Environment (IDE)** is a software application that p
 Written in C, C++ and Dart, **Flutter** is an open-source UI software development kit created by Google. It can be used to develop cross platform applications from a single codebase for the web,[4] Fuchsia, Android, iOS, Linux, macOS, and Windows. | [Wikipedia](https://en.wikipedia.org/wiki/Flutter_(software))
 
 Flutter contains few **channels**: master, beta and stable; in increasing order of stability. | [Source](https://github.com/flutter/flutter/wiki/flutter-build-release-channels)
+
+In computing, a **database** is an organized collection of data based on the use of a database management system (DBMS), the software that interacts with end users, applications, and the database itself to capture and analyze the data. | [Wikipedia](https://en.wikipedia.org/wiki/Database)
+
+An **Application Programming Interface (API)** is a way for two or more computer programs or components to communicate with each other. | [Wikipedia](https://en.wikipedia.org/wiki/API)
