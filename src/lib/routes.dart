@@ -6,6 +6,8 @@ import 'pages/redirection.dart';
 import 'pages/loginpage.dart';
 import 'pages/registerpage.dart';
 import 'pages/registerpage2.dart';
+import 'pages/registerpage3.dart';
+import 'pages/homepage.dart';
 
 final routes = GoRouter(
   routes: [
@@ -32,8 +34,18 @@ final routes = GoRouter(
     ),
     GoRoute(
       path: "/registerpage2",
-      name: "RegisterPage2",
+      name: "RegisterPage2", 
       builder: (BuildContext context, GoRouterState state) => const RegisterPage2(),
     ),
+    GoRoute(
+      path: "/registerpage3",
+      name: "RegisterPage3",
+      builder: (BuildContext context, GoRouterState state) => const RegisterPage3(),
+    ),
+    GoRoute(
+      path: "/homepage",
+      name: "HomePage",
+      builder: (BuildContext context, GoRouterState state) => const HomePage(),
+    )
   ]
 );

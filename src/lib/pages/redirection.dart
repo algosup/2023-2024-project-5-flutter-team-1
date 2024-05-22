@@ -175,10 +175,12 @@ class _RedirectionPageState extends State<RedirectionPage> {
       } else {
         appPreferences.setLanguage("en_US");
       }
+        appPreferences.macAddress = appMacAddress;
         context.go("/loginpage");
       });
     } else {
       setState(() {
+        appPreferences.macAddress = appMacAddress;
         context.go("/languagehomepage");
       });
     }

@@ -162,7 +162,7 @@ Widget myApplication(BuildContext context, String appLang, void Function(String)
                           bottomRight: Radius.circular(20),
                         ),
                       ),
-                      fillColor: Color.fromRGBO(230, 230, 230, 100),
+                      fillColor: const Color.fromRGBO(230, 230, 230, 100),
                       filled: true,
                     ),
                   ),

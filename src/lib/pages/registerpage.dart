@@ -71,7 +71,7 @@ class _RegisterPageState extends State<RegisterPage> {
   };
 
   Map<String,String> loginNow = {
-    "fr_FR": "Connecte-toi",
+    "fr_FR": "Connexion",
     "en_US": "Login"
   };
 
@@ -232,7 +232,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   onTap: () {
                     setState(() {
                       if (checkOne == true && checkTwo == true) {
-                        context.go("/registerPage2");
+                        context.go("/registerpage2");
                       }
                     });
                   },
