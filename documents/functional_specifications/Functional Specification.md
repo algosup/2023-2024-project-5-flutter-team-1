@@ -1,19 +1,17 @@
 # Functional Specifications: ADOPT A CANDIDATE Project
 
 ## Table of Contents
-
 - [Functional Specifications: ADOPT A CANDIDATE Project](#functional-specifications-adopt-a-candidate-project)
   - [Table of Contents](#table-of-contents)
   - [1. Document Control](#1-document-control)
-    - [1.1 Version History](#11-version-history)
-    - [1.2 Document Approval](#12-document-approval)
+    - [1.1 Document Approval](#11-document-approval)
   - [2. Overview](#2-overview)
     - [2.1 Product Description](#21-product-description)
     - [2.2 Product Functional Capabilities](#22-product-functional-capabilities)
     - [2.3 User Roles](#23-user-roles)
     - [2.4 Use Cases for All Operations](#24-use-cases-for-all-operations)
-      - [2.4.1 Jobseekers Side](#241-jobseekers-side)
-      - [2.4.2 Company Side](#242-company-side)
+    - [2.4.1 Jobseekers Side](#241-jobseekers-side)
+    - [2.4.2 Company Side](#242-company-side)
   - [3. General Constraints](#3-general-constraints)
   - [4. Design Constraints](#4-design-constraints)
   - [5. Assumptions](#5-assumptions)
@@ -23,34 +21,38 @@
     - [6.3 Processing](#63-processing)
     - [6.4 Outputs](#64-outputs)
   - [7. User Interfaces](#7-user-interfaces)
+    - [7.1 User Interface For JobSeekers](#71-user-interface-for-jobseekers)
+    - [7.2 User Interface For Companies](#72-user-interface-for-companies)
+    - [7.3 Navigation Flow](#73-navigation-flow)
+    - [Initial Flow for Jobseekers](#initial-flow-for-jobseekers)
+    - [Initial Flow for Companies](#initial-flow-for-companies)
   - [8. Hardware Interfaces](#8-hardware-interfaces)
   - [9. Configurability and Compatibility](#9-configurability-and-compatibility)
   - [10. Installation](#10-installation)
   - [11. Usability](#11-usability)
+  - [12. Security](#12-security)
+  - [13. Performance Requirements](#13-performance-requirements)
+  - [14. Privacy and Data Protection](#14-privacy-and-data-protection)
+  - [15. Compliance](#15-compliance)
+  - [Glossary](#glossary)
+
 
 ## 1. Document Control
 
-### 1.1 Version History
+### 1.1 Document Approval
 
-| **Version** | **Date**        | **Author**        | **Description**                        |
-| ----------- | --------------- | ----------------- | -------------------------------------- |
-| 0.1         | 13th May 2024   | Wilfried PORTET   | Initial Draft                          |
-| 0.2         | 13th May 2024   | Wilfried PORTET   | Second version                         |
-
-### 1.2 Document Approval
-
-| **Role**          | **Name**          | **Date** | **Signature**        |
-| ----------------- | ----------------- | -------- | -------------------- |
-| Project Manager   | Serena BAVAROIS   |          | <center>❌</center>  |
-| Program Manager   | Wilfried PORTET   |          | <center>❌</center>  |
-| Technical Leader  | Enzo GUILLOUCHE   |          | <center>❌</center>  |
-| Software Engineer | Guillaume DERAMCHI|          | <center>❌</center>  |
-| Technical Writer  | Elone DELILLE     |          | <center>❌</center>  |
-| Quality Assurance | Mattéo LEFIN      |          | <center>❌</center>  |
+| Role | Name | Date | Signature |
+| --- | --- | --- | --- |
+| Project Manager | Serena BAVAROIS |  | <center>❌</center> |
+| Program Manager | Wilfried PORTET |  | <center>❌</center> |
+| Technical Leader | Enzo GUILLOUCHE |  | <center>❌</center> |
+| Software Engineer | Guillaume DERAMCHI |  | <center>❌</center> |
+| Technical Writer | Elone DELILLE |  | <center>❌</center> |
+| Quality Assurance | Mattéo LEFIN |  | <center>❌</center> |
 
 ## 2. Overview
 
-The aim of this document is to provide a comprehensive overview of the "Adopt a Candidate" application. This application serves as a bridge between job seekers and companies, with a unique feature of anonymity to prevent any form of discrimination. The app focuses on matching soft skills rather than qualifications. The project's scope involves the development of key features such as user account creation, a matching algorithm, and job posting management. This document will serve as a roadmap, detailing each facet of the application for clarity and understanding.
+This document aims to provide a comprehensive overview of the "Adopt a Candidate" application. This application serves as a bridge between jobseekers and companies, with a unique feature of anonymity to prevent any form of discrimination. The app focuses on matching soft skills rather than qualifications. The project's scope involves the development of key features such as user account creation, a matching algorithm, and job posting management. This document will serve as a roadmap, detailing each facet of the application for clarity and understanding.
 
 ### 2.1 Product Description
 
@@ -71,35 +73,50 @@ Developed using Flutter 3, and commissioned by "We Are Evolution," this applicat
 - Allow both candidates and companies to create accounts.
 - Provide a like/dislike system for candidates to express interest in companies.
 - Include an administrative interface for companies to manage applications and communicate with candidates.
-- Jobseekers will be able to search for softskills through a search bar.
-And in case the softskills they want to add don't exist in the database, they can create it.
-- Allow companies to specify the soft skills they are looking for via checkboxes.
+- Jobseekers will be able to search for soft skills through a search bar.
+    - In case the soft skills they want to add don't exist in the database, they can create it.
+- Allow companies to specify the soft skills they are looking for via checkboxes or search bar.
 
 ### 2.3 User Roles
 
 **Intended users of the software:**
 
-- **Job Seekers:** Citizens seeking employment, whether skilled or low-skilled, by highlighting their soft skills rather than formal qualifications. The goal is to help job seekers find positions that match their soft skills.
+- **Job Seekers:** Citizens seeking employment, whether skilled or low-skilled, by highlighting their soft skills rather than formal qualifications. The goal is to help jobseekers find positions that match their soft skills.
 - **Companies:** Businesses of all sizes looking to attract candidates with the appropriate soft skills for available positions.
 
 ### 2.4 Use Cases for All Operations
 
 **Typical usage scenarios and tasks:**
 
-#### 2.4.1 Jobseekers Side
+### 2.4.1 Jobseekers Side
 
 Typical steps for jobseekers:
 
 1. Download the application.
 2. Select the preferred language for the application's text.
 3. Create an account by providing personal information.
-4. Select relevant soft skills via checkboxes.
+4. Select relevant soft skills via the search bar.
 5. Specify the geographical area for job searching.
 6. Access the homepage to view companies currently hiring for the selected soft skills.
-7. On the homepage the job seeker must like the company to initiate the match.
-8. If a company expresses interest in the jobseekers profile, the connection process begins.
+7. On the homepage the jobseeker must like the company to initiate the match.
+8. Then the jobseeker needs to wait for a company to start a conversation.
 
-#### 2.4.2 Company Side
+**Example: Jobseeker's experience**
+
+```markdown
+Scenario: A candidate uses the application.
+- Given: The candidate has downloaded the application and chosen his language.
+- When: The candidate enters personal information and selects soft skills.
+- Then: The candidate sees companies looking for his skills.
+
+Example:
+- Soft Skills Needed: Teamwork
+- Soft Skill of the Applicant: Collaboration
+- Result: Match succeeded because collaboration is a subskill of teamwork.
+
+```
+
+### 2.4.2 Company Side
 
 Typical steps for companies:
 
@@ -108,10 +125,25 @@ Typical steps for companies:
 3. Create an account by providing company information.
 4. Access the homepage.
 5. Post job advertisements on the app.
-6. When posting a job advertisement the company gives their preferred soft-skills, and if a job seeker likes a company with which the soft skills are compatible, the match appears.
+6. When posting a job advertisement the company gives their preferred soft-skills, and if a jobseeker likes a company with which the soft skills are compatible, the match appears.
 7. Wait for applications from candidates.
 8. Review anonymous candidate profiles based on soft skills.
-9.  The company decides to send a message to the job seeker afterwards.
+9. The company decides to send a message to the jobseeker afterwards.
+
+**Example: Company's experience**
+
+```markdown
+Scenario: A company publishes a job offer and seeks soft skills.
+- Given: The company downloaded the app and chose its language.
+- When: The company enters the details of the job offer and selects the soft skills required.
+- Then: The company sees anonymous candidates matching the sought-after skills.
+
+Example:
+- Skill sought: Oral communication
+- Candidate's competence: Oral communication
+- Result: Match because the candidate has the skills sought by the company.
+
+```
 
 ## 3. General Constraints
 
@@ -140,11 +172,13 @@ Typical steps for companies:
 ### 6.2 Inputs
 
 - **Candidate Inputs:**
-  - Personal information,
-  - Location details,
-  - Selected soft skills,
-  - Job preferences.
+    - Personal information,
+    - Location details,
+    - Selected soft skills,
+    - Job preferences.
+
 - **Company Inputs:**
+  - Personal information,
   - Job descriptions,
   - Required soft skills,
   - Location details.
@@ -157,11 +191,11 @@ Typical steps for companies:
 ### 6.4 Outputs
 
 - **Match Results:**
-  - Displays matched job postings to candidates,
-  - Matched candidates to companies.
+    - Displays matched job postings to candidates,
+    - Matched candidates to companies.
 - **Notifications:**
-  - Sends alerts to jobseekers when a company starts a chat,
-  - Important updates.
+    - Sends alerts to jobseekers when a company starts a chat,
+    - Important updates.
 
 ## 7. User Interfaces
 
@@ -169,24 +203,54 @@ The navigation flow of the windows, menus, and options is described, along with 
 
 You can find all the mockups here → [Mockups on Figma](https://www.figma.com/design/juw1xMWP0mUO0F4TyaW9jz/Flutter-Project?node-id=0%3A1&t=FrH8CO2qv7IewlBk-1)
 
-- First screen :
-  - Choose Your Language
+### 7.1 User Interface For JobSeekers
+
+- **Choose Your Language Screen (picture to add)**
+- **Registration Screen** 
+- **Login Screen** 
+
+### 7.2 User Interface For Companies
+
+- **Choose Your Language Screen** (picture to add)
+- Registration Screen (picture to add)
+- Login Screen (picture to add)
+- Company Dashboard Screen (picture to add)
+
+### 7.3 Navigation Flow
+
+### Initial Flow for Jobseekers
+
+- **For a New User:**
+    - Choose Your Language Screen → Registration Screen → Home Screen
+        - Home Screen: The user can browse job postings, update their profile, and view matched companies.
+- **For a User Who Already Has an Account:**
+    - Login Screen → Home Screen
+        - Home Screen: The user can directly access job postings, update their profile, and view matched companies.
+
+### Initial Flow for Companies
+
+- **For a New Company:**
+    - Choose Your Language Screen → Registration Screen → Company Dashboard
+        - Company Dashboard: The company can create and manage job postings, view matched candidates, and communicate with candidates.
+- **For Companies Who Already Have an Account:**
+    - Login Screen → Company Dashboard
+        - Company Dashboard: The company can directly access and manage job postings, view matched candidates, and communicate with candidates.
 
 ## 8. Hardware Interfaces
 
 - To use the "Adopt a Candidate" app, jobseekers must access the app via their smartphone by downloading it from the Apple Store or Play Store. The app will be optimized to work on the following devices:
-  - Smartphones with iOS 12 or later.
-  - Smartphones with Android 8.0 (Oreo) or later.
-  - A stable Internet connection is required to access all the features of the application.
+    - Smartphones with iOS 12 or later.
+    - Smartphones with Android 8.0 (Oreo) or later.
+    - A stable Internet connection is required to access all the features of the application.
 - In a future release, jobseekers will also be able to use the app on their personal computers. The minimum specifications laid down are:
-  - Compatible browsers: Google Chrome, Mozilla Firefox, Safari, Microsoft Edge (recent versions).
+    - Compatible browsers: Google Chrome, Mozilla Firefox, Safari, Microsoft Edge (recent versions).
 - For businesses, the platform will be mainly usable with a computer and will require the following equipment:
-  - Desktops or laptops with a stable Internet connection.
-  - Compatible browsers: Google Chrome, Mozilla Firefox, Safari, Microsoft Edge (recent versions).
+    - Desktops or laptops with a stable Internet connection.
+    - Compatible browsers: Google Chrome, Mozilla Firefox, Safari, Microsoft Edge (recent versions).
 - **Hardware Compatibility (Screen size):**
-  - The application must be compatible with devices with varying screen resolutions, ranging from small 4-inch screens to large tablet screens of 10 inches or more.
+    - The application must be compatible with devices with varying screen resolutions, ranging from small 4-inch screens to large tablet screens of 10 inches or more.
 - **Accessibility:**
-  - The application should include accessibility features for jobseekers with disabilities, such as compatibility with screen readers and the ability to adjust contrasts and font sizes.
+    - The application should include accessibility features for jobseekers with disabilities, such as compatibility with screen readers and the ability to adjust contrasts and font sizes.
 
 ## 9. Configurability and Compatibility
 
@@ -196,10 +260,54 @@ You can find all the mockups here → [Mockups on Figma](https://www.figma.com/d
 ## 10. Installation
 
 - **Installation Method:** jobseekers can download the app from their store:
-  - Apple Store
-  - Play Store
+    - Apple Store
+    - Play Store
 
 ## 11. Usability
 
 - **Error Messages:** Provide clear and actionable error messages to guide users in resolving issues.
 - **Input Validation:** Validate inputs in real-time to prevent errors and enhance user experience.
+
+## 12. Security
+
+- **Access Control:** Ensure that different user roles (e.g., jobseekers, companies, admins) have appropriate access controls to prevent unauthorized access to sensitive data.
+
+## 13. Performance Requirements
+
+- **Scalability:** The application must be able to scale horizontally to handle a growing number of users and data.
+- **Response Time:** The system should respond to user actions within 2 seconds for 95% of the requests.
+
+## 14. Privacy and Data Protection
+
+- **Data Anonymization:** Ensure that all user data is anonymized to protect user identities.
+- **Data Retention Policy:** Implement a data retention policy to ensure that user data is stored only for as long as necessary and is securely deleted thereafter.
+- **User Consent:** Obtain explicit user consent for data collection and processing in compliance with GDPR and other relevant privacy regulations.
+
+## 15. Compliance
+
+- **GDPR:** Ensure compliance with the General Data Protection Regulation for users in the European Union.
+
+## Glossary
+
+| Term                 | Definition                                                                                                                   |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------|
+| Jobseeker            | An individual seeking employment through the application. Intended to find positions that match their soft skills.           |
+| Company              | A business entity looking to recruit candidates through the application. Focused on identifying suitable candidates by soft skills. |
+| Soft Skills          | Non-technical skills that relate to how one works, such as teamwork, communication, and problem-solving.                      |
+| Match                | A successful pairing of a jobseeker's soft skills with a company's requirements, initiated by mutual interest in the app.    |
+| Anonymity            | The state of being anonymous; ensures that jobseeker identities are not disclosed to companies until a mutual interest is established. |
+| Matching Algorithm   | The backend software mechanism that pairs jobseekers with job opportunities based on a comparison of soft skills and company requirements. |
+| Data Encryption      | The process of converting information or data into a code, especially to prevent unauthorized access.                        |
+| GDPR                 | General Data Protection Regulation; EU legislation that protects personal data and privacy in the European Union.            |
+| UI                   | User Interface; the means through which a user interacts with a software or hardware system.                                 |
+| UX                   | User Experience; encompasses all aspects of the end-user's interaction with the company, its services, and its products.     |
+| Scalability          | The capability of a system to handle a growing amount of work, or its potential to be enlarged to accommodate that growth.   |
+| Response Time        | The amount of time a system or functional unit takes to react to a given input.                                              |
+| Data Anonymization   | The process of either encrypting or removing personally identifiable information from data sets, so that the people whom the data describe remain anonymous. |
+| Data Retention Policy| The set of guidelines that a company follows to determine how long it will retain different types of data.                   |
+| Accessibility        | The design of products, devices, services, or environments for people with disabilities.                                     |
+| Compliance           | Adherence to laws, regulations, guidelines and specifications relevant to the business process.                              |
+| Configuration        | The arrangement of elements in a particular piece of software or the settings available to customize a device.               |
+
+
+---
