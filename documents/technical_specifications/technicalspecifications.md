@@ -63,6 +63,7 @@ We'll code it using Flutter, all the technical specificities are described [here
 ### Nice To Have
 
 - The phone and PC application can be used either by a candidate or a company.
+- Different themes (light/dark themes, etc).
 - Some back-end using a database to store data.
 - APIs concerning choices in the registration.
 
@@ -223,12 +224,16 @@ We'll use Dart version 3.4.0 or newer and Flutter version 3.22.0 or newer (visib
 
 - Flutter SDK.
   - already setup if there's no issues in the flutter doctor summary.
-- Flutter widget package implementing Material design.
-  - importation: `import 'package:flutter/material.dart'`
+- Flutter widget package implementing material design.
+  - importation: `import 'package:flutter/material.dart';`
 - Flutter router package implementing pages navigation.
   - importation: `import 'package:go_router/go_router.dart';`
 - Flutter IOS package implementing IOS design.
   - importation: `import 'package:flutter/cupertino.dart';`
+- Flutter package making HTTP requests.
+  - importation: `import 'package:http/http.dart' as http;`
+- Dart library implementing mathematical constants and functions, plus a random number generator.
+  - importation: `import 'dart:math';`
 
 ### Front-end
 
@@ -303,7 +308,12 @@ Container(
 #### Text Font
 
 The text font in the application has to be the Google Font Poppins.
-Here's how you can add correctly the font:
+
+You need to import the right package:
+
+`import 'package:google_fonts/google_fonts.dart';`
+
+And then, you can add the font to a Text:
 
 ```dart
 Text(
