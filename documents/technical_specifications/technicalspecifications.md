@@ -600,6 +600,8 @@ The likes' system is only for candidates, that means "Likes" are companies' name
 When a candidate likes a company and the candidate's soft skills are similar enough to the company's expectations, a match occurs.
 Each time a candidate likes a company, once the company's name has been put in the database, we need to check if the candidate's soft skills match with the company's expectations.
 
+![matchdiagram](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/108c08c3-356c-4936-8057-05db9618cee0)
+
 **Account's Chat Flow**
 
 The account's chat will be managed in a dedicated database, linked with the user ID.
@@ -611,6 +613,8 @@ Both candidate and company's side:
 - the chat's ID
 - the second user's ID
 - the message's content
+
+![databaseslink](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/3f5cf5d2-4df9-4519-90ed-5921cc200a64)
 
 We'll not use databases' array because dedicated databases were chosen for specific purposes, due to their security and ease of use (the project was not intended to contain a back-end system).
 They are, however, linked to the main database with the user's ID, which enhances performance.
