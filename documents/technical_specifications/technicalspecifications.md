@@ -558,7 +558,7 @@ Both parameters are compared, to enhance the security.
 - the last and current IPV4.
 Both parameters are compared, to enhance the security.
 
-If the time from the last connection to the current one is below 15min, the position from the last connexion to the current one is below 15km, and the IPV4 from the last connection to the current one doesn't differ, no need to login again.
+If the time from the last connection to the current one is below 15min, the position from the last connection to the current one is below 15km, and the IPV4 from the last connection to the current one doesn't differ, no need to login again.
 
 Here's a diagram that should be more understandable:
 ![logintechnicaldiagram](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/0095d9da-9ac0-47fb-b9aa-70138a1354f9)
@@ -592,11 +592,13 @@ Company's side:
 - the company's job's expectation
 - the company's soft skills' expectation
 
-**Account's Likes Data Flow**
+**Account's Likes/Match Data Flow**
 
 The account's likes will be managed in a dedicated database, linked with the user ID.
+The likes' system is only for candidates, that means "Likes" are companies' names (strings) the candidate liked.
 
-The likes' system is only for candidates, that means "Likes" are companies' names the candidate liked.
+When a candidate likes a company and the candidate's soft skills are similar enough to the company's expectations, a match occurs.
+Each time a candidate likes a company, once the company's name has been put in the database, we need to check if the candidate's soft skills match with the company's expectations.
 
 **Account's Chat Flow**
 
