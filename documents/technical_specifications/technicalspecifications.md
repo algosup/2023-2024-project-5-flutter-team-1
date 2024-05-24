@@ -14,7 +14,7 @@
   - [Conventions](#conventions)
     - [Naming](#naming)
     - [GitHub](#github)
-      - [Organisation](#organisation)
+      - [Organization](#organization)
     - [Coding](#coding)
       - [Comments](#comments)
       - [Formatting](#formatting)
@@ -31,10 +31,12 @@
       - [Images](#images)
       - [Sizes](#sizes)
       - [Text Font](#text-font)
+      - [TextStyle Reusability](#textstyle-reusability)
     - [Back-end](#back-end)
       - [Routes](#routes)
       - [Maps](#maps)
       - [Database and Data Flow](#database-and-data-flow)
+      - [Error handling](#error-handling)
   - [Security](#security)
   - [Glossary](#glossary)
 
@@ -49,7 +51,7 @@
 
 ## Overview
 
-Adopt A Candidate is a "Tinder style" recruitment application that matches companies with jobseekers in a different way.
+Adopt A Candidate is a "Tinder style" recruitment application that matches companies with job-seekers in a different way.
 We'll code it using Flutter, all the technical specificities are described [here](#technical-architecture).
 
 ### Requirements
@@ -58,7 +60,7 @@ We'll code it using Flutter, all the technical specificities are described [here
 - **The phone format will be dedicated to candidate's use:**
   - This format promotes the swipe system, the user just has to swipe and receive a message from a company when he matches with it.
 - **The PC format will be dedicated to a company's use.**
-  - This fomat promotes the chat managing system, the company just gets notified when it matches with a jobseeker and they can send the first message to the jobseeker, initiating the discussion.
+  - This format promotes the chat managing system, the company just gets notified when it matches with a job-seeker and they can send the first message to the job-seeker, initiating the discussion.
 
 ### Nice To Have
 
@@ -80,7 +82,7 @@ The naming conventions are explained in the [dedicated file](../../conventionsan
 
 ### GitHub
 
-#### Organisation
+#### Organization
 
 - Each pull-request has to contain labels, the project, the dedicated milestone, and at least 2 reviewers.
 - Each issue has to contain labels, the project, the dedicated milestone, and the assigned member.
@@ -105,9 +107,15 @@ The rule concerning comments is explained in the [conventions and rules file](..
 Here's an example of the formatting rules:
 
 ```dart
+
+/*
+  Widget showing formatting
+*/
+
 Widget example(String word, int number){
     //write your piece of code here
 }
+
 ```
 
 ## Technical Architecture
@@ -204,7 +212,7 @@ It could be better to debug and test your code on a real portable device, though
 Run and debug Flutter code on PC is quite easier than on phones.
 You already have a device named by your OS:
 
-![destop-device](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/e2e8be53-6a52-4d89-8f2d-1d9126ab362c)
+![desktop-device](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/e2e8be53-6a52-4d89-8f2d-1d9126ab362c)
 
 You can directly run and debug on it, no need to setup something else.
 
@@ -246,11 +254,17 @@ The class SafeArea insets its only child by sufficient padding to avoid intrusio
 We use it this way:
 
 ```dart
+
+/*
+  Scaffold showing how to initiate SafeArea
+*/
+
 return Scaffold(
   child: SafeArea(
     // my code, with one child.
   ),
 );
+
 ```
 
 It has to be used when an element should be safe from the edge of the screen for example.
@@ -270,15 +284,25 @@ The images used for the development have to be in a dedicated folder, following 
 The file `pubspec.yaml` needs to contain this lines to add the assets:
 
 ```yaml
+
+# Assets
+
 flutter:
   assets:
     - assets/images/
+
 ```
 
 Then, you can use the assets using:
 
 ```dart
+
+/*
+  Image showing how to use assets
+*/
+
 Image.asset('assets/images/MyImage.png'),
+
 ```
 
 #### Sizes
@@ -289,10 +313,16 @@ It will help us exporting the application to different device with different scr
 We can take it coding this, where `size` contains the size of the screen:
 
 ```dart
+
+/*
+  Widget showing the initialization of the screen size's variable
+*/
+
 Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
     // your code
 }
+
 ```
 
 You can initiate it at the beginning of the app, and then import this Size variable to the different pages.
@@ -300,9 +330,15 @@ You can initiate it at the beginning of the app, and then import this Size varia
 Once you've done this initialization, you can use the variable to set the size of all the elements:
 
 ```dart
+
+/*
+  Container showing the use of the screen size
+*/
+
 Container(
   width: size.width * 0.5,
 ),
+
 ```
 
 #### Text Font
@@ -316,12 +352,56 @@ You need to import the right package:
 And then, you can add the font to a Text:
 
 ```dart
+
+/*
+  Text showing the use of a font
+*/
+
 Text(
-  // your text
+  'this is a text',
   style: GoogleFonts.poppins(
     // some text adjustments
   ),
 ),
+
+```
+
+#### TextStyle Reusability
+
+TextStyles can be initialized and reused, enhancing code readability and performance.
+Though you first need to initialize a TextStyle:
+
+```dart
+
+/*
+  TextStyle for showing the initialization of a reusable TextStyle
+*/
+
+final TextStyle poppinsStyle = GoogleFonts.poppins(
+  fontSize: 16,
+  color: Colors.black,
+);
+
+```
+
+And you can then reuse it overtime with multiple Text:
+
+```dart
+
+/*
+  Text showing the use of a reusable TextStyle
+*/
+
+Text(
+  'This is a text',
+  style: poppinsStyle,
+),
+
+Text(
+  'This is another text.',
+  style: poppinsStyle,
+),
+
 ```
 
 ### Back-end
@@ -332,7 +412,12 @@ Routes are used to navigate through the application's pages.
 We initialize the Language Page, the Redirection Page and the Login Page in this example:
 
 ```dart
-import 'package:go_router/go_router.dart';
+
+import 'package:go_router/go_router.dart'; // importation of the dependencies
+
+/*
+  routes showing their initialization
+*/
 
 final routes = GoRouter(
   routes: [
@@ -353,16 +438,25 @@ final routes = GoRouter(
     ),
   ]
 );
+
 ```
+
 You can now call the route to switch pages.
 Here's how you can navigate to routes (here, to the Login Page):
 
 ```dart
+
+/*
+  OnTap function showing the use of routes
+  - if OnTap is triggered, the page changes to the LoginPage.
+*/
+
 onTap(){
   setState(() {
     context.go("/loginpage");
   });
 },
+
 ```
 
 #### Maps
@@ -376,21 +470,33 @@ We'll use them concerning the application's language and theme.
 Initialization:
 
 ```dart
+
+/*
+  Map showing their initialization for language
+*/
+
 Map<String, String> loginLang = {
-  "fr_FR": "Connexion",
+  "fr_FR": "Connection",
   "en_US": "Login",
 };
+
 ```
 
 Use:
 
 ```dart
+
+/*
+  Text showing the use of language maps
+*/
+
 Text(
   "${loginLang[appLang]}", // appLang is the chosen language, fr_FR or en_US then
   style: GoogleFonts.poppins(
     // some text adjustments
   ),
 ),
+
 ```
 
 **Maps for theme**
@@ -398,6 +504,11 @@ Text(
 Initialization:
 
 ```dart
+
+/*
+  Map showing their initialization for themes
+*/
+
 Map<String, Color> buttonColor = {
   "dark_Theme": Colors.white,
   "light_Theme": Colors.black,
@@ -407,9 +518,15 @@ Map<String, Color> buttonColor = {
 Use:
 
 ```dart
+
+/*
+  Container showing the use of theme maps
+*/
+
 Container(
   color: ${buttonColor[appTheme]}, //appTheme is the current theme, dark_Theme or light_Theme then
 ),
+
 ```
 
 #### Database and Data Flow
@@ -432,16 +549,16 @@ The language can be changed in the settings.
 - the user ID.
 The user ID is unique to a single user.
 
-- the last and current connexion.
-Both parameters are compared, to enchance the security.
+- the last and current connection.
+Both parameters are compared, to enhance the security.
 
-- the last and current position of connexion.
-Both parameters are compared, to enchance the security.
+- the last and current position of connection.
+Both parameters are compared, to enhance the security.
 
 - the last and current IPV4.
-Both parameters are compared, to enchance the security.
+Both parameters are compared, to enhance the security.
 
-If the time from the last connexion to the current one is below 15min, the position from the last connexion to the current one is below 15km, and the IPV4 from the last connexion to the current one doesn't differ, no need to login again.
+If the time from the last connection to the current one is below 15min, the position from the last connection to the current one is below 15km, and the IPV4 from the last connection to the current one doesn't differ, no need to login again.
 
 Here's a diagram that should be more understandable:
 ![logintechnicaldiagram](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/0095d9da-9ac0-47fb-b9aa-70138a1354f9)
@@ -475,11 +592,15 @@ Company's side:
 - the company's job's expectation
 - the company's soft skills' expectation
 
-**Account's Likes Data Flow**
+**Account's Likes/Match Data Flow**
 
 The account's likes will be managed in a dedicated database, linked with the user ID.
+The likes' system is only for candidates, that means "Likes" are companies' names (strings) the candidate liked.
 
-The likes' system is only for candidates, that means "Likes" are companies' names the candidate liked.
+When a candidate likes a company and the candidate's soft skills are similar enough to the company's expectations, a match occurs.
+Each time a candidate likes a company, once the company's name has been put in the database, we need to check if the candidate's soft skills match with the company's expectations.
+
+![matchdiagram](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/108c08c3-356c-4936-8057-05db9618cee0)
 
 **Account's Chat Flow**
 
@@ -493,8 +614,45 @@ Both candidate and company's side:
 - the second user's ID
 - the message's content
 
+![databaseslink](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/3f5cf5d2-4df9-4519-90ed-5921cc200a64)
+
 We'll not use databases' array because dedicated databases were chosen for specific purposes, due to their security and ease of use (the project was not intended to contain a back-end system).
 They are, however, linked to the main database with the user's ID, which enhances performance.
+
+#### Error handling
+
+Error handling is a powerful way to debug and enhance the maintainability of the code.
+`print(""),` and `debugPrint("");` are useful to know if the workflow is going as expected.
+
+```dart
+
+/* 
+  Function to check the MacAddress.
+  - Sends the URL to the database
+  - Checks the response
+  - Prints if the response is successful or not
+*/
+
+Future<bool> checkMacAddress() async {
+  try {
+    final file = await fileLocalization;
+    String content = await file.readAsString();
+    print("Checking MAC address: $content");
+    final response = await macDatabase(content);
+    print("URL Sended");
+    if (response.statusCode == 200) {
+      // successful response
+      print("Response successful.");
+    } else {
+      // failed response
+      print("Error: HTTP status ${response.statusCode}");
+    }
+  } catch (e) {
+    print("Error on checking mac address on database: $e");
+  }
+  return false;
+}
+```
 
 ## Security
 

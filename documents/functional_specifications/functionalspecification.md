@@ -204,17 +204,24 @@ The navigation flow of the windows, menus, and options is described, along with 
 You can find all the mockups here → [Mockups on Figma](https://www.figma.com/design/juw1xMWP0mUO0F4TyaW9jz/Flutter-Project?node-id=0%3A1&t=FrH8CO2qv7IewlBk-1)
 
 ### 7.1 User Interface For JobSeekers
+- **Choose Your Language Screen**
+-   ![Screenshot 2024-05-22 151134](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145995592/3e214f65-3c45-42b7-ad68-eb8160aadaf8)
 
-- **Choose Your Language Screen (picture to add)**
-- **Registration Screen** 
-- **Login Screen** 
+- **Registration Screen**
+-   ![Screenshot 2024-05-22 151230](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145995592/5b1f1ee7-2e1d-4eab-aac1-5aac6f76a103)
+
+- **Login Screen**
+-   ![Screenshot 2024-05-22 151333](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145995592/b1bb4df8-6aae-4918-9e42-d2424f9c6e82)
 
 ### 7.2 User Interface For Companies
 
-- **Choose Your Language Screen** (picture to add)
-- Registration Screen (picture to add)
-- Login Screen (picture to add)
-- Company Dashboard Screen (picture to add)
+- Registration Screen
+-   ![Screenshot 2024-05-22 162147](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145995592/3cfcca0f-7e65-45db-bfeb-6057985e1bef)
+  ![Screenshot 2024-05-22 162212](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145995592/2adcbb35-cf9e-42b4-93cc-16e54abc71d0)
+
+- Login Screen
+-   ![Screenshot 2024-05-22 162130](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145995592/99d4dee8-4315-4666-aa5d-32fecc3b5a68)
+
 
 ### 7.3 Navigation Flow
 
@@ -298,7 +305,7 @@ You can find all the mockups here → [Mockups on Figma](https://www.figma.com/d
 | Anonymity            | The state of being anonymous; ensures that jobseeker identities are not disclosed to companies until a mutual interest is established. |
 | Matching Algorithm   | The backend software mechanism that pairs jobseekers with job opportunities based on a comparison of soft skills and company requirements. |
 | Data Encryption      | The process of converting information or data into a code, especially to prevent unauthorized access.                        |
-| GDPR                 | General Data Protection Regulation; EU legislation that protects personal data and privacy in the European Union.            |
+| GDPR                 | General Data Protection Regulation; EU legislation that protects personal Data and privacy in the European Union.            |
 | UI                   | User Interface; the means through which a user interacts with a software or hardware system.                                 |
 | UX                   | User Experience; encompasses all aspects of the end-user's interaction with the company, its services, and its products.     |
 | Scalability          | The capability of a system to handle a growing amount of work, or its potential to be enlarged to accommodate that growth.   |
