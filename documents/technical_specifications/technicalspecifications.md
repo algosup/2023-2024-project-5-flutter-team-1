@@ -18,6 +18,7 @@
     - [Coding](#coding)
       - [Comments](#comments)
       - [Formatting](#formatting)
+      - [Folder Structure](#folder-structure)
   - [Technical Architecture](#technical-architecture)
     - [Technology Used](#technology-used)
       - [Supported Platforms](#supported-platforms)
@@ -117,6 +118,37 @@ Widget example(String word, int number){
 }
 
 ```
+
+#### Folder Structure
+
+A folder structure promotes coherent and understandable file locations.
+The `lib` folder has to follow this structure:
+
+lib/
+  ├── pages/
+  │     ├── homepage.dart
+  |     ├── company/
+  │     |      ├── languagehomepage.dart
+  │     |      ├── loginpage.dart
+  │     |      ├── redirection.dart
+  │     |      ├── registerpage.dart
+  │     |      ├── registerpage2.dart
+  │     |      ├── registerpage3.dart
+  │     |      ├── settings.dart
+  │     |      ├── . . .
+  |     ├── candidate/
+  │     |      ├── homepage.dart
+  │     |      ├── languagehomepage.dart
+  │     |      ├── loginpage.dart
+  │     |      ├── redirection.dart
+  │     |      ├── registerpage.dart
+  │     |      ├── registerpage2.dart
+  │     |      ├── registerpage3.dart
+  │     |      ├── settings.dart
+  │     |      ├── . . .
+  ├── main.dart
+  ├── preferences.dart
+  ├── routes.dart
 
 ## Technical Architecture
 
