@@ -1,4 +1,4 @@
-# Test Plan
+# <center>Test Plan</center>
 ----
 
 |Author|Mattéo LEFIN|
@@ -17,6 +17,7 @@
 |-------|----|---|--|
 |1.0|05/16/2024|Mattéo LEFIN|Create documents template|
 |1.1|05/17/2024|Mattéo LEFIN| - add sub parts and Table of content <br> - start the writing of [1. Introduction](#1-introduction)|
+|1.2|05/21/2024|Mattéo LEFIN|- finish [1. Introduction](#1-introduction),  [2. Documentation Reviewing](#2-documentation-reviewing) and [3. Testing strategy](#3-testing-strategy)|
 </details>
 
 ----
@@ -99,7 +100,7 @@ This document shows the **Quality Assurance activity** to provide **clarity** on
 It also demonstrates our **documentation reviewing** and indicates our **testing procedure**, including:
 
 - ***The testing strategy***
-  - It outlines **the goals** of the test plan, describing the **testing field**, the **testing environment**, the **test plan scope** and categorizes the **types of testing** involved. 
+  - It outlines **the goals** of the test plan, describes the **testing field**, the **testing environment**, and the **test plan scope** and categorizes the **types of testing** involved. 
 - ***The execution strategy***
   - Describe how **tests will be performed**, and the process for any kind of issue or bug encountered during the project period.
 - ***The test management***
@@ -117,7 +118,7 @@ The app has to be made on [***Flutter**](#glossary).
 
 The project has been commissioned by the company ["We Are Evolution"](https://www.we-are-evolution.com/team) represented by [**Oliver Blonsar**](https://www.linkedin.com/in/olivier-blonsard/) (the employment brand, communication expert and audio-visual expert) and [**Lilou Jourdannaud**](https://www.linkedin.com/in/lilou-jourdannaud-6b0a60220/) (The communication manager).
 
-They made a presentation on how they wanted the app, we didn't receive any mandatory design so we had to make it from scratch.
+They made a presentation on how they wanted the application, we didn't receive any mandatory design so we had to make it from scratch.
 
 
 </details>
@@ -132,7 +133,18 @@ They made a presentation on how they wanted the app, we didn't receive any manda
 
 ### 2.1 Document criteria
 
+The majority of our documents have the same criteria, making harmony between them is required for standardization and a better organization of the project.
+
+The common criteria are:
+- All documents must have a table of contents
+- Documents must stay as simple as possible, making them short and not too technical as possible. if technical terms are necessary, a glossary has to be implemented.
+- All the documents are written in American English.
+
 ### 2.2 Review process
+
+To review the documents we use Github issues to track any problems like typos or criterias that haven't been addressed.
+
+![Screenshot]()
 
 </details>
 
@@ -146,21 +158,23 @@ They made a presentation on how they wanted the app, we didn't receive any manda
 
 ### 3.1 Tests main goal
 
+The main goal behind doing tests is to ensure that all project criteria are checked, and possibly enhance the quality of the project for a better user experience.
+
+
 ### 3.2 Testing field
 
+**Flutter works with this WEB platform :**
 
+Chrome 84
+Firefox 72.0 
+Safari on El Capitan
+Edge 1.2.0
+***(They will work in the upper version of this web platform)***
 
+<br>
+<br>
 
-
-Flutter works with this WEB platform :
-Chrome 84 & above
-Firefox 72.0 & above
-Safari on El Capitan & above
-Edge 1.2.0 & above
-
-
-
-With Flutter, we are limited to this hardware below:
+**With Flutter, we are limited to the different hardware below:**
 
 |  Platform  |  Version   |
 |   :----:   |   :------:   |
@@ -170,18 +184,40 @@ With Flutter, we are limited to this hardware below:
 | macOS | El Capitan (10.11) & above |
 | Windows | Windows 7 & above, 64-bit |
 
-**All channels include master, beta, and stable channels.**
 
 ### 3.3 Testing environment
 
+For testing our project we used a MAC and a Windows computer with an Android emulator and an iPhone emulator to see in real-time what the app on mobile will look like.
 
-
-For testing our project we used a MAC and a Windows computer with an Android emulator and an iPhone emulator to see in real
+![Screenshot]()
 
 
 ### 3.4 Test scope
 
+**In scope**
+
+- Comprehensive testing of each part of the program, including individual instructions.
+- Functional testing of all features and functionalities.
+- Identification and validation of expected system behavior.
+- User acceptance testing (UAT) for assessing user satisfaction.
+
+
 ### 3.5 Testing types
+
+There are different types of testing :
+
+**Functional testing**
+
+Functional testing is a type of software testing that evaluates the functionality of the program based on specified requirements that have been written in the [Functional Specification](). The program needs to perform as expected, focusing on user-facing features and behaviors. this type of testing includes integration testing, system testing, and user acceptance testing.
+
+**Unit testing**
+
+Unit testing is a type of software testing where we test a small and precise part of the program to see if it works properly.
+
+**Agile testing**
+
+Agile testing aligns with [***Agile development principles**](#glossary), emphasizing continuous feedback, collaboration, iterative testing, test automation, and adaptability to deliver high-quality software in a dynamic and iterative development environment.
+
 
 </details>
 
@@ -217,6 +253,8 @@ For testing our project we used a MAC and a Windows computer with an Android emu
 ### 5.2 Test design process
 
 ### 5.3 Schedule estimation
+
+We estimated a schedule for the entirety of the testing 
 
 ### 5.4 Test deliverables
 

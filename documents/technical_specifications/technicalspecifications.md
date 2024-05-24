@@ -14,7 +14,7 @@
   - [Conventions](#conventions)
     - [Naming](#naming)
     - [GitHub](#github)
-      - [Organisation](#organisation)
+      - [Organization](#organization)
     - [Coding](#coding)
       - [Comments](#comments)
       - [Formatting](#formatting)
@@ -30,10 +30,13 @@
       - [SafeArea](#safearea)
       - [Images](#images)
       - [Sizes](#sizes)
+      - [Text Font](#text-font)
+      - [TextStyle Reusability](#textstyle-reusability)
     - [Back-end](#back-end)
       - [Routes](#routes)
       - [Maps](#maps)
-      - [Database](#database)
+      - [Database and Data Flow](#database-and-data-flow)
+      - [Error handling](#error-handling)
   - [Security](#security)
   - [Glossary](#glossary)
 
@@ -48,7 +51,7 @@
 
 ## Overview
 
-Adopt A Candidate is a "Tinder style" recruitment application that matches companies with jobseekers in a different way.
+Adopt A Candidate is a "Tinder style" recruitment application that matches companies with job-seekers in a different way.
 We'll code it using Flutter, all the technical specificities are described [here](#technical-architecture).
 
 ### Requirements
@@ -57,11 +60,12 @@ We'll code it using Flutter, all the technical specificities are described [here
 - **The phone format will be dedicated to candidate's use:**
   - This format promotes the swipe system, the user just has to swipe and receive a message from a company when he matches with it.
 - **The PC format will be dedicated to a company's use.**
-  - This fomat promotes the chat managing system, the company just gets notified when it matches with a jobseeker and they can send the first message to the jobseeker, initiating the discussion.
+  - This format promotes the chat managing system, the company just gets notified when it matches with a job-seeker and they can send the first message to the job-seeker, initiating the discussion.
 
 ### Nice To Have
 
 - The phone and PC application can be used either by a candidate or a company.
+- Different themes (light/dark themes, etc).
 - Some back-end using a database to store data.
 - APIs concerning choices in the registration.
 
@@ -78,7 +82,7 @@ The naming conventions are explained in the [dedicated file](../../conventionsan
 
 ### GitHub
 
-#### Organisation
+#### Organization
 
 - Each pull-request has to contain labels, the project, the dedicated milestone, and at least 2 reviewers.
 - Each issue has to contain labels, the project, the dedicated milestone, and the assigned member.
@@ -103,9 +107,15 @@ The rule concerning comments is explained in the [conventions and rules file](..
 Here's an example of the formatting rules:
 
 ```dart
+
+/*
+  Widget showing formatting
+*/
+
 Widget example(String word, int number){
     //write your piece of code here
 }
+
 ```
 
 ## Technical Architecture
@@ -202,7 +212,7 @@ It could be better to debug and test your code on a real portable device, though
 Run and debug Flutter code on PC is quite easier than on phones.
 You already have a device named by your OS:
 
-![destop-device](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/e2e8be53-6a52-4d89-8f2d-1d9126ab362c)
+![desktop-device](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/e2e8be53-6a52-4d89-8f2d-1d9126ab362c)
 
 You can directly run and debug on it, no need to setup something else.
 
@@ -222,12 +232,16 @@ We'll use Dart version 3.4.0 or newer and Flutter version 3.22.0 or newer (visib
 
 - Flutter SDK.
   - already setup if there's no issues in the flutter doctor summary.
-- Flutter widget package implementing Material design.
-  - importation: `import 'package:flutter/material.dart'`
+- Flutter widget package implementing material design.
+  - importation: `import 'package:flutter/material.dart';`
 - Flutter router package implementing pages navigation.
   - importation: `import 'package:go_router/go_router.dart';`
 - Flutter IOS package implementing IOS design.
   - importation: `import 'package:flutter/cupertino.dart';`
+- Flutter package making HTTP requests.
+  - importation: `import 'package:http/http.dart' as http;`
+- Dart library implementing mathematical constants and functions, plus a random number generator.
+  - importation: `import 'dart:math';`
 
 ### Front-end
 
@@ -240,11 +254,17 @@ The class SafeArea insets its only child by sufficient padding to avoid intrusio
 We use it this way:
 
 ```dart
+
+/*
+  Scaffold showing how to initiate SafeArea
+*/
+
 return Scaffold(
   child: SafeArea(
     // my code, with one child.
   ),
 );
+
 ```
 
 It has to be used when an element should be safe from the edge of the screen for example.
@@ -264,15 +284,25 @@ The images used for the development have to be in a dedicated folder, following 
 The file `pubspec.yaml` needs to contain this lines to add the assets:
 
 ```yaml
+
+# Assets
+
 flutter:
   assets:
     - assets/images/
+
 ```
 
 Then, you can use the assets using:
 
 ```dart
+
+/*
+  Image showing how to use assets
+*/
+
 Image.asset('assets/images/MyImage.png'),
+
 ```
 
 #### Sizes
@@ -283,10 +313,16 @@ It will help us exporting the application to different device with different scr
 We can take it coding this, where `size` contains the size of the screen:
 
 ```dart
+
+/*
+  Widget showing the initialization of the screen size's variable
+*/
+
 Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
     // your code
 }
+
 ```
 
 You can initiate it at the beginning of the app, and then import this Size variable to the different pages.
@@ -294,9 +330,78 @@ You can initiate it at the beginning of the app, and then import this Size varia
 Once you've done this initialization, you can use the variable to set the size of all the elements:
 
 ```dart
+
+/*
+  Container showing the use of the screen size
+*/
+
 Container(
   width: size.width * 0.5,
 ),
+
+```
+
+#### Text Font
+
+The text font in the application has to be the Google Font Poppins.
+
+You need to import the right package:
+
+`import 'package:google_fonts/google_fonts.dart';`
+
+And then, you can add the font to a Text:
+
+```dart
+
+/*
+  Text showing the use of a font
+*/
+
+Text(
+  'this is a text',
+  style: GoogleFonts.poppins(
+    // some text adjustments
+  ),
+),
+
+```
+
+#### TextStyle Reusability
+
+TextStyles can be initialized and reused, enhancing code readability and performance.
+Though you first need to initialize a TextStyle:
+
+```dart
+
+/*
+  TextStyle for showing the initialization of a reusable TextStyle
+*/
+
+final TextStyle poppinsStyle = GoogleFonts.poppins(
+  fontSize: 16,
+  color: Colors.black,
+);
+
+```
+
+And you can then reuse it overtime with multiple Text:
+
+```dart
+
+/*
+  Text showing the use of a reusable TextStyle
+*/
+
+Text(
+  'This is a text',
+  style: poppinsStyle,
+),
+
+Text(
+  'This is another text.',
+  style: poppinsStyle,
+),
+
 ```
 
 ### Back-end
@@ -307,7 +412,12 @@ Routes are used to navigate through the application's pages.
 We initialize the Language Page, the Redirection Page and the Login Page in this example:
 
 ```dart
-import 'package:go_router/go_router.dart';
+
+import 'package:go_router/go_router.dart'; // importation of the dependencies
+
+/*
+  routes showing their initialization
+*/
 
 final routes = GoRouter(
   routes: [
@@ -328,34 +438,235 @@ final routes = GoRouter(
     ),
   ]
 );
+
 ```
 
 You can now call the route to switch pages.
 Here's how you can navigate to routes (here, to the Login Page):
 
 ```dart
+
+/*
+  OnTap function showing the use of routes
+  - if OnTap is triggered, the page changes to the LoginPage.
+*/
+
 onTap(){
   setState(() {
     context.go("/loginpage");
   });
 },
+
 ```
 
 #### Maps
 
-<!-- TO-DO -->
+The maps are used as collections of key/value pairs, from which you retrieve a value using its associated key.
 
-#### Database
+We'll use them concerning the application's language and theme.
 
-<!-- TO-DO -->
+**Maps for language**
+
+Initialization:
+
+```dart
+
+/*
+  Map showing their initialization for language
+*/
+
+Map<String, String> loginLang = {
+  "fr_FR": "Connection",
+  "en_US": "Login",
+};
+
+```
+
+Use:
+
+```dart
+
+/*
+  Text showing the use of language maps
+*/
+
+Text(
+  "${loginLang[appLang]}", // appLang is the chosen language, fr_FR or en_US then
+  style: GoogleFonts.poppins(
+    // some text adjustments
+  ),
+),
+
+```
+
+**Maps for theme**
+
+Initialization:
+
+```dart
+
+/*
+  Map showing their initialization for themes
+*/
+
+Map<String, Color> buttonColor = {
+  "dark_Theme": Colors.white,
+  "light_Theme": Colors.black,
+};
+```
+
+Use:
+
+```dart
+
+/*
+  Container showing the use of theme maps
+*/
+
+Container(
+  color: ${buttonColor[appTheme]}, //appTheme is the current theme, dark_Theme or light_Theme then
+),
+
+```
+
+#### Database and Data Flow
+
+The user data will be stocked and supplied mainly by databases and API requests.
+
+Name of the database: *ffeur.pq.lu/*
+IP of the database: *185.221.182.215*
+
+**Login Data Flow**
+
+The database manages many parameters during the login phase:
+
+- a random MacAddress, dedicated to a specific device.
+When the application is launched on a new device, a new random MacAddress is generated.
+
+- the language of the application.
+The language can be changed in the settings.
+
+- the user ID.
+The user ID is unique to a single user.
+
+- the last and current connection.
+Both parameters are compared, to enhance the security.
+
+- the last and current position of connection.
+Both parameters are compared, to enhance the security.
+
+- the last and current IPV4.
+Both parameters are compared, to enhance the security.
+
+If the time from the last connection to the current one is below 15min, the position from the last connection to the current one is below 15km, and the IPV4 from the last connection to the current one doesn't differ, no need to login again.
+
+Here's a diagram that should be more understandable:
+![logintechnicaldiagram](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/0095d9da-9ac0-47fb-b9aa-70138a1354f9)
+
+**Account Data Flow**
+
+The database will stock all the information about the user account (as strings):
+
+Candidate's side:
+
+- the candidate's ID
+- the candidate's first name
+- the candidate's last name
+- the candidate's date of birth
+- the candidate's city of birth
+- the candidate's city of residence
+- the candidate's email address
+- the candidate's password
+- the candidate's soft skills
+- the candidate's current job
+- the candidate's job's expectation
+
+Company's side:
+
+- the company's ID
+- the company's full name
+- the company's brand name
+- the company's email address
+- the company's password
+- the company's HR members
+- the company's job's expectation
+- the company's soft skills' expectation
+
+**Account's Likes/Match Data Flow**
+
+The account's likes will be managed in a dedicated database, linked with the user ID.
+The likes' system is only for candidates, that means "Likes" are companies' names (strings) the candidate liked.
+
+When a candidate likes a company and the candidate's soft skills are similar enough to the company's expectations, a match occurs.
+Each time a candidate likes a company, once the company's name has been put in the database, we need to check if the candidate's soft skills match with the company's expectations.
+
+![matchdiagram](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/108c08c3-356c-4936-8057-05db9618cee0)
+
+**Account's Chat Flow**
+
+The account's chat will be managed in a dedicated database, linked with the user ID.
+The database will stock all the information about the chat (as strings):
+
+Both candidate and company's side:
+
+- the user's ID
+- the chat's ID
+- the second user's ID
+- the message's content
+
+![databaseslink](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/3f5cf5d2-4df9-4519-90ed-5921cc200a64)
+
+We'll not use databases' array because dedicated databases were chosen for specific purposes, due to their security and ease of use (the project was not intended to contain a back-end system).
+They are, however, linked to the main database with the user's ID, which enhances performance.
+
+#### Error handling
+
+Error handling is a powerful way to debug and enhance the maintainability of the code.
+`print(""),` and `debugPrint("");` are useful to know if the workflow is going as expected.
+
+```dart
+
+/* 
+  Function to check the MacAddress.
+  - Sends the URL to the database
+  - Checks the response
+  - Prints if the response is successful or not
+*/
+
+Future<bool> checkMacAddress() async {
+  try {
+    final file = await fileLocalization;
+    String content = await file.readAsString();
+    print("Checking MAC address: $content");
+    final response = await macDatabase(content);
+    print("URL Sended");
+    if (response.statusCode == 200) {
+      // successful response
+      print("Response successful.");
+    } else {
+      // failed response
+      print("Error: HTTP status ${response.statusCode}");
+    }
+  } catch (e) {
+    print("Error on checking mac address on database: $e");
+  }
+  return false;
+}
+```
 
 ## Security
 
-<!-- TO-DO -->
+The security is an important part of the back-end management, concerning databases and user data.
+
+Here's some elements that have to be implemented to enhance the security:
+
+- The database will be accessible only with a specific token.
+- The accessibility token changes everyday.
+- The user's password will be encrypted to prevent a theft of account (following the Caesar cipher).
 
 ## Glossary
 
-In software engineering, the terms **frontend** and **backend** (sometimes written as back end or back-end) refer to the separation of concerns between the presentation layer (frontend), and the data access layer (backend) of a piece of software. | [Wikipedia](https://en.wikipedia.org/wiki/Frontend_and_backend)
+In software engineering, the terms **front-end** and **back-end** (sometimes written as back end or back-end) refer to the separation of concerns between the presentation layer (front-end), and the data access layer (back-end) of a piece of software. | [Wikipedia](https://en.wikipedia.org/wiki/Frontend_and_backend)
 
 An **Application Programming Interface (API)** is a way for two or more computer programs or components to communicate with each other. | [Wikipedia](https://en.wikipedia.org/wiki/API)
 
@@ -366,3 +677,9 @@ An **Integrated Development Environment (IDE)** is a software application that p
 Written in C, C++ and Dart, **Flutter** is an open-source UI software development kit created by Google. It can be used to develop cross platform applications from a single codebase for the web,[4] Fuchsia, Android, iOS, Linux, macOS, and Windows. | [Wikipedia](https://en.wikipedia.org/wiki/Flutter_(software))
 
 Flutter contains few **channels**: master, beta and stable; in increasing order of stability. | [Source](https://github.com/flutter/flutter/wiki/flutter-build-release-channels)
+
+In computing, a **database** is an organized collection of data based on the use of a database management system (DBMS), the software that interacts with end users, applications, and the database itself to capture and analyze the data. | [Wikipedia](https://en.wikipedia.org/wiki/Database)
+
+An **Application Programming Interface (API)** is a way for two or more computer programs or components to communicate with each other. | [Wikipedia](https://en.wikipedia.org/wiki/API)
+
+In cryptography, a Caesar cipher is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. | [Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher)
