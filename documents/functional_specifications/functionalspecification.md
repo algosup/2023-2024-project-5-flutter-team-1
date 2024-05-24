@@ -43,12 +43,12 @@
 
 | Role | Name | Date | Signature |
 | --- | --- | --- | --- |
-| Project Manager | Serena BAVAROIS |  | <center>❌</center> |
-| Program Manager | Wilfried PORTET |  | <center>❌</center> |
-| Technical Leader | Enzo GUILLOUCHE |  | <center>❌</center> |
-| Software Engineer | Guillaume DERAMCHI |  | <center>❌</center> |
-| Technical Writer | Elone DELILLE |  | <center>❌</center> |
-| Quality Assurance | Mattéo LEFIN |  | <center>❌</center> |
+| Project Manager | Serena BAVAROIS | 5/24/2024 | <center>✅</center> |
+| Program Manager | Wilfried PORTET | 5/24/2024 | <center>✅</center> |
+| Technical Leader| Enzo GUILLOUCHE| 5/24/2024 | <center>✅</center> |
+| Software Engineer | Guillaume DERAMCHI | 5/24/2024 | <center>✅</center> |
+| Technical Writer | Elone DELILLE | 5/24/2024 | <center>✅</center> |
+| Quality Assurance | Mattéo LEFIN |5/24/2024  | <center>✅</center> |
 
 ## 2. Overview
 
@@ -81,7 +81,7 @@ Developed using Flutter 3, and commissioned by "We Are Evolution," this applicat
 
 **Intended users of the software:**
 
-- **Job Seekers:** Citizens seeking employment, whether skilled or low-skilled, by highlighting their soft skills rather than formal qualifications. The goal is to help jobseekers find positions that match their soft skills.
+- **JobSeekers:** Citizens seeking employment, whether skilled or low-skilled, by highlighting their soft skills rather than formal qualifications. The goal is to help jobseekers find positions that match their soft skills.
 - **Companies:** Businesses of all sizes looking to attract candidates with the appropriate soft skills for available positions.
 
 ### 2.4 Use Cases for All Operations
