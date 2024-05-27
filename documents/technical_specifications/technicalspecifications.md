@@ -50,6 +50,8 @@
 - Software Engineers:
     to understand the user and technical requirements, and to guide their work. Help them understand challenges and choices made.
 
+It's highly recommended to read the [Functional Specifications](../functional_specifications/functionalspecification.md) before going further in this document.
+
 ## Overview
 
 Adopt A Candidate is a "Tinder style" recruitment application that matches companies with job-seekers in a different way.
@@ -150,6 +152,8 @@ lib/
   ├── preferences.dart
   ├── routes.dart
 
+The pages of the application will be in a dedicated folder `pages`, with `candidate` and `company` dedicated folders, due to pages' differences.
+
 ## Technical Architecture
 
 ### Technology Used
@@ -210,8 +214,6 @@ You can now access to the Developer's settings.
 >Search Debug in the Settings.<br>
 Go to USB Debug.<br>
 Enable USB Debug, regardless the warnings.
-
-You can now Debug on your device.
 
 ##### IOS-based Phone
 
