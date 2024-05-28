@@ -3,14 +3,14 @@ description: Github issue template
 title: "[ISSUE TYPE HERE] <title>"
 body:
   - type: checkboxes
-    attribute:
+    attributes:
       label: Is there an existing issue for this?
       description: Please search if there's an already existing issue for the bug you encountered.
       options:
       - label: I have searched the existiing issues
         required: true
   - type: checkboxes
-    attribute:
+    attributes:
       label: Which environment the issue is appearing
       description: Please, check on which environement the issues are appearing.
       options:
@@ -18,25 +18,25 @@ body:
       - label: The issue appears on an IOS environement
         required: false
   - type: textarea
-    attribute:
+    attributes:
       label: What's the current behavior?
       description: Please, describe concisely what you are experiencing.
     validation:
       required: false
   - type: textarea
-    attribute:
+    attributes:
       label: What's the expected behavior?
       description: Please, describe concisely what was normally expected.
     validation:
       required: false
   - type: textarea
-    attribute:
+    attributes:
       label: How to reproduce this behavior?
       description: Please, explain the process to get the issues.
     validation:
       required: false
   - type: textarea
-    attribute:
+    attributes:
       label: Is there any comment to add?
       description: If you have anything more to add, write it here.
 
