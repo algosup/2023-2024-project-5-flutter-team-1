@@ -33,6 +33,7 @@
       - [Sizes](#sizes)
       - [Text Font](#text-font)
       - [TextStyle Reusability](#textstyle-reusability)
+      - [Swipe Cards](#swipe-cards)
     - [Back-end](#back-end)
       - [Routes](#routes)
       - [Maps](#maps)
@@ -461,6 +462,122 @@ Text(
 Text(
   'This is another text.',
   style: poppinsStyle,
+),
+
+```
+
+#### Swipe Cards
+
+Swipe Cards is a Flutter widget for Tinder like swipe cards. The card can be swiped right and left for different responses. Currently it has to support the following responses:
+
+- Right swipe for like
+- Left swipe for dislike
+
+To import the package, you need to add these lines to the `pubspec.yaml`:
+
+```yaml
+
+dependencies:
+  swipe_cards: ^2.0.0+1
+
+```
+
+Then, you can use the swipe cards following the next piece of code:
+
+```dart
+
+/*
+  Map storing the 3 companies
+  - The first String is the company
+  - The List is the card's information
+*/
+
+Map<String, List<String>> companyList = {
+  "Job 3": [
+    "Location",
+    "Job Description",
+    "Soft Skills",
+  ],
+  "Job 2": [
+    "Location",
+    "Job Description",
+    "Soft Skills",
+  ],
+  "Job 1": [
+    "Location",
+    "Job Description",
+    "Soft Skills",
+  ],
+};
+
+/*
+  Stack showing the use of swipe cards
+  - Stack of 3 companies' cards (the map companyList)
+  - The cards can be dismissed swiping to the left (like) or to the right (dislike)
+*/
+
+Stack(
+  children: companyList.keys.map((company) {
+    return Dismissible(
+      key: Key(company),
+      direction: DismissDirection.horizontal,
+      onDismissed: (direction) {
+        if (direction == DismissDirection.endToStart) {
+          // Handle left swipe
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('$company disliked')),
+          );
+        } else if (direction == DismissDirection.startToEnd) {
+          // Handle right swipe
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('$company liked')),
+          );
+        }
+        setState(() {
+          companyList.remove(company);
+        });
+      },
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(10, 5, 10, 20),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(
+            maxHeight: 550,
+          ),
+          child: Card(
+            elevation: 5,
+            margin: const EdgeInsets.all(10),
+            child: ListTile(
+              title: Text(
+                // companies' job
+                company,
+                style: GoogleFonts.poppins(
+                  color: const Color.fromRGBO(44, 41, 41, 100),
+                  fontSize: size.width * 0.07,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children:
+                // companies' info
+                companyList[company]!
+                    .map((data) => Text(
+                          data,
+                          style: GoogleFonts.poppins(
+                            color: const Color.fromRGBO(
+                                44, 41, 41, 100),
+                            fontSize: size.width * 0.06,
+                          ),
+                        ))
+                    .toList(),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+  ),
 ),
 
 ```
