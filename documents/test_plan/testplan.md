@@ -56,7 +56,7 @@
 
 [**5. Testing management**](#5-test-management)
  - [**5.1 Tools**](#51-tools)
- - [**5.2 Test design process**](#52-test-design-process)
+ - [**5.2 Test design**](#52-test-design)
  - [**5.3 Schedule estimation**](#53-schedule-estimation)
  - [**5.4 Test deliverables**](#54-test-deliverables)
 
@@ -77,7 +77,7 @@
 |Term|Definition|Source location|
 |-|-|-|
 |Flutter|Flutter is an open-source UI software development kit created by Google. It can be used to develop cross platform applications from a single codebase for the web, Fuchsia, Android, iOS, Linux, macOS, and Windows.<br> First described in 2015, Flutter was released in May 2017. Flutter is used internally by Google in apps such as Google Pay and Google Earth as well as by other software developers including ByteDance and Alibaba.|[Wikipedia](https://en.wikipedia.org/wiki/Flutter_(software))|
-|Agile development principles|![]()|THis shema comes from the website : [Katalon.com](https://katalon.com/resources-center/blog/agile-testing-methodology)|
+|Agile development principles|![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/4570761f-ecb2-4b4b-b2ff-a0d734de943a)|This shema comes from the website : [Katalon.com](https://katalon.com/resources-center/blog/agile-testing-methodology)|
 |.YAML file|YAML (also known as Yet Another Markup Language), is a human-readable [***data serialization language**](#glossary). it has for purpose is to represent complex informations while keeping it readable for anyone.|[Wikipedia](https://en.wikipedia.org/wiki/YAML)|
 
 
@@ -143,7 +143,10 @@ The common criteria are:
 
 To review the documents we use **GitHub issues** to track any problems like typos or criterias that haven't been addressed.
 
-![]()
+![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/991aa92e-7ab3-49eb-a513-e496d2a39ffe)
+
+*GitHub issues for the Review of the functional document*
+
 
 </details>
 
@@ -189,7 +192,9 @@ Edge 1.2.0
 
 For testing our project we used a **MAC** and a **Windows computer** with an **Android emulator** and an **iPhone emulator** to see in real-time what the app on mobile will look like.
 
-![]()
+![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/8cbbae56-c2c1-4f23-a256-f3ee82d37364)
+
+*The coding Software on the left and the emulator on the left*
 
 
 ### 3.4 Test scope
@@ -217,8 +222,6 @@ Unit testing is a type of software testing where we test a small and precise par
 **Agile testing**
 
 Agile testing aligns with [***Agile development principles**](#glossary), emphasizing continuous feedback, collaboration, iterative testing, test automation, and adaptability to deliver high-quality software in a dynamic and iterative development environment.
-
-![]()
 
 </details>
 
@@ -255,7 +258,9 @@ Test cases are specifications of the execution condition, testing procedure, and
 
 ### 4.4 Bug tracking schema
 
+![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/7661262a-6f32-45d7-bd86-da27ae3817bb)
 
+*Bug tracking schema*
 
 </details>
 
@@ -284,7 +289,10 @@ To manage our test we are using specific tools :
 
 We have a conforming plan of how we create and process our tests.
 
-![]()
+![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/4c34e2b5-58bc-4749-9e8e-bf6c489f6ec2)
+
+*Test design schema*
+
 
 ### 5.3 Schedule estimation
 
