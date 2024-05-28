@@ -50,7 +50,18 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: myApplication(context, applicationLanguage, callNewPage),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                child: IntrinsicHeight(
+                  child: myApplication(context, applicationLanguage, callNewPage),
+                ),
+              ),
+            );
+          },
+        ),
       ),
     );
   }
