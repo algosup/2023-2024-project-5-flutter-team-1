@@ -27,7 +27,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   String applicationLanguage = "en_US";
   @override
-  void initState(){
+  void initState() {
     super.initState();
     getApplicationData();
   }
@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
     print("Application Language : $applicationLanguage");
   }
 
-  void callNewPage(String pageName){
+  void callNewPage(String pageName) {
     setState(() {
       context.go(pageName);
     });
@@ -50,16 +50,14 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: myApplication(context, applicationLanguage, callNewPage))
+        child: myApplication(context, applicationLanguage, callNewPage),
+      ),
     );
   }
 }
 
 Widget myApplication(BuildContext context, String appLang, void Function(String) newPage) {
-  Map<String, String> loginLang = {
-    "fr_FR": "Connexion",
-    "en_US": "Login"
-  };
+  Map<String, String> loginLang = {"fr_FR": "Connexion", "en_US": "Login"};
 
   Map<String, String> loginText = {
     "fr_FR": "Adresse mail",
@@ -70,26 +68,20 @@ Widget myApplication(BuildContext context, String appLang, void Function(String)
     "fr_FR": "Mot de passe",
     "en_US": "Password"
   };
-  
+
   Map<String, String> forgotPassword = {
     "fr_FR": "Mot de passe oublié ?",
     "en_US": "Forgotten password ?"
   };
 
-  Map <String, String> buttonText = {
-    "fr_FR": "Se connecter",
-    "en_US": "Login"
-  };
+  Map<String, String> buttonText = {"fr_FR": "Se connecter", "en_US": "Login"};
 
   Map<String, String> noAcc = {
     "fr_FR": "Pas de compte ?",
     "en_US": "No account ?"
   };
 
-  Map<String, String> regNow = {
-    "fr_FR": "S'inscrire",
-    "en_US": "Register now"
-  };
+  Map<String, String> regNow = {"fr_FR": "S'inscrire", "en_US": "Register now"};
 
   var size = MediaQuery.sizeOf(context);
 
@@ -100,20 +92,21 @@ Widget myApplication(BuildContext context, String appLang, void Function(String)
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("${loginLang[appLang]}", style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                fontWeight: FontWeight.w600,
-                color: Colors.black,
-                fontSize: 30,
+            Text(
+              "${loginLang[appLang]}",
+              style: GoogleFonts.poppins(
+                textStyle: const TextStyle(
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
+                  fontSize: 30,
+                ),
               ),
-            ),)
+            ),
           ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset("assets/images/LoginImage.png")
-          ],
+          children: [Image.asset("assets/images/LoginImage.png")],
         ),
         Column(
           children: [
@@ -141,7 +134,7 @@ Widget myApplication(BuildContext context, String appLang, void Function(String)
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
                         fontSize: 18,
-                      )
+                      ),
                     ),
                     decoration: InputDecoration(
                       hintText: "${loginText[appLang]}",
@@ -220,73 +213,78 @@ Widget myApplication(BuildContext context, String appLang, void Function(String)
               ],
             ),
             GestureDetector(
-              child:
-                Text(
-                  "${forgotPassword[appLang]}",
-                  style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                          fontWeight: FontWeight.w700,
-                          color: Color.fromRGBO(0, 117, 255, 100),
-                          fontSize: 15,
-                        ),
+              child: Text(
+                "${forgotPassword[appLang]}",
+                style: GoogleFonts.poppins(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.w700,
+                    color: Color.fromRGBO(0, 117, 255, 100),
+                    fontSize: 15,
                   ),
                 ),
+              ),
             )
           ],
         ),
-        Column(
-          children: [
-            GestureDetector(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: size.width * 0.6,
-                    height: size.width * 0.15,
-                    decoration: BoxDecoration(
-                      color: const Color.fromRGBO(0, 117, 255, 100),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Center(
-                      child: Text("${buttonText[appLang]}", 
-                        style: GoogleFonts.poppins(
+        Column(children: [
+          GestureDetector(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: size.width * 0.6,
+                  height: size.width * 0.15,
+                  decoration: BoxDecoration(
+                    color: const Color.fromRGBO(0, 117, 255, 100),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "${buttonText[appLang]}",
+                      style: GoogleFonts.poppins(
                         textStyle: const TextStyle(
                           fontWeight: FontWeight.w700,
                           color: Colors.white,
                           fontSize: 18,
                         ),
-                  ),),)
+                      ),
+                    ),
                   ),
-                ]
-              ),
+                ),
+              ],
             ),
-            GestureDetector(
-              onTap: () {
-                newPage("/registerpage");
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                Text("${noAcc[appLang]}", 
-                        style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                          fontSize: 15,
-                        ),
-                  ),),
-                Text(" ${regNow[appLang]}",
-                        style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                          color: Color.fromRGBO(0, 117, 255, 100),
-                          fontSize: 15,
-                        ),
-                  ),),
-              ],)
-            )
-          ]
-        )
+          ),
+          GestureDetector(
+            onTap: () {
+              newPage("/registerpage");
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "${noAcc[appLang]}",
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
+                Text(
+                  " ${regNow[appLang]}",
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Color.fromRGBO(0, 117, 255, 100),
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          )
+        ])
       ],
     ),
   );
