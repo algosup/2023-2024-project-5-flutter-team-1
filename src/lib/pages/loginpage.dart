@@ -56,7 +56,8 @@ class _LoginPageState extends State<LoginPage> {
               child: ConstrainedBox(
                 constraints: BoxConstraints(minHeight: constraints.maxHeight),
                 child: IntrinsicHeight(
-                  child: myApplication(context, applicationLanguage, callNewPage),
+                  child:
+                      myApplication(context, applicationLanguage, callNewPage),
                 ),
               ),
             );
@@ -67,7 +68,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
-Widget myApplication(BuildContext context, String appLang, void Function(String) newPage) {
+Widget myApplication(
+    BuildContext context, String appLang, void Function(String) newPage) {
   Map<String, String> loginLang = {"fr_FR": "Connexion", "en_US": "Login"};
 
   Map<String, String> loginText = {
@@ -250,13 +252,18 @@ Widget myApplication(BuildContext context, String appLang, void Function(String)
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Center(
-                    child: Text(
-                      "${buttonText[appLang]}",
-                      style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
-                          fontSize: 18,
+                    child: GestureDetector(
+                      onTap: () {
+                        newPage("/homepage");
+                      },
+                      child: Text(
+                        "${buttonText[appLang]}",
+                        style: GoogleFonts.poppins(
+                          textStyle: const TextStyle(
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                            fontSize: 18,
+                          ),
                         ),
                       ),
                     ),
