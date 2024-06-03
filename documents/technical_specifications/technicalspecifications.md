@@ -468,17 +468,53 @@ Text(
 
 #### Swipe Cards
 
-Swipe Cards is a Flutter widget for Tinder like swipe cards. The card can be swiped right and left for different responses. Currently it has to support the following responses:
+To simulate the swipe cards system, we'll animate containers to create smooth animations. The card can be swiped right and left for different responses. Currently it has to support the following responses:
 
 - Right swipe for like
 - Left swipe for dislike
 
-To import the package, you need to add these lines to the `pubspec.yaml`:
+We'll need to initialize the variables and methods (in a Stateful Widget):
 
-```yaml
+```dart
 
-dependencies:
-  swipe_cards: ^2.0.0+1
+// initialize the offsets variables
+Offset _startDragOffset = Offset.zero;
+Offset _currentOffset = Offset.zero;
+
+// _onPanStart sets the offset as the current location when the container begins to move
+void _onPanStart(DragStartDetails details) {
+  _startDragOffset = details.localPosition;
+}
+
+// _onPanUpdate sets the offset of the current location each frame of the movement
+void _onPanUpdate(DragUpdateDetails details) {
+  setState(() {
+    _currentOffset = details.localPosition - _startDragOffset;
+    if (_isSelected()) {
+      debugPrint("Swiped to the right");
+    }
+    if (_isRejected()) {
+      debugPrint("Swiped to the left");
+    }
+  });
+}
+
+// _onPanEnd sets the offset as the center of the screen
+void _onPanEnd(DragEndDetails details) {
+  setState(() {
+    _currentOffset = Offset.zero;
+  });
+}
+
+// detects if the half of the card is on the right
+bool _isSelected() {
+  return _currentOffset.dx != 0 && _currentOffset.dx > 150;
+}
+
+// detects if the half of the card is on the left
+bool _isRejected() {
+  return _currentOffset.dx != 0 && _currentOffset.dx < -150;
+}
 
 ```
 
@@ -487,96 +523,32 @@ Then, you can use the swipe cards following the next piece of code:
 ```dart
 
 /*
-  Map storing the 3 companies
-  - The first String is the company
-  - The List is the card's information
+  GestureDetector showing the use of swipe cards
+  - containing the methods initialized above
+  - the offset of the container is set as the position used in the methods
+  - the cards has to be dismissed swiping to the left (like) or to the right (dislike)
 */
 
-Map<String, List<String>> companyList = {
-  "Job 3": [
-    "Location",
-    "Job Description",
-    "Soft Skills",
-  ],
-  "Job 2": [
-    "Location",
-    "Job Description",
-    "Soft Skills",
-  ],
-  "Job 1": [
-    "Location",
-    "Job Description",
-    "Soft Skills",
-  ],
-};
-
-/*
-  Stack showing the use of swipe cards
-  - Stack of 3 companies' cards (the map companyList)
-  - The cards can be dismissed swiping to the left (like) or to the right (dislike)
-*/
-
-Stack(
-  children: companyList.keys.map((company) {
-    return Dismissible(
-      key: Key(company),
-      direction: DismissDirection.horizontal,
-      onDismissed: (direction) {
-        if (direction == DismissDirection.endToStart) {
-          // Handle left swipe
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('$company disliked')),
-          );
-        } else if (direction == DismissDirection.startToEnd) {
-          // Handle right swipe
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('$company liked')),
-          );
-        }
-        setState(() {
-          companyList.remove(company);
-        });
-      },
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 5, 10, 20),
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(
-            maxHeight: 550,
-          ),
-          child: Card(
-            elevation: 5,
-            margin: const EdgeInsets.all(10),
-            child: ListTile(
-              title: Text(
-                // companies' job
-                company,
-                style: GoogleFonts.poppins(
-                  color: const Color.fromRGBO(44, 41, 41, 100),
-                  fontSize: size.width * 0.07,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children:
-                // companies' info
-                companyList[company]!
-                    .map((data) => Text(
-                          data,
-                          style: GoogleFonts.poppins(
-                            color: const Color.fromRGBO(
-                                44, 41, 41, 100),
-                            fontSize: size.width * 0.06,
-                          ),
-                        ))
-                    .toList(),
-                ),
-              ),
-            ),
-          ),
+GestureDetector(
+  onPanStart: _onPanStart,
+  onPanUpdate: _onPanUpdate,
+  onPanEnd: _onPanEnd,
+  child: Transform.translate(
+    offset: _currentOffset,
+    child: Container(
+      width: 300,
+      height: 300,
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: const Center(
+        child: Text(
+          'Tinder Card',
+          style: TextStyle(fontSize: 32, color: Colors.white),
         ),
-      );
-    }
+      ),
+    ),
   ),
 ),
 
