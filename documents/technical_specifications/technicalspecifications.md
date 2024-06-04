@@ -18,6 +18,7 @@
     - [Coding](#coding)
       - [Comments](#comments)
       - [Formatting](#formatting)
+      - [Folder Structure](#folder-structure)
   - [Technical Architecture](#technical-architecture)
     - [Technology Used](#technology-used)
       - [Supported Platforms](#supported-platforms)
@@ -32,6 +33,7 @@
       - [Sizes](#sizes)
       - [Text Font](#text-font)
       - [TextStyle Reusability](#textstyle-reusability)
+      - [Swipe Cards](#swipe-cards)
     - [Back-end](#back-end)
       - [Routes](#routes)
       - [Maps](#maps)
@@ -49,6 +51,8 @@
 - Software Engineers:
     to understand the user and technical requirements, and to guide their work. Help them understand challenges and choices made.
 
+It's highly recommended to read the [Functional Specifications](../functional_specifications/functionalspecification.md) before going further in this document.
+
 ## Overview
 
 Adopt A Candidate is a "Tinder style" recruitment application that matches companies with job-seekers in a different way.
@@ -57,14 +61,14 @@ We'll code it using Flutter, all the technical specificities are described [here
 ### Requirements
 
 - The application will need to be available on phone, and PC.
-- **The phone format will be dedicated to candidate's use:**
+- **The phone format will be dedicated to the candidate's use:**
   - This format promotes the swipe system, the user just has to swipe and receive a message from a company when he matches with it.
 - **The PC format will be dedicated to a company's use.**
   - This format promotes the chat managing system, the company just gets notified when it matches with a job-seeker and they can send the first message to the job-seeker, initiating the discussion.
 
 ### Nice To Have
 
-- The phone and PC application can be used either by a candidate or a company.
+- The phone and PC applications can be used either by a candidate or a company.
 - Different themes (light/dark themes, etc).
 - Some back-end using a database to store data.
 - APIs concerning choices in the registration.
@@ -88,7 +92,7 @@ The naming conventions are explained in the [dedicated file](../../conventionsan
 - Each issue has to contain labels, the project, the dedicated milestone, and the assigned member.
 - The working version of the project goes into the *Release* branch.
 - Release should be made from the main.
-- The main branch should be updated at least once a day (when the team is in project-time).
+- The main branch should be updated at least once a day (when the team is on project-time).
 - There can't be any direct push to the main. The member has to do a pull-request to merge their changes in the main.
 - Only push code that has been tested (working code).
 
@@ -101,7 +105,7 @@ The rule concerning comments is explained in the [conventions and rules file](..
 #### Formatting
 
 - You can format automatically your .dart files using *Shift* + *Alt* + F.
-- Avoid to create too long lines.
+- Avoid creating too long lines.
 - Avoid non-ASCII characters.
 
 Here's an example of the formatting rules:
@@ -118,13 +122,73 @@ Widget example(String word, int number){
 
 ```
 
+#### Folder Structure
+
+A folder structure promotes coherent and understandable file locations.
+
+**Documents Files Structure**
+
+The `documents` folder has to follow this structure:
+
+documents/<br>
+  ├── code_documentation/<br>
+  │     ├── codedocumentation.md<br>
+  │     ├── codedocumentation.pdf<br>
+  ├── functional_specifications/<br>
+  │     ├── functionalspecifications.md<br>
+  ├── management/<br>
+  │     ├── codeofconduct.md<br>
+  │     ├── managementdocument.md<br>
+  │     ├── projectcharter.md<br>
+  │     ├── weeklyreports.md<br>
+  ├── technical_specifications/<br>
+  │     ├── technicalspecifications.md<br>
+  ├── test_plan/<br>
+  │     ├── testplan.md<br>
+  ├── user_manual/<br>
+  │     ├── usermanual.md<br>
+  │     ├── usermanual.pdf<br>
+  ├── conventionsandrules.md<br>
+
+**Code Files Structure**
+
+The `lib` folder has to follow this structure:
+
+lib/<br>
+  ├── pages/<br>
+  │     ├── homepage.dart<br>
+  |     ├── company/<br>
+  │     |      ├── languagehomepage.dart<br>
+  │     |      ├── loginpage.dart<br>
+  │     |      ├── redirection.dart<br>
+  │     |      ├── registerpage.dart<br>
+  │     |      ├── registerpage2.dart<br>
+  │     |      ├── registerpage3.dart<br>
+  │     |      ├── settings.dart<br>
+  │     |      ├── . . .<br>
+  |     ├── candidate/<br>
+  │     |      ├── homepage.dart<br>
+  │     |      ├── languagehomepage.dart<br>
+  │     |      ├── loginpage.dart<br>
+  │     |      ├── redirection.dart<br>
+  │     |      ├── registerpage.dart<br>
+  │     |      ├── registerpage2.dart<br>
+  │     |      ├── registerpage3.dart<br>
+  │     |      ├── settings.dart<br>
+  │     |      ├── . . .<br>
+  ├── main.dart<br>
+  ├── preferences.dart<br>
+  ├── routes.dart<br>
+
+The pages of the application will be in a dedicated folder `pages`, with `candidate` and `company` dedicated folders, due to pages' differences.
+
 ## Technical Architecture
 
 ### Technology Used
 
 #### Supported Platforms
 
-As of the current release, Flutter supports the following platforms as part of Google-tested and best-effort platform tier:
+As of the current release, Flutter supports the following platforms as part of the Google-tested and best-effort platform tier:
 
 |  Platform  |  Version   |  Channels  |
 |   :----:   |   :------:   |   :--:   |
@@ -142,7 +206,7 @@ As of the current release, Flutter supports the following platforms as part of G
 
 #### Real Device Use
 
-Phones and PCs can be used to debug Flutter code, either on Android, IOS and PC. There are some requirements that need to be done though, and in a certain range of device:
+Phones and PCs can be used to debug Flutter code, either on Android, IOS or PC. Some requirements need to be done though, and in a certain range of devices:
 
 **Flutter needs to be setup correctly**
 
@@ -171,15 +235,13 @@ Touch About phone.<br>
 Touch the Build number field 7 times. You will begin seeing a message as you approach the 7 touches.<br>
 Once you did the 7 touches, the message "You are now a developer" will appear.
 
-You can now access to the Developer's settings.
+You can now access the Developer's settings.
 
 - Authorize USB Debug mode
 
 >Search Debug in the Settings.<br>
 Go to USB Debug.<br>
 Enable USB Debug, regardless the warnings.
-
-You can now Debug on your device.
 
 ##### IOS-based Phone
 
@@ -209,7 +271,7 @@ It could be better to debug and test your code on a real portable device, though
 
 ##### PC
 
-Run and debug Flutter code on PC is quite easier than on phones.
+Running and debugging Flutter code on PC is quite easier than on phones.
 You already have a device named by your OS:
 
 ![desktop-device](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/e2e8be53-6a52-4d89-8f2d-1d9126ab362c)
@@ -217,7 +279,7 @@ You already have a device named by your OS:
 You can directly run and debug on it, no need to setup something else.
 
 Also, you can use virtual devices on your PC, whether it is IOS or Android-based.
-Some of these emulators are already integrated to Android-Studio and else, however you sometimes have to create it by yourself.
+Some of these emulators are already integrated to Android-Studio and else, though you sometimes have to create them yourself.
 
 #### Software
 
@@ -231,7 +293,7 @@ We'll use Dart version 3.4.0 or newer and Flutter version 3.22.0 or newer (visib
 **Dependencies:**
 
 - Flutter SDK.
-  - already setup if there's no issues in the flutter doctor summary.
+  - already setup if there's no issue in the flutter doctor summary.
 - Flutter widget package implementing material design.
   - importation: `import 'package:flutter/material.dart';`
 - Flutter router package implementing pages navigation.
@@ -281,7 +343,7 @@ With SafeArea:
 
 The images used for the development have to be in a dedicated folder, following this convention: `assets/images/MyImage.png`.
 
-The file `pubspec.yaml` needs to contain this lines to add the assets:
+The file `pubspec.yaml` needs to contain these lines to add the assets:
 
 ```yaml
 
@@ -307,10 +369,10 @@ Image.asset('assets/images/MyImage.png'),
 
 #### Sizes
 
-The elements' size has to be set taking in consideration the screen size.
-It will help us exporting the application to different device with different screen sizes.
+The elements' size has to be set taking into consideration the screen size.
+It will help us export the application to different devices with different screen sizes.
 
-We can take it coding this, where `size` contains the size of the screen:
+We can take it by coding this, where `size` contains the size of the screen:
 
 ```dart
 
@@ -400,6 +462,94 @@ Text(
 Text(
   'This is another text.',
   style: poppinsStyle,
+),
+
+```
+
+#### Swipe Cards
+
+To simulate the swipe cards system, we'll animate containers to create smooth animations. The card can be swiped right and left for different responses. Currently it has to support the following responses:
+
+- Right swipe for like
+- Left swipe for dislike
+
+We'll need to initialize the variables and methods (in a Stateful Widget):
+
+```dart
+
+// initialize the offsets variables
+Offset _startDragOffset = Offset.zero;
+Offset _currentOffset = Offset.zero;
+
+// _onPanStart sets the offset as the current location when the container begins to move
+void _onPanStart(DragStartDetails details) {
+  _startDragOffset = details.localPosition;
+}
+
+// _onPanUpdate sets the offset of the current location each frame of the movement
+void _onPanUpdate(DragUpdateDetails details) {
+  setState(() {
+    _currentOffset = details.localPosition - _startDragOffset;
+    if (_isSelected()) {
+      debugPrint("Swiped to the right");
+    }
+    if (_isRejected()) {
+      debugPrint("Swiped to the left");
+    }
+  });
+}
+
+// _onPanEnd sets the offset as the center of the screen
+void _onPanEnd(DragEndDetails details) {
+  setState(() {
+    _currentOffset = Offset.zero;
+  });
+}
+
+// detects if the half of the card is on the right
+bool _isSelected() {
+  return _currentOffset.dx != 0 && _currentOffset.dx > 150;
+}
+
+// detects if the half of the card is on the left
+bool _isRejected() {
+  return _currentOffset.dx != 0 && _currentOffset.dx < -150;
+}
+
+```
+
+Then, you can use the swipe cards following the next piece of code:
+
+```dart
+
+/*
+  GestureDetector showing the use of swipe cards
+  - containing the methods initialized above
+  - the offset of the container is set as the position used in the methods
+  - the cards has to be dismissed swiping to the left (like) or to the right (dislike)
+*/
+
+GestureDetector(
+  onPanStart: _onPanStart,
+  onPanUpdate: _onPanUpdate,
+  onPanEnd: _onPanEnd,
+  child: Transform.translate(
+    offset: _currentOffset,
+    child: Container(
+      width: 300,
+      height: 300,
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: const Center(
+        child: Text(
+          'Tinder Card',
+          style: TextStyle(fontSize: 32, color: Colors.white),
+        ),
+      ),
+    ),
+  ),
 ),
 
 ```
@@ -558,7 +708,7 @@ Both parameters are compared, to enhance the security.
 - the last and current IPV4.
 Both parameters are compared, to enhance the security.
 
-If the time from the last connection to the current one is below 15min, the position from the last connection to the current one is below 15km, and the IPV4 from the last connection to the current one doesn't differ, no need to login again.
+If the time from the last connection to the current one is below 15min, the position from the last connection to the current one is below 15km, and the IPV4 from the last connection to the current one doesn't differ, no need to log in again.
 
 Here's a diagram that should be more understandable:
 ![logintechnicaldiagram](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/0095d9da-9ac0-47fb-b9aa-70138a1354f9)
@@ -570,8 +720,7 @@ The database will stock all the information about the user account (as strings):
 Candidate's side:
 
 - the candidate's ID
-- the candidate's first name
-- the candidate's last name
+- the candidate's first name and last name
 - the candidate's date of birth
 - the candidate's city of birth
 - the candidate's city of residence
@@ -595,10 +744,10 @@ Company's side:
 **Account's Likes/Match Data Flow**
 
 The account's likes will be managed in a dedicated database, linked with the user ID.
-The likes' system is only for candidates, that means "Likes" are companies' names (strings) the candidate liked.
+The likes' system is only for candidates, which means "Likes" are companies' names (strings) the candidate liked.
 
 When a candidate likes a company and the candidate's soft skills are similar enough to the company's expectations, a match occurs.
-Each time a candidate likes a company, once the company's name has been put in the database, we need to check if the candidate's soft skills match with the company's expectations.
+Each time a candidate likes a company, once the company's name has been put in the database, we need to check if the candidate's soft skills match the company's expectations.
 
 ![matchdiagram](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/108c08c3-356c-4936-8057-05db9618cee0)
 
@@ -607,7 +756,7 @@ Each time a candidate likes a company, once the company's name has been put in t
 The account's chat will be managed in a dedicated database, linked with the user ID.
 The database will stock all the information about the chat (as strings):
 
-Both candidate and company's side:
+Both candidate's and company's side:
 
 - the user's ID
 - the chat's ID
@@ -658,11 +807,11 @@ Future<bool> checkMacAddress() async {
 
 The security is an important part of the back-end management, concerning databases and user data.
 
-Here's some elements that have to be implemented to enhance the security:
+Here are some elements that have to be implemented to enhance security:
 
 - The database will be accessible only with a specific token.
 - The accessibility token changes everyday.
-- The user's password will be encrypted to prevent a theft of account (following the Caesar cipher).
+- The user's password will be encrypted to prevent theft of the account (following the Caesar cipher).
 
 ## Glossary
 
@@ -672,11 +821,11 @@ An **Application Programming Interface (API)** is a way for two or more computer
 
 **ASCII** is an acronym for American Standard Code for Information Interchange, is a character encoding standard for electronic communication. ASCII codes represent text in computers, telecommunications equipment, and other devices. | [Wikipedia](https://en.wikipedia.org/wiki/ASCII)
 
-An **Integrated Development Environment (IDE)** is a software application that provides comprehensive facilities for software development. An IDE normally consists of at least a source-code editor, build automation tools, and a debugger. | [Wikipedia](https://en.wikipedia.org/wiki/Integrated_development_environment)
+An **Integrated Development Environment (IDE)** is a software application that provides comprehensive facilities for software development. An IDE normally consists of at least a source-code editor, build automation tools and a debugger. | [Wikipedia](https://en.wikipedia.org/wiki/Integrated_development_environment)
 
 Written in C, C++ and Dart, **Flutter** is an open-source UI software development kit created by Google. It can be used to develop cross platform applications from a single codebase for the web,[4] Fuchsia, Android, iOS, Linux, macOS, and Windows. | [Wikipedia](https://en.wikipedia.org/wiki/Flutter_(software))
 
-Flutter contains few **channels**: master, beta and stable; in increasing order of stability. | [Source](https://github.com/flutter/flutter/wiki/flutter-build-release-channels)
+Flutter contains a few **channels**: master, beta and stable; in increasing order of stability. | [Source](https://github.com/flutter/flutter/wiki/flutter-build-release-channels)
 
 In computing, a **database** is an organized collection of data based on the use of a database management system (DBMS), the software that interacts with end users, applications, and the database itself to capture and analyze the data. | [Wikipedia](https://en.wikipedia.org/wiki/Database)
 

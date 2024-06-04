@@ -18,6 +18,7 @@
 |1.0|05/16/2024|Mattéo LEFIN|Create documents template|
 |1.1|05/17/2024|Mattéo LEFIN| - add sub parts and Table of content <br> - start the writing of [1. Introduction](#1-introduction)|
 |1.2|05/21/2024|Mattéo LEFIN|- finish [1. Introduction](#1-introduction),  [2. Documentation Reviewing](#2-documentation-reviewing) and [3. Testing strategy](#3-testing-strategy)|
+|1.3|05/28/2024|Mattéo LEFIN| - finish [4. Execution strategy](#4-execution-strategy) and [5. Testing management](#5-test-management)|
 </details>
 
 ----
@@ -49,17 +50,16 @@
 
 [**4. Execution strategy**](#4-execution-strategy)
  - [**4.1 Testing criterias**](#41-testing-criterias)
- - [**4.2 Github issues**](#42-github-issues)
+ - [**4.2 GitHub issues**](#42-github-issues)
  - [**4.3 Test cases**](#43-test-cases)
  - [**4.4 Bug tracking schema**](#44-bug-tracking-schema)
 
 [**5. Testing management**](#5-test-management)
  - [**5.1 Tools**](#51-tools)
- - [**5.2 Test design process**](#52-test-design-process)
+ - [**5.2 Test design**](#52-test-design)
  - [**5.3 Schedule estimation**](#53-schedule-estimation)
  - [**5.4 Test deliverables**](#54-test-deliverables)
 
-[**6. Conclusion**](#6-conclusion)
 
 
 
@@ -77,10 +77,9 @@
 |Term|Definition|Source location|
 |-|-|-|
 |Flutter|Flutter is an open-source UI software development kit created by Google. It can be used to develop cross platform applications from a single codebase for the web, Fuchsia, Android, iOS, Linux, macOS, and Windows.<br> First described in 2015, Flutter was released in May 2017. Flutter is used internally by Google in apps such as Google Pay and Google Earth as well as by other software developers including ByteDance and Alibaba.|[Wikipedia](https://en.wikipedia.org/wiki/Flutter_(software))|
-||||
-||||
-||||
-||||
+|Agile development principles|![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/4570761f-ecb2-4b4b-b2ff-a0d734de943a)|This shema comes from the website : [Katalon.com](https://katalon.com/resources-center/blog/agile-testing-methodology)|
+|.YAML file|YAML (also known as Yet Another Markup Language), is a human-readable [***data serialization language**](#glossary). it has for purpose is to represent complex informations while keeping it readable for anyone.|[Wikipedia](https://en.wikipedia.org/wiki/YAML)|
+
 
 </details>
 
@@ -133,18 +132,21 @@ They made a presentation on how they wanted the application, we didn't receive a
 
 ### 2.1 Document criteria
 
-The majority of our documents have the same criteria, making harmony between them is required for standardization and a better organization of the project.
+The majority of our documents have **the same criteria**, making harmony between them is required for **standardization and a better organization of the project**.
 
 The common criteria are:
-- All documents must have a table of contents
-- Documents must stay as simple as possible, making them short and not too technical as possible. if technical terms are necessary, a glossary has to be implemented.
-- All the documents are written in American English.
+- All documents must have a **table of contents**
+- Documents must stay **as simple as possible**, making them **short and not too technical as possible**. if technical terms are necessary, a **glossary must be implemented**.
+- All the documents are written in **American English**.
 
 ### 2.2 Review process
 
-To review the documents we use Github issues to track any problems like typos or criterias that haven't been addressed.
+To review the documents we use **GitHub issues** to track any problems like typos or criterias that haven't been addressed.
 
-![Screenshot]()
+![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/991aa92e-7ab3-49eb-a513-e496d2a39ffe)
+
+*GitHub issues for the Review of the functional document*
+
 
 </details>
 
@@ -158,7 +160,7 @@ To review the documents we use Github issues to track any problems like typos or
 
 ### 3.1 Tests main goal
 
-The main goal behind doing tests is to ensure that all project criteria are checked, and possibly enhance the quality of the project for a better user experience.
+The main goal behind doing tests is to **ensure that all project criterias are checked**, and possibly enhance the quality of the project for a better user experience.
 
 
 ### 3.2 Testing field
@@ -169,6 +171,7 @@ Chrome 84
 Firefox 72.0 
 Safari on El Capitan
 Edge 1.2.0
+
 ***(They will work in the upper version of this web platform)***
 
 <br>
@@ -187,9 +190,11 @@ Edge 1.2.0
 
 ### 3.3 Testing environment
 
-For testing our project we used a MAC and a Windows computer with an Android emulator and an iPhone emulator to see in real-time what the app on mobile will look like.
+For testing our project we used a **MAC** and a **Windows computer** with an **Android emulator** and an **iPhone emulator** to see in real-time what the app on mobile will look like.
 
-![Screenshot]()
+![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/8cbbae56-c2c1-4f23-a256-f3ee82d37364)
+
+*The coding Software on the left and the emulator on the left*
 
 
 ### 3.4 Test scope
@@ -218,7 +223,6 @@ Unit testing is a type of software testing where we test a small and precise par
 
 Agile testing aligns with [***Agile development principles**](#glossary), emphasizing continuous feedback, collaboration, iterative testing, test automation, and adaptability to deliver high-quality software in a dynamic and iterative development environment.
 
-
 </details>
 
 ----
@@ -231,12 +235,32 @@ Agile testing aligns with [***Agile development principles**](#glossary), emphas
 
 ### 4.1 Testing Criterias
 
-### 4.2 Github Issues
+To ensure that our test  goes as smoothly as possible, we have some testing criteria that we have to fulfill in every test:
+
+- Are tested features in line with the specifications defined in the documents?
+<br>
+- Does the feature work as intended by the developer?
+<br>
+- Is this feature easy to use for the user?
+
+### 4.2 GitHub Issues
+
+GitHub issues are created to track any problems in the program or the documents as mentioned in "[**2. Document reviewing**](#2-documentation-reviewing)".
+
+However, compared to documents GitHub issues, tests GitHub issues will be based on the corresponding **test cases**.
 
 ### 4.3 Test cases
 
+Test cases are specifications of the execution condition, testing procedure, and expected results that define a single test to be executed to achieve a particular software testing objective.
+
+![]()
+
+
 ### 4.4 Bug tracking schema
 
+![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/7661262a-6f32-45d7-bd86-da27ae3817bb)
+
+*Bug tracking schema*
 
 </details>
 
@@ -250,23 +274,47 @@ Agile testing aligns with [***Agile development principles**](#glossary), emphas
 
 ### 5.1 Tools
 
-### 5.2 Test design process
+To manage our test we are using specific tools :
+
+- We use GitHub for test management. Test cases and GitHub issues are updated in the [GitHub Issue section](https://github.com/algosup/2023-2024-project-5-flutter-team-1/issues).
+<br>
+
+- Test cases and GitHub issues are Written using templates made with a [.YAML file](#glossary)
+<br>
+- Every Failed test case caused by a bug will be reported in a GitHub issue with the associated test cases
+<br>
+- After the developer does the bug fix, the Quality Assurance will test it again in the same way he did last time.
+
+### 5.2 Test design
+
+We have a conforming plan of how we create and process our tests.
+
+![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/4c34e2b5-58bc-4749-9e8e-bf6c489f6ec2)
+
+*Test design schema*
+
 
 ### 5.3 Schedule estimation
 
-We estimated a schedule for the entirety of the testing 
+We estimated a schedule for the entirety of the testing procedure of this project :
+
+| Task | Time estimation |
+|------|-------------:|
+|Review functional specifications| 3 hours|
+| Review technical specification | 4 hours|
+|Create the test plan| 48 hours |
+|Create and review test cases|27 hours|
+|Execute the test cases|  hours|
+|Update test cases status|  hours|
+|Create GitHub issues| 4 hours|
 
 ### 5.4 Test deliverables
 
-</details>
+- **Test Plan:** it documents our approach and methodology for testing, explaining how tests will be managed and done.
+  
+- **Test Cases:** It represent a set of tests created to ensure that our application works as intended.
 
-----
-
-<details open>
-
-<summary>6. Conclusion</summary>
-
-## 6. Conclusion
+- **GitHub issue:** This section documents any identified issues encountered during the testing phase.
 
 </details>
 
