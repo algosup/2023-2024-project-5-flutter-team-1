@@ -19,6 +19,7 @@
 |1.1|05/17/2024|Mattéo LEFIN| - add sub parts and Table of content <br> - start the writing of [1. Introduction](#1-introduction)|
 |1.2|05/21/2024|Mattéo LEFIN|- finish [1. Introduction](#1-introduction),  [2. Documentation Reviewing](#2-documentation-reviewing) and [3. Testing strategy](#3-testing-strategy)|
 |1.3|05/28/2024|Mattéo LEFIN| - finish [4. Execution strategy](#4-execution-strategy) and [5. Testing management](#5-test-management)|
+|1.4|06/04/2024|Mattéo LEFIN| - Add images and finish the document.|
 </details>
 
 ----
@@ -78,7 +79,6 @@
 |-|-|-|
 |Flutter|Flutter is an open-source UI software development kit created by Google. It can be used to develop cross platform applications from a single codebase for the web, Fuchsia, Android, iOS, Linux, macOS, and Windows.<br> First described in 2015, Flutter was released in May 2017. Flutter is used internally by Google in apps such as Google Pay and Google Earth as well as by other software developers including ByteDance and Alibaba.|[Wikipedia](https://en.wikipedia.org/wiki/Flutter_(software))|
 |Agile development principles|![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/4570761f-ecb2-4b4b-b2ff-a0d734de943a)|This shema comes from the website : [Katalon.com](https://katalon.com/resources-center/blog/agile-testing-methodology)|
-|.YAML file|YAML (also known as Yet Another Markup Language), is a human-readable [***data serialization language**](#glossary). it has for purpose is to represent complex informations while keeping it readable for anyone.|[Wikipedia](https://en.wikipedia.org/wiki/YAML)|
 
 
 </details>
@@ -253,7 +253,8 @@ However, compared to documents GitHub issues, tests GitHub issues will be based 
 
 Test cases are specifications of the execution condition, testing procedure, and expected results that define a single test to be executed to achieve a particular software testing objective.
 
-![]()
+![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/f2daf253-e45d-4dc7-b145-9f71aa217ec1)
+
 
 
 ### 4.4 Bug tracking schema
@@ -277,9 +278,6 @@ Test cases are specifications of the execution condition, testing procedure, and
 To manage our test we are using specific tools :
 
 - We use GitHub for test management. Test cases and GitHub issues are updated in the [GitHub Issue section](https://github.com/algosup/2023-2024-project-5-flutter-team-1/issues).
-<br>
-
-- Test cases and GitHub issues are Written using templates made with a [.YAML file](#glossary)
 <br>
 - Every Failed test case caused by a bug will be reported in a GitHub issue with the associated test cases
 <br>
