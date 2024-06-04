@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../preferences.dart';
+import 'package:src/preferences.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

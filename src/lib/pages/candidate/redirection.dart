@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:go_router/go_router.dart';
-import '../preferences.dart';
+import 'package:src/preferences.dart';
 
 class DocumentStorage {
   Future<String> get folderLocalization async {

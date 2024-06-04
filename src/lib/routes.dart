@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/cupertino.dart';
-import 'pages/languagehomepage.dart';
-import 'pages/redirection.dart';
-import 'pages/loginpage.dart';
-import 'pages/registerpage.dart';
-import 'pages/registerpage2.dart';
-import 'pages/registerpage3.dart';
-import 'pages/homepage.dart';
+import 'pages/candidate/languagehomepage.dart';
+import 'pages/candidate/redirection.dart';
+import 'pages/candidate/loginpage.dart';
+import 'pages/candidate/registerpage.dart';
+import 'pages/candidate/registerpage2.dart';
+import 'pages/candidate/registerpage3.dart';
+import 'pages/candidate/homepage.dart';
 
 final routes = GoRouter(
   routes: [

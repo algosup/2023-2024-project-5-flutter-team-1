@@ -2,7 +2,7 @@
 // Except from 212 to 219
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../preferences.dart';
+import 'package:src/preferences.dart';
 import 'package:go_router/go_router.dart';
 
 class RegisterPage extends StatefulWidget {

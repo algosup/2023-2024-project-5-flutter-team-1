@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:google_fonts/google_fonts.dart';
-import '../preferences.dart';
+import 'package:src/preferences.dart';
 import 'package:go_router/go_router.dart';
 
 class RegisterPage3 extends StatefulWidget {

@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 import 'package:go_router/go_router.dart';
-import '../preferences.dart';
+import 'package:src/preferences.dart';
 
 class GetUserData {
   Future<String> get folderLocalization async {
