@@ -97,4 +97,4 @@ For this project we have diffrents deliverables such as:
 - Final Product
 
 ## Budget
-For this project there is no financial budget because we only use free softwares and free ressources. askip elone il a payé 5€.
+For this project there is no financial budget because we only use free softwares and free ressources.

@@ -81,7 +81,7 @@ This week is dedicated to finalising the functional specification, as our progra
 
 ### W2 - Timeline status
 
-
+ We have made some progress on the documentation, but as far as the code is concerned, we have preferred to let our software engineer get to grips with the language a bit more, as from the start of the project it was Elone who was in charge of the code. Guillaume, our software engineer, wanted to get to grips with Elone and as he had more gaps in his knowledge, we gave him this week to help him gain some knowledge. So we slowed things down a bit without losing the flow of the project. 
 
 ### W2 - Work accomplished
 
@@ -90,10 +90,15 @@ This week is dedicated to finalising the functional specification, as our progra
 | Managements Documents | In Progress | 05/21/2024 | Séréna BAVAROIS |
 | Functionnal specification | Done | 05/21/2024|Wilfried PORTET |
 | Gantt chart |In Progress |05/22/2024|Séréna BAVAROIS|
-|Technical specification|In Progress|05/21/2024| Enzo GUILLOUCHE|
-|Test plan|In Progress|05/21/2024|Mattéo LEFIN|
+| KPI |In Progress|05/23/2024|Séréna BAVAROIS|
+| Technical specification |In Progress|05/21/2024| Enzo GUILLOUCHE|
+| Test plan |In Progress|05/21/2024|Mattéo LEFIN|
+|Login Page Front-end|Done|05/22/2024|Elone DELILLE|
+|Register Page Front-end|Done|05/22/2024|Elone DELILLE|
 
 ### W2 - Next steps
+
+For the next week we gonna work and try to finish our documents.
 
 ---
 
@@ -104,13 +109,21 @@ This week is dedicated to finalising the functional specification, as our progra
 
 ### W3 - Timeline status
 
+This week we have a test, so not a complete project period and only a half day of project. We focused this day to work on our documentation in order to finish it for the Week 4.
+
 ### W3 - Work accomplished
 
 | Task | Status | Date of start | People |
 |--|--|--|--|
-| | | 05/00/2024 | |
+| Technical Specification |In Progress| 05/28/2024 |Enzo GUILLOUCHE|
+| Test Plan |In Progress|05/28/2024|Mattéo LEFIN|
+| Test cases |In Progress|05/28/2024|Mattéo LEFIN|
+| Critical Path |In Progress|05/28/2024|Séréna BAVAROIS|
 
+   
 ### W3 - Next steps
+
+For the next we have to finish our documents because of the deadline for the technical specification and the test plan and be more productive on the code, because we don't have enought project time.
 
 ---
 
@@ -119,15 +132,25 @@ This week is dedicated to finalising the functional specification, as our progra
 ### W4 - Overall project status summary 
 06/03/2024 - 06/07/2024
 
+This week we need to concentrate on the code as we are not making much progress.
+
 ### W4 - Timeline status
+
+
 
 ### W4 - Work accomplished
 
 | Task | Status | Date of start | People |
 |--|--|--|--|
-| | | 05/00/2024 | |
+| Swipe system | In Progress | 06/03/2024 | Guillaume DERAMCHI with Wilfried PORTET |
+| Technical Specification |In Progress|06/03/2024|Enzo GUILLOUCHE|
+| Test Plan |In Progress|06/03/2024|Mattéo LEFIN|
+| Test Cases |In Progress|06/03/2024|Mattéo LEFIN|
+
 
 ### W4 - Next steps
+
+
 
 ---
 
@@ -145,6 +168,8 @@ This week is dedicated to finalising the functional specification, as our progra
 | | | 05/00/2024 | |
 
 ### W5 - Next steps
+
+
 
 ---
 
