@@ -253,7 +253,17 @@ However, compared to documents GitHub issues, tests GitHub issues will be based 
 
 Test cases are specifications of the execution condition, testing procedure, and expected results that define a single test to be executed to achieve a particular software testing objective.
 
+We also use a system of **labels** to identify the severity of the test cases:
+
+- Critical
+- High
+- Medium
+- Low
+
+<br>
+
 ![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/f2daf253-e45d-4dc7-b145-9f71aa217ec1)
+*Demonstration on how the taste cases are created*
 
 
 
