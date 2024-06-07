@@ -15,8 +15,8 @@
 
 |Version|Date|Author|Description|
 |-------|----|---|--|
-|1.0|05/16/2024|Mattéo LEFIN|Create documents template|
-|1.1|05/17/2024|Mattéo LEFIN| - add sub parts and Table of content <br> - start the writing of [1. Introduction](#1-introduction)|
+|1.0|05/16/2024|Mattéo LEFIN| - Create documents template.|
+|1.1|05/17/2024|Mattéo LEFIN| - add sub-parts and Table of Contents. <br> - start the writing of [1. Introduction](#1-introduction)|
 |1.2|05/21/2024|Mattéo LEFIN|- finish [1. Introduction](#1-introduction),  [2. Documentation Reviewing](#2-documentation-reviewing) and [3. Testing strategy](#3-testing-strategy)|
 |1.3|05/28/2024|Mattéo LEFIN| - finish [4. Execution strategy](#4-execution-strategy) and [5. Testing management](#5-test-management)|
 |1.4|06/04/2024|Mattéo LEFIN| - Add images and finish the document.|
@@ -36,14 +36,14 @@
 [**1. Introduction**](#1-introduction)
  - [**1.1 Document purpose**](#11-document-purpose)
  - [**1.2 Project purpose**](#12-project-purpose)
- - [**1.3 Customers**](#13-customer)
+ - [**1.3 Customers**](#13-customers)
 
 [**2. Documentation Reviewing**](#2-documentation-reviewing)
  - [**2.1 Document criteria**](#21-document-criteria)
  - [**2.2 Review process**](#22-review-process)
 
 [**3. Testing strategy**](#3-testing-strategy)
- - [**3.1 Tests main goal**](#31-tests-main-goal)
+ - [**3.1 Tests' main goal**](#31-tests-main-goal)
  - [**3.2 Testing field**](#32-testing-field)
  - [**3.3 Testing environment**](#33-testing-environment)
  - [**3.4 Test scope**](#34-test-scope)
@@ -93,7 +93,7 @@
 
 ### 1.1 Document purpose
 
-This document shows the **Quality Assurance activity** to provide **clarity** on the approach taken, The **produced result** and the **conclusion reached** out of this project.
+This document shows the **Quality Assurance activities** to provide **clarity** on the approach taken, The **produced results** and the **conclusions reached** out of this project.
 
 
 It also demonstrates our **documentation reviewing** and indicates our **testing procedure**, including:
@@ -107,13 +107,13 @@ It also demonstrates our **documentation reviewing** and indicates our **testing
 
 ### 1.2 Project purpose
 
-The project named "Adopter un candidat" (Adopt a candidate in English) has for purpose of **creating an application that allows users to find a job depending primarily on their soft skills.** The application on the employee side will have a scrolling system like ***Tinder***, meaning it will be a side-scrolling to accept or reject the job offer.
+The project named "Adopter un candidat" (Adopt a candidate in English) aims **creating an application that allows users to find a job depending primarily on their soft skills.** The application on the employee side will have a scrolling system like ***Tinder***, meaning it will be a side-scrolling to accept or reject the job offer.
 
-On the company side, the app can also be **used on computers** and will have a completely different design. It will look like a tab where they will see the different "matches" of employees, where they **accept the candidates and can message them,** the new messages will always appear on the top of the tab.
+On the company side, the app can also be **used on computers** and will have a completely different design. It will look like a tab where they will see the different 'matches' of employees, where they can **accept the candidates and message them.** The new messages will always appear at the top of the tab.
 
 The app has to be made on [***Flutter**](#glossary).
 
-### 1.3 Customer
+### 1.3 Customers
 
 The project has been commissioned by the company ["We Are Evolution"](https://www.we-are-evolution.com/team) represented by [**Oliver Blonsar**](https://www.linkedin.com/in/olivier-blonsard/) (the employment brand, communication expert and audio-visual expert) and [**Lilou Jourdannaud**](https://www.linkedin.com/in/lilou-jourdannaud-6b0a60220/) (The communication manager).
 
@@ -158,7 +158,7 @@ To review the documents we use **GitHub issues** to track any problems like typo
 
 ## 3. Testing strategy
 
-### 3.1 Tests main goal
+### 3.1 Tests' main goal
 
 The main goal behind doing tests is to **ensure that all project criterias are checked**, and possibly enhance the quality of the project for a better user experience.
 
@@ -319,7 +319,7 @@ We estimated a schedule for the entirety of the testing procedure of this projec
 
 ### 5.4 Test deliverables
 
-- **Test Plan:** it documents our approach and methodology for testing, explaining how tests will be managed and done.
+- **Test Plan:** it documents our approach and methodology for testing, explaining how tests will be managed and performed.
   
 - **Test Cases:** It represent a set of tests created to ensure that our application works as intended.
 
