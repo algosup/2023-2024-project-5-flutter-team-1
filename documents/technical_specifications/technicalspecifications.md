@@ -130,6 +130,7 @@ A folder structure promotes coherent and understandable file locations.
 
 The `documents` folder has to follow this structure:
 
+```
 documents/<br>
   ├── code_documentation/<br>
   │     ├── codedocumentation.md<br>
@@ -149,11 +150,13 @@ documents/<br>
   │     ├── usermanual.md<br>
   │     ├── usermanual.pdf<br>
   ├── conventionsandrules.md<br>
+```
 
 **Code Files Structure**
 
 The `lib` folder has to follow this structure:
 
+```
 lib/<br>
   ├── pages/<br>
   │     ├── homepage.dart<br>
@@ -179,6 +182,7 @@ lib/<br>
   ├── main.dart<br>
   ├── preferences.dart<br>
   ├── routes.dart<br>
+```
 
 The pages of the application will be in a dedicated folder `pages`, with `candidate` and `company` dedicated folders, due to pages' differences.
 
@@ -690,22 +694,22 @@ IP of the database: *185.221.182.215*
 
 The database manages many parameters during the login phase:
 
-- a random MacAddress, dedicated to a specific device.
+- A random MacAddress, dedicated to a specific device.
 When the application is launched on a new device, a new random MacAddress is generated.
 
-- the language of the application.
+- The language of the application.
 The language can be changed in the settings.
 
-- the user ID.
+- The user ID.
 The user ID is unique to a single user.
 
-- the last and current connection.
+- The last and current connection.
 Both parameters are compared, to enhance the security.
 
-- the last and current position of connection.
+- The last and current position of connection.
 Both parameters are compared, to enhance the security.
 
-- the last and current IPV4.
+- The last and current IPV4.
 Both parameters are compared, to enhance the security.
 
 If the time from the last connection to the current one is below 15min, the position from the last connection to the current one is below 15km, and the IPV4 from the last connection to the current one doesn't differ, no need to log in again.
@@ -719,27 +723,27 @@ The database will stock all the information about the user account (as strings):
 
 Candidate's side:
 
-- the candidate's ID
-- the candidate's first name and last name
-- the candidate's date of birth
-- the candidate's city of birth
-- the candidate's city of residence
-- the candidate's email address
-- the candidate's password
-- the candidate's soft skills
-- the candidate's current job
-- the candidate's job's expectation
+- The candidate's ID
+- The candidate's first name and last name
+- The candidate's date of birth
+- The candidate's city of birth
+- The candidate's city of residence
+- The candidate's email address
+- The candidate's password
+- The candidate's soft skills
+- The candidate's current job
+- The candidate's job's expectation
 
 Company's side:
 
-- the company's ID
-- the company's full name
-- the company's brand name
-- the company's email address
-- the company's password
-- the company's HR members
-- the company's job's expectation
-- the company's soft skills' expectation
+- The company's ID
+- The company's full name
+- The company's brand name
+- The company's email address
+- The company's password
+- The company's HR members
+- The company's job's expectation
+- The company's soft skills' expectation
 
 **Account's Likes/Match Data Flow**
 
@@ -758,10 +762,10 @@ The database will stock all the information about the chat (as strings):
 
 Both candidate's and company's side:
 
-- the user's ID
-- the chat's ID
-- the second user's ID
-- the message's content
+- The user's ID
+- The chat's ID
+- The second user's ID
+- The message's content
 
 ![databaseslink](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/145991192/3f5cf5d2-4df9-4519-90ed-5921cc200a64)
 
@@ -831,4 +835,4 @@ In computing, a **database** is an organized collection of data based on the use
 
 An **Application Programming Interface (API)** is a way for two or more computer programs or components to communicate with each other. | [Wikipedia](https://en.wikipedia.org/wiki/API)
 
-In cryptography, a Caesar cipher is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. | [Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher)
+In cryptography, a **Caesar cipher** is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. | [Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher)
