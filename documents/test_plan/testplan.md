@@ -337,12 +337,11 @@ We estimated a schedule for the entirety of the testing procedure of this projec
 
 |Role|Name|Signature|
 |----|----|---------|
-|Project Manager| BAVAROIS Séréna ||
-|Program Manager| PORTET Wilfried ||
-|Technical Lead| GUILLOUCHE Enzo ||
-|Technical Writer| DELILLE Elone ||
-|Software Enginer| DERAMCHI Guillaume ||
-|Quality Assurance| LEFIN Mattéo |![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/7926ee24-879c-44b6-bdec-4473bd922e72)
-|
+|Project Manager| BAVAROIS Séréna |✅|
+|Program Manager| PORTET Wilfried |✅|
+|Technical Lead| GUILLOUCHE Enzo |✅|
+|Technical Writer| DELILLE Elone |✅|
+|Software Enginer| DERAMCHI Guillaume |✅|
+|Quality Assurance| LEFIN Mattéo |✅|
 
 </details>
