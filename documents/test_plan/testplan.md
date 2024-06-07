@@ -136,7 +136,7 @@ The majority of our documents have **the same criteria**, making harmony between
 
 The common criteria are:
 - All documents must have a **table of contents**
-- Documents must stay **as simple as possible**, making them **short and not too technical as possible**. if technical terms are necessary, a **glossary must be implemented**.
+- Documents must stay **as simple as possible**, making them **short and not too technical as possible**. If technical terms are necessary, a **glossary must be implemented**.
 - All the documents are written in **American English**.
 
 ### 2.2 Review process
@@ -172,7 +172,7 @@ Firefox 72.0
 Safari on El Capitan
 Edge 1.2.0
 
-***(They will work in the upper version of this web platform)***
+***(They will work in the upper version of this web platforms)***
 
 <br>
 <br>
@@ -269,7 +269,8 @@ We also use a system of **labels** to identify the severity of the test cases:
 
 ### 4.4 Bug tracking schema
 
-![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/7661262a-6f32-45d7-bd86-da27ae3817bb)
+![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/b6e26386-f4a9-4656-af15-59bcb61d3672)
+
 
 *Bug tracking schema*
 
@@ -289,7 +290,7 @@ To manage our test we are using specific tools :
 
 - We use GitHub for test management. Test cases and GitHub issues are updated in the [GitHub Issue section](https://github.com/algosup/2023-2024-project-5-flutter-team-1/issues).
 <br>
-- Every Failed test case caused by a bug will be reported in a GitHub issue with the associated test cases
+- Every failed test case caused by a bug will be reported in a GitHub issue with the associated test cases
 <br>
 - After the developer does the bug fix, the Quality Assurance will test it again in the same way he did last time.
 
@@ -297,7 +298,7 @@ To manage our test we are using specific tools :
 
 We have a conforming plan of how we create and process our tests.
 
-![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/4c34e2b5-58bc-4749-9e8e-bf6c489f6ec2)
+![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/0c1ea20b-bfaf-4849-b4d7-6f77aa172ef7)
 
 *Test design schema*
 
@@ -341,6 +342,7 @@ We estimated a schedule for the entirety of the testing procedure of this projec
 |Technical Lead| GUILLOUCHE Enzo ||
 |Technical Writer| DELILLE Elone ||
 |Software Enginer| DERAMCHI Guillaume ||
-|Quality Assurance| LEFIN Mattéo ||
+|Quality Assurance| LEFIN Mattéo |![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/7926ee24-879c-44b6-bdec-4473bd922e72)
+|
 
 </details>
