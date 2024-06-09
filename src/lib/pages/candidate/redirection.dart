@@ -31,36 +31,35 @@ class DocumentStorage {
   }
 
   Future<bool> checkMacAddress() async {
-  try {
-    final file = await fileLocalization;
-    String content = await file.readAsString();
-    print("Checking MAC address: $content");
-    final response = await macDatabase(content);
-    print("URL Sended");
-    if (response.statusCode == 200) {
-      print("Entering the if");
-      String body = response.body;
-      print("Fetching: $body");
-      if(body == "[false]"){
-        return false;
-      } else if(body == "[true]"){
-        return true;
+    try {
+      final file = await fileLocalization;
+      String content = await file.readAsString();
+      print("Checking MAC address: $content");
+      final response = await macDatabase(content);
+      print("URL Sended");
+      if (response.statusCode == 200) {
+        print("Entering the if");
+        String body = response.body;
+        print("Fetching: $body");
+        if (body == "[false]") {
+          return false;
+        } else if (body == "[true]") {
+          return true;
+        }
+      } else {
+        print("Error: HTTP status ${response.statusCode}");
       }
-    } else {
-      print("Error: HTTP status ${response.statusCode}");
+    } catch (e) {
+      print("Error on checking mac address on database: $e");
     }
-  } catch (e) {
-    print("Error on checking mac address on database: $e");
+    return false;
   }
-  return false;
-}
-
 
   Future<http.Response> macDatabase(String content) {
     var encodedContent = Uri.encodeComponent(content);
-    return http.get(Uri.parse("https://ffeur.pq.lu/v1/data/getApi/doesMacAddressExist.php?mac=$encodedContent"));
+    return http.get(Uri.parse(
+        "https://ffeur.pq.lu/v1/data/getApi/doesMacAddressExist.php?mac=$encodedContent"));
   }
-
 
   Future<bool> createOnDatabase() async {
     try {
@@ -89,9 +88,9 @@ class DocumentStorage {
       var ok = response.statusCode;
       print("Status code received: $ok");
       if (response.statusCode == 200) {
-          var body = jsonDecode(response.body);
-          print("Response from server: $body");
-          return body['success'] ?? false;
+        var body = jsonDecode(response.body);
+        print("Response from server: $body");
+        return body['success'] ?? false;
       }
       return false;
     } catch (e) {
@@ -102,7 +101,7 @@ class DocumentStorage {
 
   Future<String> userLanguageFetch(String address) async {
     final response = await getUserLanguage(address);
-    if(response.statusCode == 200){
+    if (response.statusCode == 200) {
       String body = response.body;
       print("Response Body: ${response.body}");
       return body;
@@ -111,15 +110,16 @@ class DocumentStorage {
     }
   }
 
-  Future<http.Response> getUserLanguage(String address){
+  Future<http.Response> getUserLanguage(String address) {
     var encode = Uri.encodeComponent(address);
-    return http.get(Uri.parse("https://ffeur.pq.lu/v1/data/getApi/getUserLanguage.php?mac=$encode"));
+    return http.get(Uri.parse(
+        "https://ffeur.pq.lu/v1/data/getApi/getUserLanguage.php?mac=$encode"));
   }
 }
 
 class RedirectionPage extends StatefulWidget {
   const RedirectionPage({super.key, required this.storage});
-  
+
   final DocumentStorage storage;
 
   @override
@@ -149,7 +149,8 @@ class _RedirectionPageState extends State<RedirectionPage> {
     if (isFileEmpty) {
       try {
         final random = Random();
-        List<String> parts = List.generate(6, (index) => random.nextInt(256).toRadixString(16).padLeft(2, '0'));
+        List<String> parts = List.generate(6,
+            (index) => random.nextInt(256).toRadixString(16).padLeft(2, '0'));
         String address = parts.join(':');
 
         await file.writeAsString(address);
@@ -167,14 +168,14 @@ class _RedirectionPageState extends State<RedirectionPage> {
     appMacAddress = await file.readAsString();
 
     String userLang = await widget.storage.userLanguageFetch(appMacAddress);
-    if(userLang == "[\"vfr_FR\"]" || userLang == "[\"ven_US\"]"){
+    if (userLang == "[\"vfr_FR\"]" || userLang == "[\"ven_US\"]") {
       setState(() {
-      if(userLang == "[\"vfr_FR\"]"){
-        appPreferences.setLanguage("fr_FR");
-        print("${appPreferences.appLanguage}");
-      } else {
-        appPreferences.setLanguage("en_US");
-      }
+        if (userLang == "[\"vfr_FR\"]") {
+          appPreferences.setLanguage("fr_FR");
+          print(appPreferences.appLanguage);
+        } else {
+          appPreferences.setLanguage("en_US");
+        }
         appPreferences.macAddress = appMacAddress;
         context.go("/loginpage");
       });
@@ -189,7 +190,8 @@ class _RedirectionPageState extends State<RedirectionPage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(child:CircularProgressIndicator(),)
-    );
+        body: Center(
+      child: CircularProgressIndicator(),
+    ));
   }
 }

@@ -138,7 +138,7 @@ class _RegisterPage2State extends State<RegisterPage2> {
                     ),
                     Column(
                       children: [
-                        Container(
+                        SizedBox(
                             width: size.width * 0.6,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -155,7 +155,7 @@ class _RegisterPage2State extends State<RegisterPage2> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
+                            SizedBox(
                                 width: size.width * 0.6,
                                 height: size.width * 0.15,
                                 child: TextField(
@@ -186,7 +186,7 @@ class _RegisterPage2State extends State<RegisterPage2> {
                                 )),
                           ],
                         ),
-                        Container(
+                        SizedBox(
                             width: size.width * 0.6,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -203,7 +203,7 @@ class _RegisterPage2State extends State<RegisterPage2> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
+                            SizedBox(
                                 width: size.width * 0.6,
                                 height: size.width * 0.15,
                                 child: TextField(
@@ -235,7 +235,7 @@ class _RegisterPage2State extends State<RegisterPage2> {
                                 )),
                           ],
                         ),
-                        Container(
+                        SizedBox(
                             width: size.width * 0.6,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -252,13 +252,13 @@ class _RegisterPage2State extends State<RegisterPage2> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
+                            SizedBox(
                               width: size.width * 0.6,
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  Container(
+                                  SizedBox(
                                     width: size.width * 0.18,
                                     height: size.width * 0.15,
                                     child: DropdownButtonFormField<int>(
@@ -298,7 +298,7 @@ class _RegisterPage2State extends State<RegisterPage2> {
                                       ),
                                     ),
                                   ),
-                                  Container(
+                                  SizedBox(
                                     width: size.width * 0.18,
                                     height: size.width * 0.15,
                                     child: DropdownButtonFormField<int>(
@@ -338,7 +338,7 @@ class _RegisterPage2State extends State<RegisterPage2> {
                                       ),
                                     ),
                                   ),
-                                  Container(
+                                  SizedBox(
                                     width: size.width * 0.24,
                                     height: size.width * 0.15,
                                     child: DropdownButtonFormField<int>(
@@ -383,7 +383,7 @@ class _RegisterPage2State extends State<RegisterPage2> {
                             ),
                           ],
                         ),
-                        Container(
+                        SizedBox(
                             width: size.width * 0.6,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -400,7 +400,7 @@ class _RegisterPage2State extends State<RegisterPage2> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
+                            SizedBox(
                               width: MediaQuery.of(context).size.width * 0.6,
                               height: MediaQuery.of(context).size.width * 0.15,
                               child: Autocomplete<String>(
@@ -422,7 +422,7 @@ class _RegisterPage2State extends State<RegisterPage2> {
                                         width:
                                             MediaQuery.of(context).size.width *
                                                 0.6,
-                                        constraints: BoxConstraints(
+                                        constraints: const BoxConstraints(
                                             maxHeight:
                                                 200), // Sets a max height for the dropdown
                                         child: ListView.builder(

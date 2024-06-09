@@ -64,19 +64,19 @@ class _RegisterPage3State extends State<RegisterPage3> {
     "en_US": "Email address"
   };
 
-
   void Form2Filled() {
-      if (currentCityString?.isNotEmpty == true &&
-          emailString?.isNotEmpty == true &&
-          passwordString?.isNotEmpty == true &&
-          jobExpectationString != null &&
-          currentJobString != null &&
-          softSkillsString != null) {
-        isForm2Filled = true;
-      } else {
-        isForm2Filled = false;
-      }
+    if (currentCityString?.isNotEmpty == true &&
+        emailString?.isNotEmpty == true &&
+        passwordString?.isNotEmpty == true &&
+        jobExpectationString != null &&
+        currentJobString != null &&
+        softSkillsString != null) {
+      isForm2Filled = true;
+    } else {
+      isForm2Filled = false;
     }
+  }
+
   Map<String, String> password = {"fr_FR": "Mot de passe", "en_US": "Password"};
 
   Future<List<String>> fetchCities(String input) async {
@@ -92,39 +92,39 @@ class _RegisterPage3State extends State<RegisterPage3> {
     }
   }
 
-
   Future<bool> createUser() async {
     try {
       var response = await http.post(
-      Uri.parse("https://ffeur.pq.lu/v1/data/useApi/userCreation.php"),
-      headers: {"Content-Type": "application/x-www-form-urlencoded"},
-      body: {
-        'fn': "${appPreferences.firstName}",
-        'ln': "${appPreferences.lastName}",
-        'bD': "${appPreferences.birthDate}",
-        'bC': "${appPreferences.birthCity}",
-        'rC': currentCityString,
-        'email': emailString,
-        'pass': passwordString,
-        'sS': softSkillsString,
-        'cJ': currentJobString,
-        'jE': jobExpectationString,
+          Uri.parse("https://ffeur.pq.lu/v1/data/useApi/userCreation.php"),
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          body: {
+            'fn': appPreferences.firstName,
+            'ln': appPreferences.lastName,
+            'bD': appPreferences.birthDate,
+            'bC': appPreferences.birthCity,
+            'rC': currentCityString,
+            'email': emailString,
+            'pass': passwordString,
+            'sS': softSkillsString,
+            'cJ': currentJobString,
+            'jE': jobExpectationString,
+          });
+      print("We did manage to send the POST");
+      var ok = response.statusCode;
+      print("Status code received: $ok");
+      if (response.statusCode == 200) {
+        var body = jsonDecode(response.body);
+        print("Response from server: $body");
+        return body['success'] ?? false;
       }
-    );
-    print("We did manage to send the POST");
-    var ok = response.statusCode;
-    print("Status code received: $ok");
-    if (response.statusCode == 200) {
-      var body = jsonDecode(response.body);
-      print("Response from server: $body");
-      return body['success'] ?? false;
+      return false;
+    } catch (e) {
+      print("HTTP request failed: $e");
+      return false;
     }
-    return false;
-  } catch (e) {
-    print("HTTP request failed: $e");
-    return false;
   }
-}
 
   @override
   void initState() {
@@ -168,26 +168,26 @@ class _RegisterPage3State extends State<RegisterPage3> {
                       ))),
                 ],
               ),
-              Container(
-                      width: size.width * 0.6,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(currentCity[lang]!,
-                              style: GoogleFonts.poppins(
-                                  textStyle: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black,
-                              )))
-                        ],
-                      )),
+              SizedBox(
+                  width: size.width * 0.6,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(currentCity[lang]!,
+                          style: GoogleFonts.poppins(
+                              textStyle: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black,
+                          )))
+                    ],
+                  )),
               Column(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.6,
                         height: MediaQuery.of(context).size.width * 0.15,
                         child: Autocomplete<String>(
@@ -206,9 +206,8 @@ class _RegisterPage3State extends State<RegisterPage3> {
                                 child: Container(
                                   width:
                                       MediaQuery.of(context).size.width * 0.6,
-                                  constraints: const BoxConstraints(
-                                      maxHeight:
-                                          200),
+                                  constraints:
+                                      const BoxConstraints(maxHeight: 200),
                                   child: ListView.builder(
                                     padding: EdgeInsets.zero,
                                     shrinkWrap: true,
@@ -268,7 +267,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
                       )
                     ],
                   ),
-                  Container(
+                  SizedBox(
                       width: size.width * 0.6,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -285,7 +284,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
+                      SizedBox(
                           width: size.width * 0.6,
                           height: size.width * 0.15,
                           child: TextField(
@@ -315,7 +314,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
                           )),
                     ],
                   ),
-                  Container(
+                  SizedBox(
                       width: size.width * 0.6,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -332,7 +331,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
+                      SizedBox(
                           width: size.width * 0.6,
                           height: size.width * 0.15,
                           child: TextField(
@@ -362,7 +361,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
                           )),
                     ],
                   ),
-                  Container(
+                  SizedBox(
                       width: size.width * 0.6,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -379,7 +378,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
+                      SizedBox(
                           width: size.width * 0.6,
                           height: size.width * 0.15,
                           child: TextField(
@@ -425,7 +424,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
               ),
               Column(
                 children: [
-                  Container(
+                  SizedBox(
                       width: size.width * 0.6,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -442,7 +441,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
+                      SizedBox(
                           width: size.width * 0.6,
                           height: size.width * 0.15,
                           child: TextField(
@@ -474,7 +473,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
                   ),
                 ],
               ),
-              Container(
+              SizedBox(
                   width: size.width * 0.6,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -491,7 +490,7 @@ class _RegisterPage3State extends State<RegisterPage3> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
+                  SizedBox(
                       width: size.width * 0.6,
                       height: size.width * 0.15,
                       child: TextField(
@@ -526,8 +525,14 @@ class _RegisterPage3State extends State<RegisterPage3> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    if(isForm2Filled){
-                      appPreferences.registerDataTwo(currentCityString!,  emailString!, passwordString!, softSkillsString!, jobExpectationString!, currentJobString!);
+                    if (isForm2Filled) {
+                      appPreferences.registerDataTwo(
+                          currentCityString!,
+                          emailString!,
+                          passwordString!,
+                          softSkillsString!,
+                          jobExpectationString!,
+                          currentJobString!);
                       createUser();
                       context.go("/homepage");
                     }
