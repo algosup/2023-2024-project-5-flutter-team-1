@@ -9,7 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String appLanguage = "fr_FR";
+  String appLanguage = appPreferences.appLanguage;
   String macAddress = "";
   String firstName = "";
   String lastName = "";
@@ -21,6 +21,19 @@ class _HomePageState extends State<HomePage> {
   String softSkills = "";
   String jobExpectation = "";
   String currentJob = "";
+
+  Map<String, String> adoptCandidate = {
+    "fr_FR": "Adopte un Candidat",
+    "en_US": "Adopt a Candidate",
+  };
+  Map<String, String> settings = {
+    "fr_FR": "Paramètres",
+    "en_US": "Settings",
+  };
+  Map<String, String> profile = {
+    "fr_FR": "Profil",
+    "en_US": "Profile",
+  };
 
   List<String> cards = [
     "Card 1",
@@ -34,6 +47,7 @@ class _HomePageState extends State<HomePage> {
     "Card 9",
     "Card 10"
   ];
+
   Offset _startDragOffset = Offset.zero;
   Offset _currentOffset = Offset.zero;
   double _opacity = 1.0;
@@ -160,9 +174,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     List<Widget> pages = [
       _buildSwipePage(),
-      const SettingsPage(),
-      const ChatPage(),
-      const ProfilePage(),
+      SettingsPage(settings, appLanguage),
+      ChatPage(),
+      ProfilePage(profile, appLanguage),
     ];
 
     return Scaffold(
@@ -178,10 +192,10 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             AppBar(
-              title: const Center(
+              title: Center(
                 child: Text(
-                  'Adopt a Candidate',
-                  style: TextStyle(
+                  "${adoptCandidate[appLanguage]}",
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -244,14 +258,19 @@ class _HomePageState extends State<HomePage> {
 }
 
 class SettingsPage extends StatelessWidget {
-  const SettingsPage({super.key});
+  Map<String, String> settings = {
+    "fr_FR": "Paramètres",
+    "en_US": "Settings",
+  };
+  String appLanguage;
+  SettingsPage(this.settings, this.appLanguage, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Settings', style: TextStyle(color: Colors.white)),
+        title: Text("${settings[appLanguage]}", style: const TextStyle(color: Colors.white,)),
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.white),
@@ -308,14 +327,19 @@ class ChatPage extends StatelessWidget {
 }
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  Map<String, String> profile = {
+    "fr_FR": "Paramètres",
+    "en_US": "Settings",
+  };
+  String appLanguage;
+  ProfilePage(this.profile, this.appLanguage, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Profile', style: TextStyle(color: Colors.white)),
+        title: Text('${profile[appLanguage]}', style: const TextStyle(color: Colors.white)),
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.white),

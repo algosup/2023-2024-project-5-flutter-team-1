@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/cupertino.dart';
 import 'pages/candidate/languagehomepage.dart';
+import 'pages/company/languagehomepage.dart';
 import 'pages/candidate/redirection.dart';
 import 'pages/candidate/loginpage.dart';
+import 'pages/company/loginpage.dart';
 import 'pages/candidate/registerpage.dart';
 import 'pages/candidate/registerpage2.dart';
 import 'pages/candidate/registerpage3.dart';
@@ -18,6 +20,11 @@ final routes = GoRouter(
       builder: (BuildContext context, GoRouterState state) => LanguageHomePage(storage: GetUserData()),
     ),
     GoRoute(
+      path: "/languagehomepagecompany",
+      name: "LanguageHomePageCompany",
+      builder: (BuildContext context, GoRouterState state) => LanguageHomePageCompany(storage: GetUserDataCompany()),
+    ),
+    GoRoute(
       path: "/",
       name: "RedirectionPage",
       builder: (BuildContext context, GoRouterState state) => RedirectionPage(storage: DocumentStorage()),
@@ -27,6 +34,12 @@ final routes = GoRouter(
       name: "LoginPage",
       builder: (BuildContext context, GoRouterState state) => LoginPage(storage: DataClass()),
     ),
+    GoRoute(
+    path: "/loginpagecompany",
+    name: "LoginPageCompany",
+    builder: (BuildContext context, GoRouterState state) =>
+        LoginPageCompany(storage: DataClassCompany()),
+  ),
     GoRoute(
       path: "/registerpage",
       name: "RegisterPage",

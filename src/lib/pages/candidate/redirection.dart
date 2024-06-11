@@ -168,21 +168,32 @@ class _RedirectionPageState extends State<RedirectionPage> {
     appMacAddress = await file.readAsString();
 
     String userLang = await widget.storage.userLanguageFetch(appMacAddress);
+    var size = MediaQuery.sizeOf(context);
     if (userLang == "[\"vfr_FR\"]" || userLang == "[\"ven_US\"]") {
       setState(() {
         if (userLang == "[\"vfr_FR\"]") {
           appPreferences.setLanguage("fr_FR");
-          print(appPreferences.appLanguage);
         } else {
           appPreferences.setLanguage("en_US");
         }
+        print("${appPreferences.appLanguage}");
         appPreferences.macAddress = appMacAddress;
-        context.go("/loginpage");
+        if (size.width > 1000) {
+          context.go("/loginpagecompany");
+        } else {
+          context.go("/loginpage");
+        }
       });
     } else {
       setState(() {
         appPreferences.macAddress = appMacAddress;
-        context.go("/languagehomepage");
+        if (size.width > 1000) {
+          print("Company app");
+          context.go("/languagehomepagecompany");
+        } else {
+          print("Candidate app");
+          context.go("/languagehomepage");
+        }
       });
     }
   }
