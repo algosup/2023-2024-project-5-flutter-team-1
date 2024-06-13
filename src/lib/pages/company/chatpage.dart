@@ -400,11 +400,6 @@ Widget message(String mess, bool fromUser) {
                     child: Column(
                       children: [
                         Container(
-                          height: mess.length > 80
-                              ? 110
-                              : mess.length > 50
-                                  ? 80
-                                  : 50,
                           width:
                               mess.length >= 30 ? 450 : (mess.length + 5) * 15,
                           decoration: BoxDecoration(
@@ -424,6 +419,8 @@ Widget message(String mess, bool fromUser) {
                                   fontWeight: FontWeight.w500,
                                   fontSize: 20,
                                 ),
+                                maxLines: null,
+                                overflow: TextOverflow.visible,
                               ),
                             ),
                           ),
