@@ -10,6 +10,7 @@ import 'pages/candidate/registerpage.dart';
 import 'pages/candidate/registerpage2.dart';
 import 'pages/candidate/registerpage3.dart';
 import 'pages/candidate/homepage.dart';
+import 'pages/company/homepage.dart';
 
 final routes = GoRouter(
   routes: [
@@ -59,6 +60,11 @@ final routes = GoRouter(
       path: "/homepage",
       name: "HomePage",
       builder: (BuildContext context, GoRouterState state) => const HomePage(),
-    )
+    ),
+    GoRoute(
+    path: "/homepageCompany",
+    name: "HomePage Company",
+    builder: (BuildContext context, GoRouterState state) => const HomePageCompany(),
+  ),
   ]
 );

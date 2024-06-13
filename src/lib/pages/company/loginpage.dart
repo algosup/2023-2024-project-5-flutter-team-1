@@ -366,7 +366,7 @@ Widget loginContainer(
                 padding: const EdgeInsets.only(top: 25),
                 child: GestureDetector(
                   onTap: () {
-                    newPage("/homepage");
+                    newPage("/homepageCompany");
                   },
                   child: Material(
                     elevation: 5,
