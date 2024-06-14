@@ -45,13 +45,16 @@ This is the RACI Matrix, it sets out the roles and responsibilities of those inv
 It's defined who is :
 - **R** is for `responsible`, this is the person in charge of carrying out the task, who does the work.
 <br>
+
 - **A** is for `accountable`, this is the person who supervises and reports on the work carried out. He must approve the effort made by the director.
 <br>
+
 - **C** is for `consultable`, this is the person who provides advice in their field of expertise on how to accomplish a task, or a deliverable.
 <br>
+
 - **I** is for `informed`, this the person who is kept informed of the progress of the project or task, changes and results. These are generally stakeholders who do not contribute directly to the projects, but who need to know about the progress of the major phases and any critical difficulties encountered.
 
-| Task | BAVAROIS Séréna - PM | PORTET Wilfried -  PGM | GUILLOUCHE Enzo - TL | DELILLE Elone - TW | DERAMCHI Guillaume - SE | LEFIN Mattéo - QA | Stackholders |
+| Task | BAVAROIS Séréna - PM | PORTET Wilfried -  PGM | GUILLOUCHE Enzo - TL | DELILLE Elone - TW | DERAMCHI Guillaume - SE | LEFIN Mattéo - QA | Client |
 |--|--|--|--|--|--|--|--|
 |Project Charter | R | A | C | I | I | I | C |
 |Functional Specifications | C/A | R/A | C | C | I | C | I/C |
@@ -97,4 +100,4 @@ For this project we have diffrents deliverables such as:
 - Final Product
 
 ## Budget
-For this project there is no financial budget because we only use free softwares and free ressources. askip elone il a payé 5€.
+For this project there is no financial budget because we only use free softwares and free ressources.
