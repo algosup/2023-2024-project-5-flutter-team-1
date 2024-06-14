@@ -136,21 +136,22 @@ This week we need to concentrate on the code as we are not making much progress.
 
 ### W4 - Timeline status
 
-
+In terms of timeline we are on time. Our software engineer is starting to get more and more comfortable with the code and the rest of the team is continuing to code in parallel. 
 
 ### W4 - Work accomplished
 
 | Task | Status | Date of start | People |
 |--|--|--|--|
 | Swipe system | In Progress | 06/03/2024 | Guillaume DERAMCHI with Wilfried PORTET |
-| Technical Specification |In Progress|06/03/2024|Enzo GUILLOUCHE|
-| Test Plan |In Progress|06/03/2024|Mattéo LEFIN|
+| Technical Specification | Done |06/03/2024|Enzo GUILLOUCHE|
+| Test Plan |Done |06/03/2024|Mattéo LEFIN|
 | Test Cases |In Progress|06/03/2024|Mattéo LEFIN|
+| Web version |Done | 06/06/2024 | Enzo GUILLOUCHE |
 
 
 ### W4 - Next steps
 
-
+The next steps will be to improve the web version and continue to add our last features and also write the user manual.
 
 ---
 
@@ -159,13 +160,19 @@ This week we need to concentrate on the code as we are not making much progress.
 ### W5 - Overall project status summary 
 06/10/2024 - 06/14/2024
 
+We are in the last week of production and our objectives for this week are to finish the code and the user manual.
+
 ### W5 - Timeline status
+
+
 
 ### W5 - Work accomplished
 
 | Task | Status | Date of start | People |
 |--|--|--|--|
-| | | 05/00/2024 | |
+| Swipe system | Done | 06/11/2024 | Guillaume DERAMCHI |
+|User Manual|In Progress| 06/11/2024|Elone DELILLE|
+
 
 ### W5 - Next steps
 

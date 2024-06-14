@@ -15,8 +15,8 @@
 
 |Version|Date|Author|Description|
 |-------|----|---|--|
-|1.0|05/16/2024|Mattéo LEFIN|Create documents template|
-|1.1|05/17/2024|Mattéo LEFIN| - add sub parts and Table of content <br> - start the writing of [1. Introduction](#1-introduction)|
+|1.0|05/16/2024|Mattéo LEFIN| - Create documents template.|
+|1.1|05/17/2024|Mattéo LEFIN| - add sub-parts and Table of Contents. <br> - start the writing of [1. Introduction](#1-introduction)|
 |1.2|05/21/2024|Mattéo LEFIN|- finish [1. Introduction](#1-introduction),  [2. Documentation Reviewing](#2-documentation-reviewing) and [3. Testing strategy](#3-testing-strategy)|
 |1.3|05/28/2024|Mattéo LEFIN| - finish [4. Execution strategy](#4-execution-strategy) and [5. Testing management](#5-test-management)|
 |1.4|06/04/2024|Mattéo LEFIN| - Add images and finish the document.|
@@ -36,14 +36,14 @@
 [**1. Introduction**](#1-introduction)
  - [**1.1 Document purpose**](#11-document-purpose)
  - [**1.2 Project purpose**](#12-project-purpose)
- - [**1.3 Customers**](#13-customer)
+ - [**1.3 Customers**](#13-customers)
 
 [**2. Documentation Reviewing**](#2-documentation-reviewing)
  - [**2.1 Document criteria**](#21-document-criteria)
  - [**2.2 Review process**](#22-review-process)
 
 [**3. Testing strategy**](#3-testing-strategy)
- - [**3.1 Tests main goal**](#31-tests-main-goal)
+ - [**3.1 Tests' main goal**](#31-tests-main-goal)
  - [**3.2 Testing field**](#32-testing-field)
  - [**3.3 Testing environment**](#33-testing-environment)
  - [**3.4 Test scope**](#34-test-scope)
@@ -93,7 +93,7 @@
 
 ### 1.1 Document purpose
 
-This document shows the **Quality Assurance activity** to provide **clarity** on the approach taken, The **produced result** and the **conclusion reached** out of this project.
+This document shows the **Quality Assurance activities** to provide **clarity** on the approach taken, The **produced results** and the **conclusions reached** out of this project.
 
 
 It also demonstrates our **documentation reviewing** and indicates our **testing procedure**, including:
@@ -107,13 +107,13 @@ It also demonstrates our **documentation reviewing** and indicates our **testing
 
 ### 1.2 Project purpose
 
-The project named "Adopter un candidat" (Adopt a candidate in English) has for purpose of **creating an application that allows users to find a job depending primarily on their soft skills.** The application on the employee side will have a scrolling system like ***Tinder***, meaning it will be a side-scrolling to accept or reject the job offer.
+The project named "Adopter un candidat" (Adopt a candidate in English) aims **creating an application that allows users to find a job depending primarily on their soft skills.** The application on the employee side will have a scrolling system like ***Tinder***, meaning it will be a side-scrolling to accept or reject the job offer.
 
-On the company side, the app can also be **used on computers** and will have a completely different design. It will look like a tab where they will see the different "matches" of employees, where they **accept the candidates and can message them,** the new messages will always appear on the top of the tab.
+On the company side, the app can also be **used on computers** and will have a completely different design. It will look like a tab where they will see the different 'matches' of employees, where they can **accept the candidates and message them.** The new messages will always appear at the top of the tab.
 
 The app has to be made on [***Flutter**](#glossary).
 
-### 1.3 Customer
+### 1.3 Customers
 
 The project has been commissioned by the company ["We Are Evolution"](https://www.we-are-evolution.com/team) represented by [**Oliver Blonsar**](https://www.linkedin.com/in/olivier-blonsard/) (the employment brand, communication expert and audio-visual expert) and [**Lilou Jourdannaud**](https://www.linkedin.com/in/lilou-jourdannaud-6b0a60220/) (The communication manager).
 
@@ -136,7 +136,7 @@ The majority of our documents have **the same criteria**, making harmony between
 
 The common criteria are:
 - All documents must have a **table of contents**
-- Documents must stay **as simple as possible**, making them **short and not too technical as possible**. if technical terms are necessary, a **glossary must be implemented**.
+- Documents must stay **as simple as possible**, making them **short and not too technical as possible**. If technical terms are necessary, a **glossary must be implemented**.
 - All the documents are written in **American English**.
 
 ### 2.2 Review process
@@ -158,7 +158,7 @@ To review the documents we use **GitHub issues** to track any problems like typo
 
 ## 3. Testing strategy
 
-### 3.1 Tests main goal
+### 3.1 Tests' main goal
 
 The main goal behind doing tests is to **ensure that all project criterias are checked**, and possibly enhance the quality of the project for a better user experience.
 
@@ -172,7 +172,7 @@ Firefox 72.0
 Safari on El Capitan
 Edge 1.2.0
 
-***(They will work in the upper version of this web platform)***
+***(They will work in the upper version of this web platforms)***
 
 <br>
 <br>
@@ -269,7 +269,8 @@ We also use a system of **labels** to identify the severity of the test cases:
 
 ### 4.4 Bug tracking schema
 
-![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/7661262a-6f32-45d7-bd86-da27ae3817bb)
+![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/b6e26386-f4a9-4656-af15-59bcb61d3672)
+
 
 *Bug tracking schema*
 
@@ -289,7 +290,7 @@ To manage our test we are using specific tools :
 
 - We use GitHub for test management. Test cases and GitHub issues are updated in the [GitHub Issue section](https://github.com/algosup/2023-2024-project-5-flutter-team-1/issues).
 <br>
-- Every Failed test case caused by a bug will be reported in a GitHub issue with the associated test cases
+- Every failed test case caused by a bug will be reported in a GitHub issue with the associated test cases
 <br>
 - After the developer does the bug fix, the Quality Assurance will test it again in the same way he did last time.
 
@@ -297,7 +298,7 @@ To manage our test we are using specific tools :
 
 We have a conforming plan of how we create and process our tests.
 
-![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/4c34e2b5-58bc-4749-9e8e-bf6c489f6ec2)
+![image](https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/146164921/0c1ea20b-bfaf-4849-b4d7-6f77aa172ef7)
 
 *Test design schema*
 
@@ -318,7 +319,7 @@ We estimated a schedule for the entirety of the testing procedure of this projec
 
 ### 5.4 Test deliverables
 
-- **Test Plan:** it documents our approach and methodology for testing, explaining how tests will be managed and done.
+- **Test Plan:** it documents our approach and methodology for testing, explaining how tests will be managed and performed.
   
 - **Test Cases:** It represent a set of tests created to ensure that our application works as intended.
 
@@ -336,11 +337,11 @@ We estimated a schedule for the entirety of the testing procedure of this projec
 
 |Role|Name|Signature|
 |----|----|---------|
-|Project Manager| BAVAROIS Séréna ||
-|Program Manager| PORTET Wilfried ||
-|Technical Lead| GUILLOUCHE Enzo ||
-|Technical Writer| DELILLE Elone ||
-|Software Enginer| DERAMCHI Guillaume ||
-|Quality Assurance| LEFIN Mattéo ||
+|Project Manager| BAVAROIS Séréna |✅|
+|Program Manager| PORTET Wilfried |✅|
+|Technical Lead| GUILLOUCHE Enzo |✅|
+|Technical Writer| DELILLE Elone |✅|
+|Software Enginer| DERAMCHI Guillaume |✅|
+|Quality Assurance| LEFIN Mattéo |✅|
 
 </details>
