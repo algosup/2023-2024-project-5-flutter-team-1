@@ -50,8 +50,7 @@ class _HomePageCompanyState extends State<HomePageCompany> {
     var size = MediaQuery.sizeOf(context);
     List<Widget> pages = [
       ChatManager(size, appLanguage),
-      Settings(size, settings, appLanguage),
-      Profile(size, profile, appLanguage),
+      Settings(size, appLanguage),
     ];
 
     return Scaffold(
@@ -124,16 +123,6 @@ class _HomePageCompanyState extends State<HomePageCompany> {
               onPressed: () {
                 setState(() {
                   _onItemTapped(1);
-                });
-              },
-            ),
-            IconButton(
-              isSelected: _selectedIndex == 2,
-              icon: const Icon(Icons.person_outlined, color: Colors.white),
-              selectedIcon: const Icon(Icons.person, color: Colors.white),
-              onPressed: () {
-                setState(() {
-                  _onItemTapped(2);
                 });
               },
             ),
