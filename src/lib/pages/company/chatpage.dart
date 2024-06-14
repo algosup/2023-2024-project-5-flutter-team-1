@@ -130,7 +130,6 @@ class _ChatManagerState extends State<ChatManager> {
                         onTap: () {
                           setState(() {
                             selectedIndex = 0;
-                            chatSelect();
                           });
                         },
                         child: chats(
@@ -144,7 +143,6 @@ class _ChatManagerState extends State<ChatManager> {
                         onTap: () {
                           setState(() {
                             selectedIndex = 1;
-                            chatSelect();
                           });
                         },
                         child: chats(
@@ -158,7 +156,6 @@ class _ChatManagerState extends State<ChatManager> {
                         onTap: () {
                           setState(() {
                             selectedIndex = 2;
-                            chatSelect();
                           });
                         },
                         child: chats(widget.size, "Elone", "Software Engineer",
@@ -168,7 +165,6 @@ class _ChatManagerState extends State<ChatManager> {
                         onTap: () {
                           setState(() {
                             selectedIndex = 3;
-                            chatSelect();
                           });
                         },
                         child: chats(widget.size, "Julian", "Software Engineer",
@@ -178,7 +174,6 @@ class _ChatManagerState extends State<ChatManager> {
                         onTap: () {
                           setState(() {
                             selectedIndex = 4;
-                            chatSelect();
                           });
                         },
                         child: chats(widget.size, "Joe", "Software Engineer",
