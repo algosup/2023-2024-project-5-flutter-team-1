@@ -34,10 +34,21 @@ For functions and widget names, the naming convention used is camel case (i.e. a
 `userSlideOnLeft`
 `changeApplicationLanguage`
 
+
+> GitHub branch
+
+For GitHub branches, we'll use the flat case style (i.e. all words are pasted in, and written in lower case). Here are a few examples:<br>
+`main`
+`dev`
+`branch`
+<br><br>
+
 ## Rules
 
+> Comments
+
 Each function must be detailed with comments and the name of the function's author.
-Here's an example of what it looks like: 
+Here's an example of what it looks like:
 
 ```dart
 // Function made by DELILLE Elone and GUILLOUCHE Enzo

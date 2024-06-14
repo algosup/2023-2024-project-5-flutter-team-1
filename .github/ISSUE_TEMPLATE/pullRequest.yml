@@ -1,0 +1,16 @@
+name: 🚀 Pull-request
+description: Pull-request template
+title: "<title>"
+body:
+  - type: textarea
+    attributes:
+      label: Pull request purpose
+      description: What the purpose of this pull requeste?
+    validation:
+      required: false
+  - type: textarea
+    attributes:
+      label: What has been modified
+      description: describe which file you modified and what you modified
+    validation:
+      required: false

@@ -1,6 +1,6 @@
-# Flutter - Adopt a candidate
-![Static Badge](https://img.shields.io/badge/Flutter%20-%20Black?logo=flutter&logoColor=blue&labelColor=white&color=black)
+<img src="https://github.com/algosup/2023-2024-project-5-flutter-team-1/assets/147847949/910e8f91-ef71-44bf-9e13-418b52546dc0" style="width:100px" alt="Adopt a candidate - Logo - Team One"><h1> Flutter - Adopt a candidate</h1>
 
+![Static Badge](https://img.shields.io/badge/Flutter%20-%20Black?logo=flutter&logoColor=blue&labelColor=white&color=black)
 
 ## Overview
 
