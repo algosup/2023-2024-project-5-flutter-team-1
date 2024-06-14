@@ -18,7 +18,7 @@
       <p style="margin-top: 5px; font-size: 12px;">Need help with account creation and information? Each part of creating your account is listed below.</p>
     </div>
   </a>
-  <a href="https://www.google.com" style="text-decoration: none; color: inherit; flex: 1; outline: none;">
+  <a href="#-features" style="text-decoration: none; color: inherit; flex: 1; outline: none;">
     <div style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; text-align: left; width: 150px; height: 200px; transition: background-color 0.3s;">
       <div style="display: flex; align-items: center;">
         <span style="font-size: 24px; margin-right: 10px;">🔗</span>
@@ -59,11 +59,12 @@ I download the candidate application:
   </div>
   <div style="text-align: center;">
     <a href="https://apps.apple.com/us/app/example-ios-app/id123456789" style="text-decoration: none; color: inherit;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="iOS" style="width: 50px; height: 50px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/625px-Apple_logo_black.svg.png" alt="iOS" style="width: 50px; height: 50px;">
     </a>
     <p style="margin: 5px 0 0; font-size: 12px; color: lightgray;">Available for iOS 12 and above</p>
   </div>
 </div>
+<u>Link does not work. 😞</u>
 
 <style>
   a img:hover {
@@ -190,3 +191,36 @@ Once you have filled in this information, we will contact you within the next 24
 <span id="features"></span>
 ## 🔩 Features
 
+### Swiping to Match with Companies
+Our app uses a simple, intuitive swiping interface to connect candidates with potential employers. This feature is designed to streamline the process of finding the right company that matches your career aspirations and skills. Here's how it works:
+
+#### How to Swipe
+<b>Swipe Right:</b> When you're interested in a company, swipe right on their profile. This indicates your interest in the opportunity they offer. If the company also shows interest in your profile, it's a match!
+Swipe Left: If you feel that a company isn't the right fit for you, simply swipe left on their profile. This removes them from your current pool of potential matches, allowing you to focus on better-suited opportunities.
+
+#### Match Notification
+<b>It's a Match:</b> When both you and the company have swiped right on each other, it's a match! You'll receive a notification and the company will appear in your 'Matches' tab. From here, you can initiate contact directly through the app, allowing for a seamless communication process.
+
+### Communicating with Companies via Chat
+
+Once you have matched with a company, you can begin communicating directly with them using our built-in chat feature. This facilitates a seamless and efficient dialogue without the need for external communication tools. Here's how you can use the chat feature:
+
+#### Starting a Conversation
+
+<b>Access the Chat:</b> After a match is made, you can access the chat with a company by going to your 'Matches' tab and selecting the company you wish to speak with.
+
+<b>Initiate the Chat:</b> Simply tap on the chat window to open it and begin typing your message. Press 'Send' when you are ready to transmit your message to the company.
+
+#### Receiving Messages
+
+<b>Notifications:</b> You will receive notifications for new messages. Ensure that app notifications are enabled on your device so that you don't miss any important communications from interested companies.
+
+<b>Message Alerts:</b> Inside the app, any new messages will be indicated with a visual notification (such as a badge) on the 'Chat' or 'Matches' tab, making it easy to see when there’s something new.
+
+#### Chat Features
+
+<b>Real-Time Communication:</b> Enjoy real-time communication with companies, allowing for quick and efficient dialogue.
+
+<b>Message History:</b> All your chats will be saved, so you can scroll back through your conversations at any time. This is useful for recalling past discussions before going into an interview.
+
+<b>Emojis and Attachments:</b> Enhance your conversations by using emojis or attaching files like your resume or portfolio directly in the chat. This helps you better express yourself and share relevant documents instantly.
