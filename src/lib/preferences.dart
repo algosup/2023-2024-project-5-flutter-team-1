@@ -1,5 +1,5 @@
 class Preferences {
-  String appLanguage = "fr_FR";
+  String appLanguage = "en_US";
   String macAddress = "";
   String firstName = "";
   String lastName = "";

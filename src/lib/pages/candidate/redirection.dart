@@ -176,7 +176,7 @@ class _RedirectionPageState extends State<RedirectionPage> {
         } else {
           appPreferences.setLanguage("en_US");
         }
-        print("${appPreferences.appLanguage}");
+        print(appPreferences.appLanguage);
         appPreferences.macAddress = appMacAddress;
         if (size.width > 1000) {
           context.go("/loginpagecompany");

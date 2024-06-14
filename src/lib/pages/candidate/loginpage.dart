@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:src/preferences.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
@@ -34,10 +33,7 @@ class _LoginPageState extends State<LoginPage> {
 
   void getApplicationData() async {
     widget.storage.getAppLang();
-    print("Application Language DataClass: ${widget.storage.appLang}");
     applicationLanguage = widget.storage.setAppLang();
-    print("Application Language DataClass: ${widget.storage.appLang}");
-    print("Application Language : $applicationLanguage");
   }
 
   void callNewPage(String pageName) {
@@ -138,7 +134,7 @@ Widget myApplication(
                   ),
                   child: Image.asset("assets/images/Default.png"),
                 ),
-                Container(
+                SizedBox(
                   width: size.width * 0.6,
                   height: size.width * 0.15,
                   child: TextField(
@@ -191,14 +187,15 @@ Widget myApplication(
                   ),
                   child: Image.asset("assets/images/Security.png"),
                 ),
-                Container(
+                SizedBox(
                   width: size.width * 0.6,
                   height: size.width * 0.15,
                   child: TextField(
                     obscureText: true,
                     enableSuggestions: false,
                     autocorrect: false,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.w700),
                     decoration: InputDecoration(
                       hintText: "${passwordText[appLang]}",
                       hintStyle: GoogleFonts.poppins(

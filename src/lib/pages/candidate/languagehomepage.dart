@@ -28,7 +28,9 @@ class GetUserData {
   Future<bool> postUserLang(bool english) async {
     String address = await userMacAddress();
     String language = english ? "en_US" : "fr_FR";
-    final url = await http.post(Uri.parse("https://ffeur.pq.lu/v1/data/getApi/setUserLanguage.php"), body: {'mac': address,'language': language});
+    final url = await http.post(
+        Uri.parse("https://ffeur.pq.lu/v1/data/getApi/setUserLanguage.php"),
+        body: {'mac': address, 'language': language});
 
     if (url.statusCode == 200) {
       final jsonResponse = jsonDecode(url.body);
@@ -39,10 +41,10 @@ class GetUserData {
     }
   }
 
-  void setLang(bool english){
-    if(english == true){
+  void setLang(bool english) {
+    if (english == true) {
       appPreferences.setLanguage("en_US");
-    } else if (english == false){
+    } else if (english == false) {
       appPreferences.setLanguage("fr_FR");
     }
   }
@@ -71,7 +73,7 @@ class _LanguageHomePageState extends State<LanguageHomePage> {
   String? macAddress;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     getMacAddress();
   }
@@ -95,7 +97,9 @@ class _LanguageHomePageState extends State<LanguageHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    englishSelected ? "ADOPT A CANDIDATE" : "ADOPTE UN CANDIDAT",
+                    englishSelected
+                        ? "ADOPT A CANDIDATE"
+                        : "ADOPTE UN CANDIDAT",
                     style: GoogleFonts.poppins(
                       textStyle: const TextStyle(
                         fontWeight: FontWeight.w700,
@@ -118,7 +122,9 @@ class _LanguageHomePageState extends State<LanguageHomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        englishSelected ? "Choose your language" : "Choisis ta langue",
+                        englishSelected
+                            ? "Choose your language"
+                            : "Choisis ta langue",
                         style: GoogleFonts.poppins(
                           textStyle: const TextStyle(
                             fontWeight: FontWeight.w400,
@@ -144,7 +150,7 @@ class _LanguageHomePageState extends State<LanguageHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
-                    onTap:() {
+                    onTap: () {
                       widget.storage.postUserLang(englishSelected);
                       widget.storage.setLang(englishSelected);
                       setState(() {
@@ -221,7 +227,7 @@ class _LanguageHomePageState extends State<LanguageHomePage> {
     var size = MediaQuery.of(context).size;
 
     bool isSelected = (language == "fr_FR" && frenchSelected) ||
-                      (language == "en_US" && englishSelected);
+        (language == "en_US" && englishSelected);
 
     Map<bool, Color> mapColor = {
       true: Colors.white,

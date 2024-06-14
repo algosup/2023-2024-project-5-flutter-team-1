@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});
 
@@ -8,22 +7,8 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text('Chat', style: TextStyle(color: Colors.white)),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.white),
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Color(0xFF424242), Color(0xFF000000)],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-        ),
-      ),
       body: ListView(
+        padding: EdgeInsets.zero,
         children: [
           ChatListItem(
             name: 'John Doe',
@@ -322,15 +307,9 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          children: [
-            const CircleAvatar(
-              backgroundColor: Colors.grey,
-              child: Icon(Icons.person),
-            ),
-            const SizedBox(width: 10),
-            Text(widget.name),
-          ],
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.of(context).pop(),
         ),
       ),
       body: Column(

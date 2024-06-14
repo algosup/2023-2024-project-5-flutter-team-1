@@ -65,15 +65,12 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Map<String, String> nextText = {"fr_FR": "Suivant", "en_US": "Next"};
 
-  Map<String, String> alreadyAcc ={
+  Map<String, String> alreadyAcc = {
     "fr_FR": "Déjà inscrit ?",
     "en_US": "Already register?"
   };
 
-  Map<String,String> loginNow = {
-    "fr_FR": "Connexion",
-    "en_US": "Login"
-  };
+  Map<String, String> loginNow = {"fr_FR": "Connexion", "en_US": "Login"};
 
   @override
   Widget build(BuildContext context) {
@@ -227,58 +224,58 @@ class _RegisterPageState extends State<RegisterPage> {
                     width: size.width * 0.4,
                   ),
                 ),
-                Column( children: [
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      if (checkOne == true && checkTwo == true) {
-                        context.go("/registerpage2");
-                      }
-                    });
-                  },
-                  child: Container(
-                    width: size.width * 0.5,
-                    height: size.width * 0.15,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color:
-                          (checkOne! && checkTwo!) ? Colors.green : Colors.grey,
-                    ),
-                    child: Center(
-                      child: Text("${nextText[lang]}",
-                          style: GoogleFonts.poppins(
-                              textStyle: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w300,
-                            color: Colors.white,
-                          ))),
+                Column(children: [
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        if (checkOne == true && checkTwo == true) {
+                          context.go("/registerpage2");
+                        }
+                      });
+                    },
+                    child: Container(
+                      width: size.width * 0.5,
+                      height: size.width * 0.15,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: (checkOne! && checkTwo!)
+                            ? Colors.green
+                            : Colors.grey,
+                      ),
+                      child: Center(
+                        child: Text("${nextText[lang]}",
+                            style: GoogleFonts.poppins(
+                                textStyle: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.white,
+                            ))),
+                      ),
                     ),
                   ),
-                ),
-                GestureDetector(
-                  onTap: (){
-                    setState(() {
-                      context.go("/loginpage");
-                    });
-                  },
-                  child:
-                Row(children: [
-                  Text("${alreadyAcc[lang]} ", style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w200,
-                      color: Colors.black,
-                    )
-                  )),
-                  Text("${loginNow[lang]}", style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w200,
-                      color: Color.fromRGBO(0, 117, 255, 100)
-                    )
-                  ))
-                ],))
-                
+                  GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          context.go("/loginpage");
+                        });
+                      },
+                      child: Row(
+                        children: [
+                          Text("${alreadyAcc[lang]} ",
+                              style: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w200,
+                                color: Colors.black,
+                              ))),
+                          Text("${loginNow[lang]}",
+                              style: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w200,
+                                      color: Color.fromRGBO(0, 117, 255, 100))))
+                        ],
+                      ))
                 ])
               ],
             ),
