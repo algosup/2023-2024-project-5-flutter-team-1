@@ -1,14 +1,13 @@
-# Management documents
+># Management documents
 
 This document contains the main management documents for our project, such as :
 
-- [Management documents](#management-documents)
-  - [Project charter](#project-charter)
-  - [Task schedule](#task-schedule)
-  - [RACI matrix](#raci-matrix)
-  - [MoSCoW](#moscow)
-  - [Key Performance Indicators](#key-performance-indicators)
-  - [Weekly reports](#weekly-reports)
+- [Project charter](#project-charter)
+- [Task schedule](#task-schedule)
+- [RACI matrix](#raci-matrix)
+- [MoSCoW](#moscow)
+- [Key Performance Indicators](#key-performance-indicators)
+- [Weekly reports](#weekly-reports)
 
 ## Project charter
 
