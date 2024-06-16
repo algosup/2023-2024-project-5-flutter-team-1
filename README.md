@@ -9,7 +9,17 @@ Candidates are anonymous to avoid any form of discrimination based on gender, or
 
 It's based on a principle of soft skills rather than on CVs, the aim being to position yourself on several soft skills and match up with companies looking for these kinds of criteria.
 
-The application is coded in Flutter 3. The project is commissioned by Company "We Are Evolution", in order to retrieve data from candidates.
+The project is commissioned by Company "We Are Evolution", in order to retrieve data from candidates.
+
+## Version
+
+The project has been developed using Flutter 3.22.0.
+
+The application is compatible with PC and phone, though the devices are dedicated to specific users:
+- Phone for candidates
+- PC for companies
+
+You just have to run the app on your device and it will automatically detect which device you're currently using.
 
 ## Deliverables
 
