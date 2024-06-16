@@ -115,7 +115,7 @@ This week we have a test, so not a complete project period and only a half day o
 
 | Task | Status | Date of start | People |
 |--|--|--|--|
-| Technical Specification |In Progress| 05/28/2024 |Enzo GUILLOUCHE|
+| Technical Specification |In Progress| 05/28/2024 |Enzo GUILLOUCHE|a&é"
 | Test Plan |In Progress|05/28/2024|Mattéo LEFIN|
 | Test cases |In Progress|05/28/2024|Mattéo LEFIN|
 | Critical Path |In Progress|05/28/2024|Séréna BAVAROIS|
@@ -148,7 +148,6 @@ In terms of timeline we are on time. Our software engineer is starting to get mo
 | Test Cases |In Progress|06/03/2024|Mattéo LEFIN|
 | Web version |Done | 06/06/2024 | Enzo GUILLOUCHE |
 
-
 ### W4 - Next steps
 
 The next steps will be to improve the web version and continue to add our last features and also write the user manual.
@@ -164,19 +163,20 @@ We are in the last week of production and our objectives for this week are to fi
 
 ### W5 - Timeline status
 
-
+This week we're concentrating on the code because it's the last rush. Guillaume, our software engineer, is working really well, accompanied by Enzo and Wilfried. As for Elone, he's been very efficient on his document, starting and finishing it very quickly.  I'm very proud of my team this week.
 
 ### W5 - Work accomplished
 
 | Task | Status | Date of start | People |
 |--|--|--|--|
-| Swipe system | Done | 06/11/2024 | Guillaume DERAMCHI |
-|User Manual|In Progress| 06/11/2024|Elone DELILLE|
-
+| Swipe System | Done | 06/11/2024 | Guillaume DERAMCHI |
+| User Manual | Done | 06/11/2024 | Elone DELILLE |
+| Settings Page | In Progress | 06/14/2024 | Guillaume DERAMCHI |
+| Company Messaging | Done | 06/11/2024 | Enzo GUILLOUCHE |
 
 ### W5 - Next steps
 
-
+Next week we will be focussing on the oral presentation.
 
 ---
 
