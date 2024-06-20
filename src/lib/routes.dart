@@ -74,6 +74,11 @@ final routes = GoRouter(routes: [
     builder: (BuildContext context, GoRouterState state) => HomePage(2),
   ),
   GoRoute(
+    path: "/chatscreen",
+    name: "Chat Screen",
+    builder: (BuildContext context, GoRouterState state) => const ChatScreen(),
+  ),
+  GoRoute(
     path: "/homepageCompany",
     name: "HomePage Company",
     builder: (BuildContext context, GoRouterState state) =>
