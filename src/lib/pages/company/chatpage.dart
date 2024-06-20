@@ -67,16 +67,6 @@ List<Widget> messages5 = [
   ),
 ];
 
-// the list to know if a chat is selected
-List<bool> chatIsSelected = [
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-];
-
 // the index of the selected chat
 int selectedIndex = -1;
 
@@ -92,18 +82,6 @@ class ChatManager extends StatefulWidget {
 
 class _ChatManagerState extends State<ChatManager> {
   // the function that returns the selected chat
-  int chatSelect() {
-    if (chatIsSelected.contains(true)) {
-      chatIsSelected[0] = false;
-      chatIsSelected[1] = false;
-      chatIsSelected[2] = false;
-      chatIsSelected[3] = false;
-      chatIsSelected[4] = false;
-      chatIsSelected[5] = false;
-    }
-    chatIsSelected[selectedIndex] = true;
-    return selectedIndex;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +114,7 @@ class _ChatManagerState extends State<ChatManager> {
                           widget.size,
                           "John Doe",
                           "Software Engineer",
-                          chatIsSelected[0],
+                          
                         ),
                       ),
                       GestureDetector(
@@ -149,7 +127,7 @@ class _ChatManagerState extends State<ChatManager> {
                           widget.size,
                           "Jeremy",
                           "Software Engineer",
-                          chatIsSelected[1],
+                          
                         ),
                       ),
                       GestureDetector(
@@ -159,7 +137,7 @@ class _ChatManagerState extends State<ChatManager> {
                           });
                         },
                         child: chats(widget.size, "Elone", "Software Engineer",
-                            chatIsSelected[2]),
+                            ),
                       ),
                       GestureDetector(
                         onTap: () {
@@ -168,7 +146,7 @@ class _ChatManagerState extends State<ChatManager> {
                           });
                         },
                         child: chats(widget.size, "Julian", "Software Engineer",
-                            chatIsSelected[3]),
+                            ),
                       ),
                       GestureDetector(
                         onTap: () {
@@ -177,7 +155,7 @@ class _ChatManagerState extends State<ChatManager> {
                           });
                         },
                         child: chats(widget.size, "Joe", "Software Engineer",
-                            chatIsSelected[4]),
+                            ),
                       ),
                     ],
                   ),
@@ -209,7 +187,7 @@ class _ChatManagerState extends State<ChatManager> {
 }
 
 // the widget that displays the selectable chats on the left
-Widget chats(var size, String name, String job, bool isChosen) {
+Widget chats(var size, String name, String job) {
   return Padding(
     padding: const EdgeInsets.all(10),
     child: Container(

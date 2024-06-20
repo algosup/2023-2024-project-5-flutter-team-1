@@ -59,7 +59,7 @@ final routes = GoRouter(
     GoRoute(
       path: "/homepage",
       name: "HomePage",
-      builder: (BuildContext context, GoRouterState state) => const HomePage(),
+      builder: (BuildContext context, GoRouterState state) => HomePage(0),
     ),
     GoRoute(
     path: "/homepageCompany",

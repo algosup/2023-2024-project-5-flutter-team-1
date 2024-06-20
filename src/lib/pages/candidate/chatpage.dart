@@ -1,8 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:src/pages/candidate/homepage.dart';
 
-class ChatPage extends StatelessWidget {
-  const ChatPage({super.key});
+List<String> messagesList0 = [
+  'Hello, how are you?',
+  'I\'m good, thanks! How about you?',
+];
 
+List<Widget> messages0 = [
+  ChatBubble(
+    text: messagesList0[0],
+    isCurrentUser: true,
+  ),
+  ChatBubble(
+    text: messagesList0[1],
+    isCurrentUser: false,
+  ),
+];
+
+class ChatPage extends StatefulWidget {
+  ChatPage({super.key});
+
+  @override
+  State<ChatPage> createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,14 +34,14 @@ class ChatPage extends StatelessWidget {
         children: [
           ChatListItem(
             name: 'John Doe',
-            lastMessage: 'I\'m good, thanks! How about you?',
+            lastMessage: messagesList0.last,
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const ChatScreen(
+                  builder: (context) => ChatScreen(
                     name: 'John Doe',
-                    lastMessage: 'I\'m good, thanks! How about you?',
+                    messages: messages0,
                   ),
                 ),
               );
@@ -28,213 +50,47 @@ class ChatPage extends StatelessWidget {
           ChatListItem(
             name: 'Jane Smith',
             lastMessage: 'Sure, I can help with that.',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ChatScreen(
-                    name: 'Jane Smith',
-                    lastMessage: 'Sure, I can help with that.',
-                  ),
-                ),
-              );
-            },
+            onTap: () {},
           ),
           ChatListItem(
             name: 'Alice Johnson',
             lastMessage: 'Let\'s catch up this weekend.',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ChatScreen(
-                    name: 'Alice Johnson',
-                    lastMessage: 'Let\'s catch up this weekend.',
-                  ),
-                ),
-              );
-            },
+            onTap: () {},
           ),
-          // Add more chat list items as needed
           ChatListItem(
-            name: 'Bob Johnson',
+            name: 'Bob Joon',
             lastMessage: 'I have a question about the project.',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ChatScreen(
-                    name: 'Bob Johnson',
-                    lastMessage: 'I have a question about the project.',
-                  ),
-                ),
-              );
-            },
+            onTap: () {},
           ),
           ChatListItem(
             name: 'Emily Davis',
-            lastMessage: 'Can you send me the latest report?',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ChatScreen(
-                    name: 'Emily Davis',
-                    lastMessage: 'Can you send me the latest report?',
-                  ),
-                ),
-              );
-            },
+            lastMessage: 'Can you send me the last report?',
+            onTap: () {},
           ),
           ChatListItem(
             name: 'Michael Brown',
             lastMessage: 'I need to reschedule our meeting.',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ChatScreen(
-                    name: 'Michael Brown',
-                    lastMessage: 'I need to reschedule our meeting.',
-                  ),
-                ),
-              );
-            },
+            onTap: () {},
           ),
           ChatListItem(
             name: 'Sarah Wilson',
             lastMessage: 'I have some feedback for you.',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ChatScreen(
-                    name: 'Sarah Wilson',
-                    lastMessage: 'I have some feedback for you.',
-                  ),
-                ),
-              );
-            },
+            onTap: () {},
           ),
           ChatListItem(
-            name: 'David Lee',
-            lastMessage: 'I have a question about the task.',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ChatScreen(
-                    name: 'David Lee',
-                    lastMessage: 'I have a question about the task.',
-                  ),
-                ),
-              );
-            },
-          ),
-          ChatListItem(
-            name: 'Olivia Taylor',
-            lastMessage: 'I need to discuss the budget.',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ChatScreen(
-                    name: 'Olivia Taylor',
-                    lastMessage: 'I need to discuss the budget.',
-                  ),
-                ),
-              );
-            },
-          ),
-          ChatListItem(
-            name: 'Daniel Anderson',
-            lastMessage: 'I have a suggestion for the project.',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ChatScreen(
-                    name: 'Daniel Anderson',
-                    lastMessage: 'I have a suggestion for the project.',
-                  ),
-                ),
-              );
-            },
-          ),
-          ChatListItem(
-            name: 'Sophia Martinez',
-            lastMessage: 'I need to follow up on the proposal.',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ChatScreen(
-                    name: 'Sophia Martinez',
-                    lastMessage: 'I need to follow up on the proposal.',
-                  ),
-                ),
-              );
-            },
-          ),
-          ChatListItem(
-            name: 'William Thompson',
-            lastMessage: 'I have a question about the deadline.',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ChatScreen(
-                    name: 'William Thompson',
-                    lastMessage: 'I have a question about the deadline.',
-                  ),
-                ),
-              );
-            },
-          ),
-          ChatListItem(
-            name: 'Emma Garcia',
-            lastMessage: 'I have a question about the requirements.',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ChatScreen(
-                    name: 'Emma Garcia',
-                    lastMessage: 'I have a question about the requirements.',
-                  ),
-                ),
-              );
-            },
+            name: 'Davis Lee',
+            lastMessage: 'I have a question about this task.',
+            onTap: () {},
           ),
           ChatListItem(
             name: 'James Robinson',
             lastMessage: 'I need to discuss the timeline.',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ChatScreen(
-                    name: 'James Robinson',
-                    lastMessage: 'I need to discuss the timeline.',
-                  ),
-                ),
-              );
-            },
+            onTap: () {},
           ),
           ChatListItem(
             name: 'Ava Hernandez',
             lastMessage: 'I have a question about the deliverables.',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ChatScreen(
-                    name: 'Ava Hernandez',
-                    lastMessage: 'I have a question about the deliverables.',
-                  ),
-                ),
-              );
-            },
+            onTap: () {},
           ),
         ],
       ),
@@ -242,12 +98,12 @@ class ChatPage extends StatelessWidget {
   }
 }
 
-class ChatListItem extends StatelessWidget {
+class ChatListItem extends StatefulWidget {
   final String name;
-  final String lastMessage;
+  String lastMessage;
   final VoidCallback onTap;
 
-  const ChatListItem({
+  ChatListItem({
     required this.name,
     required this.lastMessage,
     required this.onTap,
@@ -255,26 +111,31 @@ class ChatListItem extends StatelessWidget {
   });
 
   @override
+  State<ChatListItem> createState() => _ChatListItemState();
+}
+
+class _ChatListItemState extends State<ChatListItem> {
+  @override
   Widget build(BuildContext context) {
     return ListTile(
       leading: const CircleAvatar(
         backgroundColor: Colors.grey,
         child: Icon(Icons.person),
       ),
-      title: Text(name),
-      subtitle: Text(lastMessage),
-      onTap: onTap,
+      title: Text(widget.name),
+      subtitle: Text(widget.lastMessage),
+      onTap: widget.onTap,
     );
   }
 }
 
 class ChatScreen extends StatefulWidget {
   final String name;
-  final String lastMessage;
+  List<Widget> messages;
 
-  const ChatScreen({
+  ChatScreen({
     required this.name,
-    required this.lastMessage,
+    required this.messages,
     super.key,
   });
 
@@ -283,21 +144,23 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  bool _showContainer = false;
-  final List<String> _messages = [];
   final TextEditingController _controller = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    _messages.add('Hello, how are you?'); // Initial message
-    _messages.add(widget.lastMessage); // Last message from the list
   }
 
   void _sendMessage() {
     if (_controller.text.isNotEmpty) {
       setState(() {
-        _messages.add(_controller.text);
+        messagesList0.add(_controller.text);
+        widget.messages.add(
+          ChatBubble(
+            text: messagesList0.last,
+            isCurrentUser: true,
+          ),
+        );
         _controller.clear();
       });
     }
@@ -309,49 +172,26 @@ class _ChatScreenState extends State<ChatScreen> {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomePage(2),
+            ),
+          ),
         ),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            child: ListView.builder(
-              itemCount: _messages.length,
-              itemBuilder: (context, index) {
-                return ChatBubble(
-                  text: _messages[index],
-                  isCurrentUser:
-                      index % 2 == 0, // For demo purposes, alternate the sender
-                  onTap: () {
-                    setState(() {
-                      _showContainer = !_showContainer;
-                    });
-                  },
-                );
-              },
-            ),
-          ),
-          if (_showContainer)
-            Container(
-              margin: const EdgeInsets.all(10),
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Colors.grey[300],
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: const Offset(0, 3),
-                  ),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  ...widget.messages,
                 ],
               ),
-              child: const Text(
-                'This is a cool container that appears when you tap on a discussion!',
-                style: TextStyle(fontSize: 18),
-              ),
             ),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -365,6 +205,9 @@ class _ChatScreenState extends State<ChatScreen> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
+                    onSubmitted: (value) {
+                      _sendMessage();
+                    },
                   ),
                 ),
                 IconButton(
@@ -383,12 +226,10 @@ class _ChatScreenState extends State<ChatScreen> {
 class ChatBubble extends StatelessWidget {
   final String text;
   final bool isCurrentUser;
-  final VoidCallback onTap;
 
-  const ChatBubble({
+  ChatBubble({
     required this.text,
     required this.isCurrentUser,
-    required this.onTap,
     super.key,
   });
 
@@ -396,19 +237,16 @@ class ChatBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: isCurrentUser ? Alignment.centerRight : Alignment.centerLeft,
-      child: GestureDetector(
-        onTap: onTap,
-        child: Container(
-          margin: const EdgeInsets.all(10),
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: isCurrentUser ? Colors.blue : Colors.grey,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Text(
-            text,
-            style: const TextStyle(color: Colors.white),
-          ),
+      child: Container(
+        margin: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: isCurrentUser ? Colors.blue : Colors.grey,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Text(
+          text,
+          style: const TextStyle(color: Colors.white),
         ),
       ),
     );

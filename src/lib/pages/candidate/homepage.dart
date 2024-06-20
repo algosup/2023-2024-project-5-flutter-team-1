@@ -5,7 +5,8 @@ import 'chatpage.dart';
 import 'dart:math';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  int _selectedIndex;
+  HomePage(this._selectedIndex, {super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -13,7 +14,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String appLanguage = appPreferences.appLanguage;
-  int _selectedIndex = 0;
   Offset _startDragOffset = Offset.zero;
   Offset _currentOffset = Offset.zero;
   double _opacity = 1.0;
@@ -241,12 +241,12 @@ class _HomePageState extends State<HomePage> {
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      widget._selectedIndex = index;
     });
   }
 
   String _getAppBarTitle() {
-    switch (_selectedIndex) {
+    switch (widget._selectedIndex) {
       case 1:
         return settings[appLanguage]!;
       case 2:
@@ -410,7 +410,7 @@ class _HomePageState extends State<HomePage> {
     List<Widget> pages = [
       _buildSwipePage(),
       SettingsPage(settings, appLanguage),
-      const ChatPage(),
+      ChatPage(),
     ];
 
     return Scaffold(
@@ -453,7 +453,7 @@ class _HomePageState extends State<HomePage> {
               elevation: 0,
             ),
             Expanded(
-              child: pages[_selectedIndex],
+              child: pages[widget._selectedIndex],
             ),
           ],
         ),
