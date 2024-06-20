@@ -36,7 +36,7 @@ The MoSCoW method is a matrix for prioritising project needs and requirements.
 
 ## Key Performance Indicators
 
-To follow the progress of the project you can check our KPI's.
+To follow the progress of the project you can check our [KPI's](https://docs.google.com/spreadsheets/d/12Rfb6oDf-pXbY8-Folnyd6P9XMX4jCHVIIkMg_S_s7M/edit?gid=0#gid=0).
 
 ## Weekly reports
 

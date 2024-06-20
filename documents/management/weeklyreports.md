@@ -33,7 +33,6 @@
     - [W6 - Overall project status summary](#w6---overall-project-status-summary)
     - [W6 - Timeline status](#w6---timeline-status)
     - [W6 - Work accomplished](#w6---work-accomplished)
-    - [W6 - Next steps](#w6---next-steps)
 
 </detail>
 
@@ -185,13 +184,14 @@ Next week we will be focussing on the oral presentation.
 ### W6 - Overall project status summary 
 06/17/2024 - 06/21/2024
 
+This week is the last week of the project and we have to finish the oral presentation.
+
 ### W6 - Timeline status
+
+We are on time for the oral presentation. I'm very proud of my team for the work they have done during the project.
 
 ### W6 - Work accomplished
 
 | Task | Status | Date of start | People |
 |--|--|--|--|
-| | | 05/00/2024 | |
-
-### W6 - Next steps
-
+| Oral Presentation |Done| 06/18/2024 | Everyone|
