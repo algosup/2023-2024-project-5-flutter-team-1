@@ -117,9 +117,6 @@ class ChatListItem extends StatelessWidget {
         subtitle: Text(lastMessage),
         onTap: onTap,
       ),
-      title: Text(name),
-      subtitle: Text(lastMessage),
-      onTap: onTap,
     );
   }
 }
