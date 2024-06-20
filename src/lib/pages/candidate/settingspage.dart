@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'privacypage.dart';
 import 'notificationspage.dart';
 import 'languagepage.dart';
-import 'helppage.dart';
 import 'securitypage.dart';
+import 'helppage.dart';
 import 'aboutpage.dart';
-import 'privacypage.dart';
 
 class SettingsPage extends StatelessWidget {
   final Map<String, String> settings;
@@ -15,125 +15,120 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          const Padding(
-            padding: EdgeInsets.all(20.0),
-            child: Row(
+      body: Container(
+        decoration: const BoxDecoration(
+          color: Colors.white,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: SingleChildScrollView(
+            child: Column(
               children: [
-                CircleAvatar(
-                  radius: 40,
-                  backgroundColor: Colors.grey,
-                  child: Icon(
-                    Icons.person,
-                    size: 40,
-                    color: Colors.white,
+                const SizedBox(height: 40),
+                const SizedBox(height: 10),
+                const Text(
+                  'Hello Franck!',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(width: 20),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'John Doe',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 5),
-                    Text(
-                      'john.doe@example.com',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ],
+                const SizedBox(height: 5),
+                Text(
+                  'franckjeannin@algosup.com',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey[700],
+                  ),
                 ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: ListView(
-              children: [
+                const SizedBox(height: 30),
+                ListTile(
+                  leading: const Icon(Icons.privacy_tip),
+                  title: Text(
+                    appLanguage == "fr_FR" ? "Confidentialité" : "Privacy",
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PrivacyPage(settings)),
+                    );
+                  },
+                ),
+                const Divider(),
                 ListTile(
                   leading: const Icon(Icons.notifications),
-                  title: const Text('Notifications'),
+                  title: Text(
+                    appLanguage == "fr_FR" ? "Notifications" : "Notifications",
+                  ),
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => NotificationsPage(),
-                      ),
+                          builder: (context) => NotificationsPage(settings)),
                     );
                   },
                 ),
+                const Divider(),
                 ListTile(
                   leading: const Icon(Icons.language),
-                  title: const Text('Language'),
+                  title: Text(
+                    appLanguage == "fr_FR" ? "Langue" : "Language",
+                  ),
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => LanguagePage(),
-                      ),
+                          builder: (context) => LanguagePage(settings)),
                     );
                   },
                 ),
-                ListTile(
-                  leading: const Icon(Icons.lock),
-                  title: const Text('Privacy'),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PrivacyPage(),
-                      ),
-                    );
-                  },
-                ),
+                const Divider(),
                 ListTile(
                   leading: const Icon(Icons.security),
-                  title: const Text('Security'),
+                  title: Text(
+                    appLanguage == "fr_FR" ? "Sécurité" : "Security",
+                  ),
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SecurityPage(),
-                      ),
+                          builder: (context) => SecurityPage(settings)),
                     );
                   },
                 ),
+                const Divider(),
                 ListTile(
                   leading: const Icon(Icons.help),
-                  title: const Text('Help'),
+                  title: Text(
+                    appLanguage == "fr_FR" ? "Aide" : "Help",
+                  ),
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HelpPage(),
-                      ),
+                          builder: (context) => HelpPage(settings)),
                     );
                   },
                 ),
+                const Divider(),
                 ListTile(
                   leading: const Icon(Icons.info),
-                  title: const Text('About'),
+                  title: Text(
+                    appLanguage == "fr_FR" ? "À propos" : "About",
+                  ),
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => AboutPage(),
-                      ),
+                          builder: (context) => AboutPage(settings)),
                     );
                   },
                 ),
               ],
             ),
           ),
-        ],
+        ),
       ),
     );
   }

@@ -28,7 +28,7 @@ class _ChatPageState extends State<ChatPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: ListView(
-        padding: EdgeInsets.zero,
+        padding: const EdgeInsets.all(8.0),
         children: [
           ChatListItem(
             name: 'John Doe',
@@ -92,10 +92,10 @@ class _ChatPageState extends State<ChatPage> {
 
 class ChatListItem extends StatelessWidget {
   final String name;
-  String lastMessage;
+  final String lastMessage;
   final VoidCallback onTap;
 
-  ChatListItem({
+  const ChatListItem({
     required this.name,
     required this.lastMessage,
     required this.onTap,
@@ -104,10 +104,18 @@ class ChatListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: const CircleAvatar(
-        backgroundColor: Colors.grey,
-        child: Icon(Icons.person),
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      elevation: 2,
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      child: ListTile(
+        leading: const CircleAvatar(
+          backgroundColor: Colors.grey,
+          child: Icon(Icons.person, color: Colors.white),
+        ),
+        title: Text(name, style: const TextStyle(fontWeight: FontWeight.bold)),
+        subtitle: Text(lastMessage),
+        onTap: onTap,
       ),
       title: Text(name),
       subtitle: Text(lastMessage),
@@ -152,6 +160,10 @@ class _ChatScreenState extends State<ChatScreen> {
             context.go("/homepage2");
           },
         ),
+        title: const Text('Chat', style: TextStyle(color: Colors.black)),
+        backgroundColor: Colors.white,
+        elevation: 1,
+        iconTheme: const IconThemeData(color: Colors.black),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -261,6 +273,8 @@ class _ChatBubbleState extends State<ChatBubble> {
                                   children: [
                                     const Text(
                                       "Delete the message?",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
                                     ),
                                     GestureDetector(
                                       onTap: () {
@@ -281,6 +295,7 @@ class _ChatBubbleState extends State<ChatBubble> {
                                             'Delete',
                                             style: TextStyle(
                                               fontWeight: FontWeight.bold,
+                                              color: Colors.white,
                                             ),
                                           ),
                                         ),
@@ -302,14 +317,16 @@ class _ChatBubbleState extends State<ChatBubble> {
         },
         child: Container(
           margin: const EdgeInsets.all(10),
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
-            color: widget.isCurrentUser ? Colors.blue : Colors.grey,
-            borderRadius: BorderRadius.circular(10),
+            color: widget.isCurrentUser ? Colors.blue : Colors.grey[300],
+            borderRadius: BorderRadius.circular(20),
           ),
           child: Text(
             widget.text,
-            style: const TextStyle(color: Colors.white),
+            style: TextStyle(
+              color: widget.isCurrentUser ? Colors.white : Colors.black,
+            ),
           ),
         ),
       ),
