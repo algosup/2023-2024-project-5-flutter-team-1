@@ -5,7 +5,8 @@ import 'chatpage.dart';
 import 'dart:math';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  int _selectedIndex;
+  HomePage(this._selectedIndex, {super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -13,7 +14,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String appLanguage = appPreferences.appLanguage;
-  int _selectedIndex = 0;
   Offset _startDragOffset = Offset.zero;
   Offset _currentOffset = Offset.zero;
   double _opacity = 1.0;
@@ -241,12 +241,12 @@ class _HomePageState extends State<HomePage> {
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      widget._selectedIndex = index;
     });
   }
 
   String _getAppBarTitle() {
-    switch (_selectedIndex) {
+    switch (widget._selectedIndex) {
       case 1:
         return settings[appLanguage]!;
       case 2:
@@ -291,11 +291,7 @@ class _HomePageState extends State<HomePage> {
                         height: 600, // Ensure this matches your card height
                         width: 350, // Ensure this matches your card width
                         decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [Color(0xFF303030), Color(0xFF000000)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
+                          color: const Color.fromRGBO(0, 117, 255, 100),
                           borderRadius: BorderRadius.circular(20),
                           boxShadow: [
                             BoxShadow(
@@ -377,13 +373,17 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     IconButton(
                                       icon: const Icon(Icons.clear,
-                                          color: Colors.red, size: 30),
+                                          color:
+                                              Color.fromARGB(255, 193, 43, 32),
+                                          size: 30),
                                       onPressed: () =>
                                           _swipeCard(const Offset(-500, 0)),
                                     ),
                                     IconButton(
                                       icon: const Icon(Icons.check,
-                                          color: Colors.green, size: 30),
+                                          color:
+                                              Color.fromARGB(255, 25, 148, 29),
+                                          size: 30),
                                       onPressed: () =>
                                           _swipeCard(const Offset(500, 0)),
                                     ),
@@ -417,11 +417,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.grey[50],
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.grey, Colors.black],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
+          color: Colors.white,
         ),
         child: Column(
           children: [
@@ -449,11 +445,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              backgroundColor: Colors.transparent,
+              backgroundColor: const Color.fromRGBO(0, 117, 255, 100),
               elevation: 0,
             ),
             Expanded(
-              child: pages[_selectedIndex],
+              child: pages[widget._selectedIndex],
             ),
           ],
         ),
@@ -463,11 +459,7 @@ class _HomePageState extends State<HomePage> {
         height: 60,
         margin: const EdgeInsets.only(bottom: 25),
         decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            colors: [Color(0xFF424242), Color(0xFF000000)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
+          color: const Color.fromRGBO(0, 117, 255, 100),
           borderRadius: BorderRadius.circular(25),
           boxShadow: [
             BoxShadow(
