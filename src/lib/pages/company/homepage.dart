@@ -12,7 +12,6 @@ class HomePageCompany extends StatefulWidget {
 }
 
 class _HomePageCompanyState extends State<HomePageCompany> {
-  String appLanguage = appPreferences.appLanguage;
   String macAddress = "";
   String firstName = "";
   String lastName = "";
@@ -49,8 +48,8 @@ class _HomePageCompanyState extends State<HomePageCompany> {
   Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
     List<Widget> pages = [
-      ChatManager(size, appLanguage),
-      Settings(size, appLanguage),
+      ChatManager(size, appPreferences.appLanguage),
+      Settings(size, appPreferences.appLanguage),
     ];
 
     return Scaffold(
@@ -68,7 +67,7 @@ class _HomePageCompanyState extends State<HomePageCompany> {
             AppBar(
               title: Center(
                 child: Text(
-                  "${adoptCandidate[appLanguage]}",
+                  "${adoptCandidate[appPreferences.appLanguage]}",
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 24,

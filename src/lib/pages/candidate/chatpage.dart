@@ -21,6 +21,25 @@ List<Widget> messages0 = [
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
 
+List<Widget> messages0 = [
+  ChatBubble(
+    text: messagesList0[0],
+    isCurrentUser: true,
+  ),
+  ChatBubble(
+    text: messagesList0[1],
+    isCurrentUser: false,
+  ),
+];
+
+class ChatPage extends StatefulWidget {
+  ChatPage({super.key});
+
+  @override
+  State<ChatPage> createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
   @override
   State<ChatPage> createState() => _ChatPageState();
 }
@@ -227,7 +246,7 @@ class ChatBubble extends StatelessWidget {
   final String text;
   final bool isCurrentUser;
 
-  const ChatBubble({
+  ChatBubble({
     required this.text,
     required this.isCurrentUser,
     super.key,

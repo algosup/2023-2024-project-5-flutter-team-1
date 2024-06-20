@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:src/pages/company/chatpage.dart';
+import 'package:src/preferences.dart';
 
 List<String> companyInfo = [
   "McDonalds", // name
@@ -236,7 +236,22 @@ class _profileTabBoxState extends State<profileTabBox> {
           AppBar(
             title: Text(widget.title),
           ),
-          selectedIndex == 0 ? aboutList(widget.size) : offersList(widget.size),
+          widget.selectedIndex == 0
+              ? aboutList(widget.size)
+              : widget.selectedIndex == 1
+                  ? offersList(widget.size)
+                  : widget.selectedIndex == 2
+                      ? preferencesList(widget.size)
+                      : GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              appPreferences.appLanguage == "fr_FR"
+                                  ? appPreferences.appLanguage = "en_US"
+                                  : appPreferences.appLanguage = "fr_FR";
+                            });
+                          },
+                          child: languagesList(widget.size),
+                        ),
         ],
       ),
     );
@@ -246,8 +261,8 @@ class _profileTabBoxState extends State<profileTabBox> {
 Widget aboutList(var size) {
   return Column(
     children: [
-      oneProfileTab(size, "Company Name", companyInfo[0], 0.5),
-      oneProfileTab(size, "Company City", companyInfo[1], 0.5)
+      oneProfileTab(size, "Company Name", "", 0.5),
+      oneProfileTab(size, "Company City", "", 0.5)
     ],
   );
 }
@@ -256,8 +271,26 @@ Widget offersList(var size) {
   return Column(
     children: [
       oneProfileTab(size, "Offers", "Software Engineer", 0.5),
-      oneProfileTab(
-          size, "Soft skills", "Team-work, problem-solving, ...", 0.5),
+      oneProfileTab(size, "Soft skills", "Team-work, ...", 0.5),
+    ],
+  );
+}
+
+Widget preferencesList(var size) {
+  return Column(
+    children: [
+      oneProfileTab(size, "Theme", "Dark, Light, ...", 0.5),
+      oneProfileTab(size, "Notifications", "Only-messages, Mute, ...", 0.5),
+    ],
+  );
+}
+
+Widget languagesList(var size) {
+  return Column(
+    children: [
+      appPreferences.appLanguage == "fr_FR"
+          ? oneProfileTab(size, "French", "Change language", 0.5)
+          : oneProfileTab(size, "English", "Change language", 0.5),
     ],
   );
 }

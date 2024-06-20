@@ -410,7 +410,7 @@ class _HomePageState extends State<HomePage> {
     List<Widget> pages = [
       _buildSwipePage(),
       SettingsPage(settings, appLanguage),
-      const ChatPage(),
+      ChatPage(),
     ];
 
     return Scaffold(

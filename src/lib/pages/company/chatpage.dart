@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:src/preferences.dart';
 
 // the messages' list of the 1st DM
 List<Widget> messages0 = [
@@ -67,16 +68,6 @@ List<Widget> messages5 = [
   ),
 ];
 
-// the list to know if a chat is selected
-List<bool> chatIsSelected = [
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-];
-
 // the index of the selected chat
 int selectedIndex = -1;
 
@@ -92,18 +83,6 @@ class ChatManager extends StatefulWidget {
 
 class _ChatManagerState extends State<ChatManager> {
   // the function that returns the selected chat
-  int chatSelect() {
-    if (chatIsSelected.contains(true)) {
-      chatIsSelected[0] = false;
-      chatIsSelected[1] = false;
-      chatIsSelected[2] = false;
-      chatIsSelected[3] = false;
-      chatIsSelected[4] = false;
-      chatIsSelected[5] = false;
-    }
-    chatIsSelected[selectedIndex] = true;
-    return selectedIndex;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +115,6 @@ class _ChatManagerState extends State<ChatManager> {
                           widget.size,
                           "John Doe",
                           "Software Engineer",
-                          chatIsSelected[0],
                         ),
                       ),
                       GestureDetector(
@@ -149,7 +127,6 @@ class _ChatManagerState extends State<ChatManager> {
                           widget.size,
                           "Jeremy",
                           "Software Engineer",
-                          chatIsSelected[1],
                         ),
                       ),
                       GestureDetector(
@@ -158,8 +135,11 @@ class _ChatManagerState extends State<ChatManager> {
                             selectedIndex = 2;
                           });
                         },
-                        child: chats(widget.size, "Elone", "Software Engineer",
-                            chatIsSelected[2]),
+                        child: chats(
+                          widget.size,
+                          "Elone",
+                          "Software Engineer",
+                        ),
                       ),
                       GestureDetector(
                         onTap: () {
@@ -167,8 +147,11 @@ class _ChatManagerState extends State<ChatManager> {
                             selectedIndex = 3;
                           });
                         },
-                        child: chats(widget.size, "Julian", "Software Engineer",
-                            chatIsSelected[3]),
+                        child: chats(
+                          widget.size,
+                          "Julian",
+                          "Software Engineer",
+                        ),
                       ),
                       GestureDetector(
                         onTap: () {
@@ -176,8 +159,11 @@ class _ChatManagerState extends State<ChatManager> {
                             selectedIndex = 4;
                           });
                         },
-                        child: chats(widget.size, "Joe", "Software Engineer",
-                            chatIsSelected[4]),
+                        child: chats(
+                          widget.size,
+                          "Joe",
+                          "Software Engineer",
+                        ),
                       ),
                     ],
                   ),
@@ -209,7 +195,7 @@ class _ChatManagerState extends State<ChatManager> {
 }
 
 // the widget that displays the selectable chats on the left
-Widget chats(var size, String name, String job, bool isChosen) {
+Widget chats(var size, String name, String job) {
   return Padding(
     padding: const EdgeInsets.all(10),
     child: Container(
@@ -446,6 +432,10 @@ Widget message(String mess, bool fromUser) {
 
 // widget that is called when no chat is selected -> returns a specific chatbox
 Widget chatBoxEmpty(var size) {
+  Map<String, String> chooseMessage = {
+    "fr_FR": "Choisissez un message.",
+    "en_US": "Choose a message.",
+  };
   return Padding(
     padding: const EdgeInsets.all(20),
     child: Container(
@@ -457,9 +447,9 @@ Widget chatBoxEmpty(var size) {
           Radius.circular(15),
         ),
       ),
-      child: const Center(
+      child: Center(
         child: Text(
-          "Choose a message.",
+          "${chooseMessage[appPreferences.appLanguage]}",
           style: const TextStyle(
             color: Colors.black,
             fontSize: 30,
