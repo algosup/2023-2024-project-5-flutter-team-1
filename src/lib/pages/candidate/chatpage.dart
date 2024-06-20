@@ -5,6 +5,7 @@ List<String> messagesList0 = [
   'Hello, how are you?',
   'I\'m good, thanks! How about you?',
 ];
+
 List<Widget> messages0 = List.generate(
   messagesList0.length,
   (index) => ChatBubble(
@@ -15,7 +16,7 @@ List<Widget> messages0 = List.generate(
 );
 
 class ChatPage extends StatefulWidget {
-  const ChatPage({super.key});
+  ChatPage({super.key});
 
   @override
   State<ChatPage> createState() => _ChatPageState();
@@ -116,12 +117,15 @@ class ChatListItem extends StatelessWidget {
         subtitle: Text(lastMessage),
         onTap: onTap,
       ),
+      title: Text(name),
+      subtitle: Text(lastMessage),
+      onTap: onTap,
     );
   }
 }
 
 class ChatScreen extends StatefulWidget {
-  const ChatScreen({super.key});
+  ChatScreen({super.key});
 
   @override
   _ChatScreenState createState() => _ChatScreenState();

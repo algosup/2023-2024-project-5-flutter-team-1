@@ -211,7 +211,7 @@ Widget chats(var size, String name, String job) {
               Padding(
                 padding: const EdgeInsets.only(top: 10, left: 10),
                 child: Text(
-                  "$name   -   $job",
+                  "$name - $job",
                   style: const TextStyle(
                     fontSize: 25,
                     color: Colors.white,
@@ -364,7 +364,6 @@ class _chatBoxState extends State<chatBox> {
 // widget that returns the message and the time it has been sent
 Widget message(String mess, bool fromUser) {
   DateTime now = DateTime.now();
-  var time = "${now.hour}:${now.minute}";
   return mess == ""
       ? Container()
       : Column(
@@ -420,9 +419,11 @@ Widget message(String mess, bool fromUser) {
                   padding: fromUser
                       ? const EdgeInsets.only(right: 30)
                       : const EdgeInsets.only(left: 30),
-                  child: Text(
-                    time,
-                  ),
+                  child: now.minute < 10
+                      ? Text(
+                          "${now.hour}:0${now.minute}",
+                        )
+                      : Text("${now.hour}:${now.minute}"),
                 ),
               ],
             ),
