@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:src/pages/candidate/homepage.dart';
+import 'package:go_router/go_router.dart';
 
 List<String> messagesList0 = [
   'Hello, how are you?',
@@ -18,8 +19,27 @@ List<Widget> messages0 = [
 ];
 
 class ChatPage extends StatefulWidget {
+  const ChatPage({super.key});
+
+List<Widget> messages0 = [
+  ChatBubble(
+    text: messagesList0[0],
+    isCurrentUser: true,
+  ),
+  ChatBubble(
+    text: messagesList0[1],
+    isCurrentUser: false,
+  ),
+];
+
+class ChatPage extends StatefulWidget {
   ChatPage({super.key});
 
+  @override
+  State<ChatPage> createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
   @override
   State<ChatPage> createState() => _ChatPageState();
 }
@@ -172,12 +192,11 @@ class _ChatScreenState extends State<ChatScreen> {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => HomePage(2),
-            ),
-          ),
+          onPressed: () {
+            setState(() {
+              context.go("/homepage2");
+            });
+          },
         ),
       ),
       body: Column(
